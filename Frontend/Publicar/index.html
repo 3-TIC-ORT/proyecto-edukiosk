@@ -10,10 +10,49 @@
 <body>
     <h1>Formulario para publicar</h1>
     <script src="main.js"></script>
-    <form>
-        <Input id="Titulo" placeholder="Ponga un Titulo">Titulo</Input>
-        <Input id="descripcion" placeholder="Ponga una breve descripcion">Descripcion</Input>
-    </form>
+    <form id="formPublicar">
+        <label for="Titulo" Titulo: ></label>
+        <Input id="Titulo" type="text" placeholder="Ponga un Titulo" required>Titulo</Input>
+        
+        <label for="imagen" imagen:></label>
+        <input type="file"  id="imagen">
+
+        <label for="descripcion" Ponga una breve descripcion: ></label>
+        <textarea id="descripcion" placeholder="Ponga una breve descripcion"></textarea>
+        
+        <label for="recurso">Tipo de recurso</label>
+        <select id="recurso" required>
+            <option value="">Selecciona una opcion</option>
+            <option value="Libro">Libro</option>
+            <option value="Clases particulares">Clases particulares</option>
+            <option value="Resumen">Resumen</option>
+        </select>
+
+        <label for="Año">Seleccione un año</label>
+        <select id="Año" required>
+            <option value="">Selecciona una opcion</option>
+            <option value="primer año">1°</option>
+            <option value="segundo año">2°</option>
+            <option value="tercer año">3°</option>
+            <option value="cuarto año">4°</option>
+            <option value="quinto año">5°</option>
+            
+        </select>
+        
+
+
+            <div id="campoprecios">
+                <label for="Precios">Precios</label>
+                <input id="Precios" type="number" placeholder="0" min="0">
+                <button type="submit">publicar</button>
+            </div>
+            
+
+
+        </select>
+
+
+    </form> 
     <script src="main.js"></script>
 </body>
 </html>
