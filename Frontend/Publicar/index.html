@@ -38,13 +38,23 @@
             <option value="3°-Medios">3°-Medios</option>
             <option value="3°-Gestion">3°-Gestion</option>
             <option value="3°-Diseño">3°-Diseño</option>
-            <option value="cuarto año">4°</option>
-            <option value="quinto año">5°</option>
+             <optgroup label="4°" (elegi especialidad)>
+            <option value="4°-Tic">4°-Tic</option>
+            <option value="4°-Medios">4°-Medios</option>
+            <option value="4°-Gestion">4°-Gestion</option>
+            <option value="4°-Diseño">4°-Diseño</option>
+             <optgroup label="5°" (elegi especialidad)>
+            <option value="5°-Tic">5°-Tic</option>
+            <option value="5°-Medios">5°-Medios</option>
+            <option value="5°-Gestion">5°-Gestion</option>
+            <option value="5°-Diseño">5°-Diseño</option>
+             </optgroup>
+
         </optgroup>
         </select>
-
-        <label for="Materia">Que materia es</label>
-        <select id="recurso" required>
+<label for="materia">Que materia es</label>
+<select id="materia" required>
+    <option value="">Selecciona una opcion</option>
             <option value="">Selecciona una opcion</option>
             <option value="Matematica">Matematica</option>
             <optgroup label="Ingles" (Elegi tu nivel de ingles)></optgroup>
@@ -102,16 +112,14 @@
             <option value="Contabilidad Patrimonial Y De Gestion">Contabilidad Patrimonial Y De Gestion</option>
             <option value="Filosofia">Filosofia</option>
             <option value="Produccion">Produccion</option>
-
-
-
-
-            
+            <option value="Introducción a la Contabilidad">Introducción a la Contabilidad</option>
+            <option value="Sistemas de Comunicación de Datos">Sistemas de Comunicación de Datos</option>
+            <option value="Taller Anual de Producción Multimedial">Taller Anual de Producción Multimedial</option>
+            <option value="Proyecto Organizacional">Proyecto Organizacional</option>
+            <option value="Desarrollo de Proyectos de Producción">Desarrollo de Proyectos de Producción</option>  
 
         </select>
         
-
-
             <div id="campoprecios">
                 <label for="Precios">Precios</label>
                 <input id="Precios" type="number" placeholder="0" min="0">
