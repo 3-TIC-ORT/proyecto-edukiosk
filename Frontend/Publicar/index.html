@@ -1,137 +1,67 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <Title>Públicaiones</Title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documento</title>
+    <title>Publicaciones</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    
+    <div class="header">
+        <div class="logo">
+            <a href="../Home/index.html" style="color: white; text-decoration: none;">Home</a>
+        </div>
+        <div class="nav-links">
+            <a href="../Perfil/index.html">Perfil</a>
+            <a href="../Publicar/index.html">Publicar</a>
+        </div>
+    </div>
     <h1>Formulario para publicar</h1>
-    <script src="main.js"></script>
     <form id="formPublicar">
-        <label for="Titulo" Titulo: ></label>
-        <Input id="Titulo" type="text" placeholder="Ponga un Titulo" required>Titulo</Input>
-        
-        <label for="imagen" imagen:></label>
-        <input type="file"  id="imagen">
+        <label for="Titulo">Título:</label>
+        <input id="Titulo" type="text" placeholder="Ponga un título" required>
 
-        <label for="descripcion" Ponga una breve descripcion: ></label>
-        <textarea id="descripcion" placeholder="Ponga una breve descripcion"></textarea>
-        
-        <label for="recurso">Tipo de recurso</label>
+        <label for="imagen">Imagen:</label>
+        <input type="file" id="imagen">
+
+        <label for="descripcion">Descripción:</label>
+        <textarea id="descripcion" placeholder="Ponga una breve descripción"></textarea>
+        <label for="recurso">Tipo de recurso:</label>
         <select id="recurso" required>
-            <option value="">Selecciona una opcion</option>
+            <option value="">Selecciona una opción</option>
             <option value="Libro">Libro</option>
             <option value="Clases particulares">Clases particulares</option>
             <option value="Resumen">Resumen</option>
         </select>
 
-        <label for="Año">Seleccione un año</label>
-        <select id="Año" required>
-            <option value="">Selecciona una opcion</option>
-            <option value="primer año">1°</option>
-            <option value="segundo año">2°</option>
-            <optgroup label="3°" (elegi especialidad)>
-            <option value="3°-Tic">3°-Tic</option>
-            <option value="3°-Medios">3°-Medios</option>
-            <option value="3°-Gestion">3°-Gestion</option>
-            <option value="3°-Diseño">3°-Diseño</option>
-             <optgroup label="4°" (elegi especialidad)>
-            <option value="4°-Tic">4°-Tic</option>
-            <option value="4°-Medios">4°-Medios</option>
-            <option value="4°-Gestion">4°-Gestion</option>
-            <option value="4°-Diseño">4°-Diseño</option>
-             <optgroup label="5°" (elegi especialidad)>
-            <option value="5°-Tic">5°-Tic</option>
-            <option value="5°-Medios">5°-Medios</option>
-            <option value="5°-Gestion">5°-Gestion</option>
-            <option value="5°-Diseño">5°-Diseño</option>
-             </optgroup>
-
-        </optgroup>
-        </select>
-<label for="materia">Que materia es</label>
-<select id="materia" required>
-    <option value="">Selecciona una opcion</option>
-            <option value="">Selecciona una opcion</option>
-            <option value="Matematica">Matematica</option>
-            <optgroup label="Ingles" (Elegi tu nivel de ingles)></optgroup>
-            <option value="Ingles-Key">Key</option>
-            <option value="Ingles-Preliminari">Preliminari</option>
-            <option value="Ingles-Teens 5">Teens 5</option>
-            <option value="Ingles-Pre-first">Pre first</option>
-            <option value="Ingles-First">First</option>
-            <option value="Ingles-Pre advanced">re advance</option>
-            <option value="Ingles-advanced">advance</option>
-            <option value="Ingles-Pre profisioncy">Pre profisioncy</option>
-            <option value="Ingles-profisioncy">profisioncy</option>
-            
-
-
-
-            <option value="Lengua">Lengua</option>
-            <option value="Hebreo">Hebreo</option>
-            <option value="Educacion judia">Educacion judia</option>
-            <option value="Cultura judia">Cultura judia</option>
-            <option value="Etica">Etica</option>
-            <option value="Biologia">Biologia</option>
-            <option value="Geografia">Geografia</option>
-            <option value="Economia">Economia</option>
-            <option value="Fisico quimica">Fisico quimica</option>
-            <option value="Historia">Historia</option>
-            <option value="Arte">Arte</option>
-            <option value="Tecnologia">Tecnologia</option>
-            <option value="Contabilidad">Contabilidad</option>
-            <option value="Organizaciones">Organizaciones</option>
-            <option value="Diseño y Tecnologia">Diseño y Tecnologia</option>
-            <option value="Estudio de la comunicacion">Estudio de la comunicacion</option>
-            <option value="Tecnologias de la informacion">Tecnologias de la informacion</option>
-            <option value="Realizacion Y Produccion Sonora">Realizacion Y Produccion Sonora</option>
-            <option value="Timi">Timi</option>
-            <option value="Sistema de comunicaciones">Sistema de comunicaciones</option>
-            <option value="Software">Software</option>
-            <option value="Hardware">Hardware</option>
-            <option value="Bases de datos">Bases de datos</option>
-            <option value="Estructura Y Funcionamiento De Sistemas Informaticos">Bases de datos</option>
-            <option value="Modelado E Interaccion 3D">Modelado E Interaccion 3D</option>
-            <option value="Taller De Programacion">Taller De Programacion</option>
-            <option value="Desarrollo de Aplicaciones Informáticas">Desarrollo de Aplicaciones Informáticas</option>
-            <option value="quimica">quimica</option>
-            <option value="Seminario de informacion y telecomunicacion">Seminario de informacion y telecomunicacion</option>
-            <option value="Sistemas embebidos">istemas embebidos</option>
-            <option value="Comunicación, Discursos Sociales Y Medios">Comunicación, Discursos Sociales Y Medios</option>
-            <option value="Teorias De La Comunicación">Teorias De La Comunicación</option>
-            <option value="Taller Anual De Arte Y Diseño">Taller Anual De Arte Y Diseño</option>
-            <option value="Comunicación, Tecnologia Y Sociedad">Comunicación, Tecnologia Y Sociedad</option>
-            <option value="Proyecto De Comunicación">Proyecto De Comunicación</option>
-            <option value="Taller Anual De Produccion Grafica">Taller Anual De Produccion Grafica</option>
-            <option value="Sistemas De Informacion Contable">Sistemas De Informacion Contable</option>
-            <option value="Sistemas Administrativos">Sistemas Administrativos</option>
-            <option value="Contabilidad Patrimonial Y De Gestion">Contabilidad Patrimonial Y De Gestion</option>
-            <option value="Filosofia">Filosofia</option>
-            <option value="Produccion">Produccion</option>
-            <option value="Introducción a la Contabilidad">Introducción a la Contabilidad</option>
-            <option value="Sistemas de Comunicación de Datos">Sistemas de Comunicación de Datos</option>
-            <option value="Taller Anual de Producción Multimedial">Taller Anual de Producción Multimedial</option>
-            <option value="Proyecto Organizacional">Proyecto Organizacional</option>
-            <option value="Desarrollo de Proyectos de Producción">Desarrollo de Proyectos de Producción</option>  
-
-        </select>
-        
-            <div id="campoprecios">
-                <label for="Precios">Precios</label>
-                <input id="Precios" type="number" placeholder="0" min="0">
-                <button type="submit">publicar</button>
-            </div>
-            
-
-
+        <label for="grado">Grado:</label>
+        <select id="grado" required>
+            <option value="1°">1°</option>
+            <option value="2°">2°</option>
+            <option value="3°">3°</option>
+            <option value="4°">4°</option>
+            <option value="5°">5°</option>
         </select>
 
+        <label for="especialidad" style="display: none;">Especialidad:</label>
+        <select id="especialidad" style="display: none;">
+            <option value="TIC">TIC</option>
+            <option value="Medio">Medio</option>
+            <option value="Gestión">Gestión</option>
+            <option value="TIMI">TIMI</option>
+        </select>
 
-    </form> 
+        <label for="materia">Materia:</label>
+        <select id="materia" required>
+        </select>
+
+        <div id="campoprecios" style="display: none;">
+            <label for="Precios">Precio:</label>
+            <input id="Precios" type="number" placeholder="0" min="0">
+        </div>
+        <button type="submit">Publicar</button>
+    </form>
     <script src="main.js"></script>
 </body>
 </html>
