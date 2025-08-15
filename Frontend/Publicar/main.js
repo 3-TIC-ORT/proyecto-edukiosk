@@ -7,25 +7,39 @@ document.addEventListener('DOMContentLoaded', () => {
   const selMateria = document.getElementById('materia');
 
   const materiasPorGradoYEspecialidad = {
-    '1°': [''],
-    '2°': [''],
+    '1°': ["Artes", "Biología", "Educación Judía", "Educación Tecnológica","Formación Ética y Ciudadana", "Geografía", "Historia","Lengua y Literatura", "Matemática", "Inglés"],
+
+    '2°': [  "Artes", "Biología", "Educación Judía", "Educación Tecnológica","Formación Ética y Ciudadana", "Geografía", "Historia","Lengua y Literatura", "Matemática", "Inglés"],
+
     '3°': {
-      'TIC': [''],
-      'Medio': [''],
-      'Gestión': [''],
-      'TIMI': ['']
+      'TIC': [  "Biología", "Cultura Judía", "Economía", "Educación Judía", "Físico Química","Formación Ética y Ciudadana", "Geografía", "Historia", "Inglés","Lengua y Literatura", "Matemática", "TIMI","harwerd", "software","Tecnologías-de-la-Información" ],
+
+      'Medio': [  "Biología", "Cultura Judía", "Diseño y Tecnología", "Economía","Educación Judía", "Físico Química", "Formación Ética y Ciudadana","Geografía", "Historia", "Inglés", "Introducción al Estudio de la Comunicación","Lengua y Literatura", "Matemática", "Realización y Producción Sonora","Tecnologías de la Información"],
+
+      'Gestión': [  "Biología", "Cultura Judía", "Derecho", "Economía","Educación Judía", "Físico Química", "Formación Ética y Ciudadana","Geografía", "Historia", "Inglés", "Introducción a la Contabilidad",  "Lengua y Literatura", "Matemática", "Organizaciones","Tecnologías de la Información"],
+
+      'Diseño': [  "Biología", "Cultura Judía", "Economía", "Educación Judía","Físico Química", "Formación Ética y Ciudadana", "Geografía","Historia", "Inglés", "Lengua y Literatura", "Matemática"]
+
     },
     '4°': {
-      'TIC': [''],
-      'Medio': [''],
-      'Gestión': [''],
-      'TIMI': ['']
+      'TIC': [  "Arte", "Bases de Datos", "Cultura Judía", "Educación Judía","Estructura y Funcionamiento de Sistemas Informáticos", "Física","Formación Ética y Ciudadana", "Geografía", "Historia", "Inglés","Lengua y Literatura", "Matemática", "Modelado e Interacción 3D","Taller de Programación"],
+
+      'Medio': [  "Arte", "Comunicación, Discursos Sociales y Medios", "Cultura Judía","Diseño y Tecnología", "Educación Judía", "Física","Formación Ética y Ciudadana", "Geografía", "Historia", "Inglés","Lengua y Literatura", "Matemática", "Taller Anual de Arte y Diseño","Tecnologías de la Información", "Teorías de la Comunicación"],
+
+      'Gestión': [  "Cultura Judía", "Derecho", "Economía", "Educación Judía", "Física","Formación Ética y Ciudadana", "Geografía", "Historia", "Inglés","Lengua y Literatura", "Matemática", "Sistemas Administrativos","Sistemas de Información Contable", "Tecnologías de la Información"],
+
+      'Diseño': ["4°-Diseño",  "Cultura Judía", "Educación Judía", "Física","Formación Ética y Ciudadana", "Geografía", "Historia", "Inglés","Lengua y Literatura", "Matemática"]
+
     },
-    '5°': {
-      'TIC': [''],
-      'Medio': [''],
-      'Gestión': [''],
-      'TIMI': ['']
+    '5°': { 
+      'TIC': [  "Cultura Judía", "Desarrollo de Aplicaciones Informáticas","Desarrollo de Proyectos de Producción", "Educación Judía","Estructura y Funcionamiento de Sistemas Informáticos", "Filosofía","Historia", "Inglés", "Lengua y Literatura", "Matemática", "Química","Seminario de Informática y Telecomunicaciones","Sistemas de Comunicación de Datos", "Sistemas Embebidos","Tecnología de la Información"],
+
+      'Medio': [  "Comunicación, Tecnología y Sociedad", "Cultura Judía", "Educación Judía","Filosofía", "Historia", "Inglés", "Lengua y Literatura", "Matemática","Proyecto de Comunicación", "Química", "Taller Anual de Producción Gráfica","Taller Anual de Producción Multimedial", "Tecnología de la Información"],
+
+      'Gestión': [  "Contabilidad Patrimonial y de Gestión", "Cultura Judía", "Derecho", "Economía","Educación Judía", "Filosofía", "Historia", "Inglés", "Lengua y Literatura","Matemática", "Producción", "Proyecto Organizacional", "Química","Tecnología de la Información"],
+
+      'diseño': [  "Cultura Judía", "Educación Judía", "Filosofía", "Inglés","Lengua y Literatura", "Matemática", "Química"]
+
     }
   };
 
@@ -48,10 +62,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (gradoSeleccionado === '3°' || gradoSeleccionado === '4°' || gradoSeleccionado === '5°') {
       selEspecialidad.style.display = '';
-      selEspecialidad.previousElementSibling.style.display = ''; // Mostrar etiqueta
+      selEspecialidad.previousElementSibling.style.display = ''; 
     } else {
       selEspecialidad.style.display = 'none';
-      selEspecialidad.previousElementSibling.style.display = 'none'; // Ocultar etiqueta
+      selEspecialidad.previousElementSibling.style.display = 'none'; 
       selEspecialidad.value = '';
     }
 
