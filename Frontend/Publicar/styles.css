@@ -1,109 +1,37 @@
+/* CODIGO DEL HEADER */
 
-body {
+.header ul {
+    list-style-type: none;
+    padding-right: 50px;
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f0f8ff;
-    color: #333;
+    gap: 50px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.header ul img{
+    width: 50px;
+    height: 50px;
 }
 
-.header {
-    background-color: #004080; 
-    height: 60px;
+.header img{
+    width: 100px;
+    height: 50px;
+    display: flex;
+    margin: 0;
+}
+
+.header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
-    color: white;
-    border-bottom: 2px solid #0073e6;}
-
-.header .logo {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.header .nav-links {
-    display: flex;
-    gap: 15px;
-}
-
-.header .nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-}
-
-.header .nav-links a:hover {
-    text-decoration: underline;
-}
-
-form#formPublicar {
-    background-color: white;
-    max-width: 500px;
-    margin: 50px auto; 
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border: 1px solid #ddd;
-}
-
-
-
-
-form#formPublicar input,
-form#formPublicar textarea,
-form#formPublicar select {
-    width: 100%;
+    border-bottom: 3px solid black;
+    margin: 0px;
     padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-    box-sizing: border-box;
-}
-
-form#formPublicar input:focus,
-form#formPublicar textarea:focus,
-form#formPublicar select:focus {
-    border-color: #0073e6; 
-    outline: none;
-    box-shadow: 0 0 5px rgba(0, 115, 230, 0.5);
-}
-
-
-form#formPublicar button {
-    background-color: #004080; 
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
     width: 100%;
 }
 
-form#formPublicar button:hover {
-    background-color: #0073e6; 
+.Titulo{
+    font-size: 25px;
+   align-self: center;
+   
 }
-
-#campoprecios {
-    margin-top: 20px;
-}
-
-@media (max-width: 600px) {
-    form#formPublicar {
-        margin: 20px;
-        padding: 15px;
-    }
-
-    .header {
-        flex-direction: column;
-        height: auto;
-        padding: 10px;
-    }
-
-    .header .nav-links {
-        flex-direction: column;
-        gap: 10px;
-    }
-}
-    
