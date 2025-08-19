@@ -28,10 +28,25 @@
     margin: 0px;
     padding: 10px;
     width: 100%;
+    background-color: blue;
 }
 
-.Titulo{
-    font-size: 25px;
-   align-self: center;
-   
+
+main {
+  display: flex;              
+  justify-content: center;    
+  align-items: center;        
+  min-height: 100vh;          
+}
+
+#formPublicar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  max-width: 300px;
+  width: 100%;
 }
