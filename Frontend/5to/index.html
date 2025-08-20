@@ -3,30 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>publicaciones de 5°</title>
+    <title>publicaciones de 5°</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-     <div class="header">
-        <div class="logo">
-            <a href="../Home/index.html" style="color: white; text-decoration: none;">Home</a>
+    <header>
+        <div class="header">
+            <img src="../../Imagenes/edukiosk.png" alt="LOGO">
+            <ul>
+                <li>
+                    <a href="../Home/index.html">
+                        <img src="../../Imagenes/home.png" alt="HOME">
+                    </a>
+                </li>
+                <li>
+                    <a href="../Perfil/index.html">
+                        <img src="../../Imagenes/perfil.png" alt="PERFIL">
+                    </a>
+                </li>
+                <li>
+                    <a href="../Publicar/index.html">
+                        <img src="../../Imagenes/crear.png" alt="CREAR">
+                    </a>
+                </li>
+                <li>
+                    <img src="../../Imagenes/notificaciones.png" alt="NOTIFICACIONES">
+                </li>
+            </ul>
         </div>
-        <div class="nav-links">
-            <a href="../Perfil/index.html">Perfil</a>
-            <a href="../Publicar/index.html">Publicar</a>
-        </div>
-    </div>
-    <h1>Publicaciones de 5°</h1>
-    <div id="publicaciones" class="publicaciones-container">
-      
-    </div>
+    </header>
 
-    <script src="main.js"></script>
-</body>
-</html>
-    <script src="main.js"></script>
-</body>
-</html>
+    <label for="menu-principal">Especialidad:</label>
+    <select id="menu-principal">
+        <option value="">-- Elegir --</option>
+        <option value="TIC">TIC</option>
+        <option value="Medios">Medios</option>
+        <option value="Diseño">Diseño</option>
+        <option value="Gestión">Gestión</option>
+    </select>
+
+    <label for="recurso">Tipo de recurso:</label>
+    <select id="recurso">
+        <option value="">Selecciona una opción</option>
+        <option value="Libro">Libro</option>
+        <option value="Clases particulares">Clases particulares</option>
+        <option value="Resumen">Resumen</option>
+    </select>
+
+    <label for="menu-secundario" style="display:none;">Materias:</label>
+    <select id="menu-secundario" style="display:none;"></select>
+
     <script src="main.js"></script>
 </body>
 </html>

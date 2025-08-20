@@ -5,28 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>publicaciones de 3°</title>
     <link rel="stylesheet" href="styles.css">
+
+    <header>
+        <div class="header">
+            <img src="../../Imagenes/edukiosk.png" alt="LOGO">
+            <ul>
+                <li>
+                    <a href="../Home/index.html">
+                        <img src="../../Imagenes/home.png" alt="HOME">
+                    </a>
+                </li>
+                <li>
+                    <a href="../Perfil/index.html">
+                        <img src="../../Imagenes/perfil.png" alt="PERFIL">
+                    </a>
+                </li>
+                <li>
+                    <a href="../Publicar/index.html">
+                        <img src="../../Imagenes/crear.png" alt="CREAR">
+                    </a>
+                </li>
+                <li>
+                     <img src="../../Imagenes/notificaciones.png" alt="NOTIFICACIONES">
+                     <!-- PROGRAMAR DESPUES XQ FUNCIONA DIFERENTE A LOS DEMAS -->
+                </li>
+            </ul>
+        </div>
+    </header>
 </head>
 <body>
-     <div class="header">
-        <div class="logo">
-            <a href="../Home/index.html" style="color: white; text-decoration: none;">Home</a>
-        </div>
-        <div class="nav-links">
-            <a href="../Perfil/index.html">Perfil</a>
-            <a href="../Publicar/index.html">Publicar</a>
-        </div>
-    </div>
-    <h1>Publicaciones de 3°</h1>
-    <div id="publicaciones" class="publicaciones-container">
-      
-    </div>
+
+
+    <label for="menu-principal">especialidad</label>
+    <select id="menu-principal">
+      <option value="">-- Elegir --</option>
+      <option value="TIC">TIC</option>
+      <option value="Medios">Medios</option>
+      <option value="Diseno">Diseño</option>
+      <option value="Gestion">Gestión</option>
+    </select>
+    <label for="recurso">Tipo de recurso:</label>
+    <select id="recurso">
+        <option value="">Selecciona una opción</option>
+        <option value="Libro">Libro</option>
+        <option value="Clases particulares">Clases particulares</option>
+        <option value="Resumen">Resumen</option>
+    </select>
+  
+    <label for="menu-secundario" style="display:none;">Especialidad:</label>
+    <select id="menu-secundario" style="display:none;"></select>
+
+
 
     <script src="main.js"></script>
 </body>
 </html>
-    <script src="main.js"></script>
+
 </body>
 </html>
-    <script src="main.js"></script>
+
 </body>
 </html>
