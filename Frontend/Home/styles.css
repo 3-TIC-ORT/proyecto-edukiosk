@@ -1,6 +1,7 @@
 body{
     font-family: "Montserrat", sans-serif;
     background-color: aliceblue;
+    text-align: center;
 }
 
 /* CODIGO DEL HEADER */
@@ -29,7 +30,6 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 3px solid black;
     margin: 0px;
     padding: 10px;
     width: 100%;
@@ -65,10 +65,33 @@ body{
     font-family: "Montserrat", sans-serif;
 }
 
-h1{
+/* ABOUT */
+
+.ABOUT {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    font-family: serif, ; 
+    padding: 1rem;
+    color: white;
+    padding: 5%;
+
+        h1{
+            font-weight: 700;
+            font-size: 100;
+        }
+    background-color: maroon;
+    border-top: 3px solid black;
 }
+
+.ABOUT p {
+    width: 100%;
+    max-width: 40rem;
+    margin: 1%;
+    font-size: 30;
+    font-weight: 550;
+}
+
 
 /* FOOTER */
 
