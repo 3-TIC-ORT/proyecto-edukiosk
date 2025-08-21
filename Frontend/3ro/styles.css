@@ -1,31 +1,73 @@
-/* CODIGO DEL HEADER */
-
-.header ul {
-    list-style-type: none;
-    padding-right: 50px;
+body {
     margin: 0;
-    gap: 50px;
-    display: flex;
-    flex-direction: row-reverse;
-}
-.header ul img{
-    width: 50px;
-    height: 50px;
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
 }
 
-.header img{
-    width: 100px;
-    height: 50px;
-    display: flex;
-    margin: 0;
-}
-
-.header{
+.header {
+    background-color: #004080;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 3px solid black;
-    margin: 0px;
-    padding: 10px;
-    width: 100%;
+    padding: 0 20px;
+    color: white;
+    border-bottom: 2px solid #0073e6;
+}
+
+.header .logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.header .nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.header .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.header .nav-links a:hover {
+    text-decoration: underline;
+}
+
+.publicaciones-container {
+    max-width: 800px;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.publicacion {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+}
+
+.publicacion h2 {
+    font-size: 18px;
+    color: #004080;
+    margin-bottom: 10px;
+}
+
+.publicacion p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.publicacion img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
 }

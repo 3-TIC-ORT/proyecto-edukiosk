@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 document.addEventListener("DOMContentLoaded", function () {
   const menuPrincipal   = document.getElementById("menu-principal"); 
@@ -100,3 +101,5 @@ document.addEventListener("DOMContentLoaded", function () {
     labelSecundario.style.display = "block";
   });
 });
+=======
+>>>>>>> parent of 9acb092 (Mejore las 5 pantallas de los años agregando los menus depegables)
