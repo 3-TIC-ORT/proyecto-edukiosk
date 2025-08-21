@@ -1,100 +1,37 @@
 <<<<<<< HEAD
 
-document.addEventListener("DOMContentLoaded", function () {
-  const menuPrincipal   = document.getElementById("menu-principal"); 
-  const menuSecundario  = document.getElementById("menu-secundario");
+const especialidades = {
+    TIC: ["Biología", "Cultura Judía", "Economía", "Educación Judía", "Físico Química", "Formación Ética y Ciudadana", "Geografía", "Historia", "Inglés", "Lengua y Literatura", "Matemática", "TIMI", "Hardware", "Software", "Tecnologías de la Información"],
+    Medios: ["Biología", "Cultura Judía", "Diseño y Tecnología", "Economía", "Educación Judía", "Físico Química", "Formación Ética y Ciudadana", "Geografía", "Historia", "Inglés", "Introducción al Estudio de la Comunicación", "Lengua y Literatura", "Matemática", "Realización y Producción Sonora", "Tecnologías de la Información"],
+    Gestión: ["Biología", "Cultura Judía", "Derecho", "Economía", "Educación Judía", "Físico Química", "Formación Ética y Ciudadana", "Geografía", "Historia", "Inglés", "Introducción a la Contabilidad", "Lengua y Literatura", "Matemática", "Organizaciones", "Tecnologías de la Información"],
+    Diseño: ["Biología", "Cultura Judía", "Economía", "Educación Judía", "Físico Química", "Formación Ética y Ciudadana", "Geografía", "Historia", "Inglés", "Lengua y Literatura", "Matemática"]
+  }
+  
+  const menuPrincipal = document.getElementById("menu-principal");
+  const menuSecundario = document.getElementById("menu-secundario");
   const labelSecundario = document.querySelector("label[for='menu-secundario']");
-
-  menuSecundario.style.display = "none";
-  labelSecundario.style.display = "none";
-
-  menuPrincipal.addEventListener("change", function () {
+  
+  menuPrincipal.addEventListener("change", () => {
     const seleccion = menuPrincipal.value;
-    let opciones = '<option value="">-- Elegir materia --</option>';
+  
+    if (seleccion && especialidades[seleccion]) {
 
-    switch (seleccion) {
-      case "TIC":
-        opciones += `
-          <option>Biología</option>
-          <option>Cultura Judía</option>
-          <option>Economía</option>
-          <option>Educación Judía</option>
-          <option>Físico Química</option>
-          <option>Formación Ética y Ciudadana</option>
-          <option>Geografía</option>
-          <option>Historia</option>
-          <option>Inglés</option>
-          <option>Lengua y Literatura</option>
-          <option>Matemática</option>
-          <option>TIMI</option>
-          <option>Hardware</option>
-          <option>Software</option>
-          <option>Tecnologías de la Información</option>
-        `;
-        break;
-
-      case "Medios":
-        opciones += `
-          <option>Biología</option>
-          <option>Cultura Judía</option>
-          <option>Diseño y Tecnología</option>
-          <option>Economía</option>
-          <option>Educación Judía</option>
-          <option>Físico Química</option>
-          <option>Formación Ética y Ciudadana</option>
-          <option>Geografía</option>
-          <option>Historia</option>
-          <option>Inglés</option>
-          <option>Introducción al Estudio de la Comunicación</option>
-          <option>Lengua y Literatura</option>
-          <option>Matemática</option>
-          <option>Realización y Producción Sonora</option>
-          <option>Tecnologías de la Información</option>
-        `;
-        break;
-
-      case "Gestión":
-        opciones += `
-          <option>Biología</option>
-          <option>Cultura Judía</option>
-          <option>Derecho</option>
-          <option>Economía</option>
-          <option>Educación Judía</option>
-          <option>Físico Química</option>
-          <option>Formación Ética y Ciudadana</option>
-          <option>Geografía</option>
-          <option>Historia</option>
-          <option>Inglés</option>
-          <option>Introducción a la Contabilidad</option>
-          <option>Lengua y Literatura</option>
-          <option>Matemática</option>
-          <option>Organizaciones</option>
-          <option>Tecnologías de la Información</option>
-        `;
-        break;
-
-      case "Diseño":
-        opciones += `
-          <option>Biología</option>
-          <option>Cultura Judía</option>
-          <option>Economía</option>
-          <option>Educación Judía</option>
-          <option>Físico Química</option>
-          <option>Formación Ética y Ciudadana</option>
-          <option>Geografía</option>
-          <option>Historia</option>
-          <option>Inglés</option>
-          <option>Lengua y Literatura</option>
-          <option>Matemática</option>
-        `;
-        break;
-
-      default:
-        menuSecundario.style.display = "none";
-        labelSecundario.style.display = "none";
-        menuSecundario.innerHTML = "";
-        return;
+      menuSecundario.innerHTML = "";
+      
+      especialidades[seleccion].forEach(opcion => {
+        const opt = document.createElement("option");
+        opt.value = opcion.toLowerCase();
+        opt.textContent = opcion;
+        menuSecundario.appendChild(opt);
+      });
+  
+      menuSecundario.style.display = "block";
+      labelSecundario.style.display = "block";
+    } else {
+      menuSecundario.style.display = "none";
+      labelSecundario.style.display = "none";
     }
+<<<<<<< HEAD
 
     menuSecundario.innerHTML = opciones;
     menuSecundario.style.display = "block";
@@ -103,3 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 =======
 >>>>>>> parent of 9acb092 (Mejore las 5 pantallas de los años agregando los menus depegables)
+=======
+  });
+>>>>>>> parent of ec337b8 (Mejorando cosas)
