@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-const selMateria = document.getElementById('materia');
-=======
 document.addEventListener('DOMContentLoaded', () => {
   const selRecurso = document.getElementById('recurso');
   const precioc = document.getElementById('campoprecios');
@@ -8,19 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const selGrado = document.getElementById('grado');
   const selEspecialidad = document.getElementById('especialidad');
   const selMateria = document.getElementById('materia');
->>>>>>> parent of ec337b8 (Mejorando cosas)
 
   const materiasPorGradoYEspecialidad = {
     '1°': ["Artes", "Biología", "Educación Judía", "Educación Tecnológica", "Formación Ética y Ciudadana", "Geografía", "Historia", "Lengua y Literatura", "Matemática", "Inglés"],
     '2°': ["Artes", "Biología", "Educación Judía", "Educación Tecnológica", "Formación Ética y Ciudadana", "Geografía", "Historia", "Lengua y Literatura", "Matemática", "Inglés"],
 
-<<<<<<< HEAD
-    '3°': {     
-       'TIC': ["Biología", "Cultura Judía", "Economía", "Educación Judía", "Físico Química", "Formación Ética y Ciudadana", "Geografía", "Historia", "Inglés", "Lengua y Literatura", "Matemática", "TIMI", "Hardware", "Software", "Tecnologías de la Información"],
-=======
     '3°': {
       'TIC': ["Biología", "Cultura Judía", "Economía", "Educación Judía", "Físico Química", "Formación Ética y Ciudadana", "Geografía", "Historia", "Inglés", "Lengua y Literatura", "Matemática", "TIMI", "Hardware", "Software", "Tecnologías de la Información"],
->>>>>>> parent of ec337b8 (Mejorando cosas)
       'Medio': ["Biología", "Cultura Judía", "Diseño y Tecnología", "Economía", "Educación Judía", "Físico Química", "Formación Ética y Ciudadana", "Geografía", "Historia", "Inglés", "Introducción al Estudio de la Comunicación", "Lengua y Literatura", "Matemática", "Realización y Producción Sonora", "Tecnologías de la Información"],
       'Gestión': ["Biología", "Cultura Judía", "Derecho", "Economía", "Educación Judía", "Físico Química", "Formación Ética y Ciudadana", "Geografía", "Historia", "Inglés", "Introducción a la Contabilidad", "Lengua y Literatura", "Matemática", "Organizaciones", "Tecnologías de la Información"],
       'Diseño': ["Biología", "Cultura Judía", "Economía", "Educación Judía", "Físico Química", "Formación Ética y Ciudadana", "Geografía", "Historia", "Inglés", "Lengua y Literatura", "Matemática"]
@@ -40,38 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-<<<<<<< HEAD
-  function actualizarEspecialidadesSegunGrado() {
-    const gradoSeleccionado = selGrado.value;
-    const especialidades = ["TIC", "Diseño", "Gestión", "Medio"];
-
-    selEspecialidad.innerHTML = "";
-    const labelEspecialidad = selEspecialidad.previousElementSibling;
-
-
-    if (gradoSeleccionado === '3°' || gradoSeleccionado === '4°' || gradoSeleccionado === '5°') {
-      selEspecialidad.style.display = '';
-      labelEspecialidad.style.display = '';
-
-      especialidades.forEach(especialidad => {
-        const option = document.createElement('option');
-        option.value = especialidad;
-        option.textContent = especialidad;
-        selEspecialidad.appendChild(option);
-      });
-    } else {
-      selEspecialidad.style.display = 'none';
-      
-      labelEspecialidad.style.display = 'none';
-      selEspecialidad.value = '';
-    }
-    selGrado.addEventListener('change', actualizarEspecialidadesSegunGrado);
-    selEspecialidad.addEventListener('change', actualizarMateriasSegunGradoYEspecialidad);
-
-  actualizarPrecioSegunTipo();
-  actualizarEspecialidadesSegunGrado();
-};
-=======
   function actualizarPrecioSegunTipo() {
     const tipo = selRecurso.value;
     const debeMostrar = tipo === 'Libro' || tipo === 'Clases particulares';
@@ -142,4 +101,3 @@ document.addEventListener('DOMContentLoaded', () => {
   actualizarPrecioSegunTipo();
   actualizarEspecialidadesSegunGrado();
 });
->>>>>>> parent of ec337b8 (Mejorando cosas)
