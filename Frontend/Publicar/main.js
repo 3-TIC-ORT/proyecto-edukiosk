@@ -5,6 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const selGrado = document.getElementById('grado');
   const selEspecialidad = document.getElementById('especialidad');
   const selMateria = document.getElementById('materia');
+const CrearPublicacion = ducument.getElementById('Publicacion');
+const Titulo1 = document.getElementById('Titulo');
+const Descripcion1 = document.getElementById('Descripcion');
+const Año1 = document.getElementById('Año');
+
 
   const materiasPorGradoYEspecialidad = {
     '1°': ["Artes", "Biología", "Educación Judía", "Educación Tecnológica", "Formación Ética y Ciudadana", "Geografía", "Historia", "Lengua y Literatura", "Matemática", "Inglés"],
@@ -101,3 +106,12 @@ document.addEventListener('DOMContentLoaded', () => {
   actualizarPrecioSegunTipo();
   actualizarEspecialidadesSegunGrado();
 });
+
+const Publicacion = {
+  Titulo1: ducument.getElementById("Titulo").value,
+  Descripcion1: ducument.getElementById("Descripcion").value,
+  Año1: ducument.getElementById("Año").value,
+  selMateria: ducument.getElementById("Materia").value,
+  selEspecialidad: ducument.getElementById("Especialiidad").value,
+  Fecha: Date.now()
+}
