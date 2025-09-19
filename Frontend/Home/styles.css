@@ -33,7 +33,7 @@ body{
     margin: 0px;
     padding: 10px;
     width: 100%;
-    background-color: maroon;
+    background-color: #224668;
 }
 
 /* AÑOS */
@@ -52,7 +52,7 @@ body{
 .AÑOS a{
     margin: 50px;
     margin-top: 40px;
-    background-color: maroon;
+    background-color: #224668;
     outline: none;
     color: white;
     padding-inline: 80px;
@@ -80,7 +80,7 @@ body{
             font-weight: 700;
             font-size: 100;
         }
-    background-color: maroon;
+    background-color: #224668;
     border-top: 3px solid black;
 }
 
