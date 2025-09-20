@@ -40,14 +40,17 @@ body{
 
 .AÑOS{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;;
     margin: 50px;
     font-family: serif;
     text-align: center;
     height: 400px;
     flex-wrap: wrap;
     border-bottom: 2px solid black;
+     flex-wrap: nowrap
+     
 }
+
 
 .AÑOS a{
     margin: 50px;
@@ -57,12 +60,17 @@ body{
     color: white;
     padding-inline: 80px;
     padding-block: 30px;
-    border-radius: 5px;
+    border-radius: 20px;
     display: flex;
     align-items: center;
-    font-size: 20px;
+    font-size: 30px;
+    font-weight: 600; 
     text-decoration: none;
     font-family: "Montserrat", sans-serif;
+    width: 150px;
+    height: 150px;
+  white-space: nowrap;  
+    
 }
 
 /* ABOUT */
