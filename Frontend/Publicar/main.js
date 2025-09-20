@@ -2,14 +2,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const selRecurso = document.getElementById('recurso');
   const precioc = document.getElementById('campoprecios');
   const inputPrecio = document.getElementById('Precios');
+
   const selGrado = document.getElementById('grado');
   const selEspecialidad = document.getElementById('especialidad');
   const selMateria = document.getElementById('materia');
-const CrearPublicacion = ducument.getElementById('Publicacion');
-const Titulo1 = document.getElementById('Titulo');
-const Descripcion1 = document.getElementById('Descripcion');
-const Año1 = document.getElementById('Año');
 
+  const form = document.getElementById('formPublicar');
+  const tituloInput = document.getElementById('Titulo');
+  const descripcionInput = document.getElementById('descripcion');
 
   const materiasPorGradoYEspecialidad = {
     '1°': ["Artes", "Biología", "Educación Judía", "Educación Tecnológica", "Formación Ética y Ciudadana", "Geografía", "Historia", "Lengua y Literatura", "Matemática", "Inglés"],
@@ -28,6 +28,7 @@ const Año1 = document.getElementById('Año');
       'Gestión': ["Cultura Judía", "Derecho", "Economía", "Educación Judía", "Física", "Formación Ética y Ciudadana", "Geografía", "Historia", "Inglés", "Lengua y Literatura", "Matemática", "Sistemas Administrativos", "Sistemas de Información Contable", "Tecnologías de la Información"],
       'Diseño': ["Arte", "Cultura Judía", "Educación Judía", "Física", "Formación Ética y Ciudadana", "Geografía", "Historia", "Inglés", "Lengua y Literatura", "Matemática"]
     },
+
     '5°': {
       'TIC': ["Cultura Judía", "Desarrollo de Aplicaciones Informáticas", "Desarrollo de Proyectos de Producción", "Educación Judía", "Estructura y Funcionamiento de Sistemas Informáticos", "Filosofía", "Historia", "Inglés", "Lengua y Literatura", "Matemática", "Química", "Seminario de Informática y Telecomunicaciones", "Sistemas de Comunicación de Datos", "Sistemas Embebidos", "Tecnología de la Información"],
       'Medio': ["Comunicación, Tecnología y Sociedad", "Cultura Judía", "Educación Judía", "Filosofía", "Historia", "Inglés", "Lengua y Literatura", "Matemática", "Proyecto de Comunicación", "Química", "Taller Anual de Producción Gráfica", "Taller Anual de Producción Multimedial", "Tecnología de la Información"],
@@ -36,10 +37,26 @@ const Año1 = document.getElementById('Año');
     }
   };
 
+  function setOptions(select, opciones, placeholder = "Selecciona una opción") {
+    select.innerHTML = "";
+    const opt = document.createElement('option');
+    opt.value = "";
+    opt.textContent = placeholder;
+    opt.disabled = true;
+    opt.selected = true;
+    select.appendChild(opt);
+
+    opciones.forEach(txt => {
+      const o = document.createElement('option');
+      o.value = txt;
+      o.textContent = txt;
+      select.appendChild(o);
+    });
+  }
+
   function actualizarPrecioSegunTipo() {
     const tipo = selRecurso.value;
     const debeMostrar = tipo === 'Libro' || tipo === 'Clases particulares';
-
     if (debeMostrar) {
       precioc.style.display = '';
       inputPrecio.required = true;
@@ -51,67 +68,63 @@ const Año1 = document.getElementById('Año');
   }
 
   function actualizarEspecialidadesSegunGrado() {
-    const gradoSeleccionado = selGrado.value;
-    const especialidades = ["TIC", "Diseño", "Gestión", "Medio"];
-
-    selEspecialidad.innerHTML = "";
+    const grado = selGrado.value;
     const labelEspecialidad = selEspecialidad.previousElementSibling;
-
-    if (gradoSeleccionado === '3°' || gradoSeleccionado === '4°' || gradoSeleccionado === '5°') {
+    if (grado === '3°' || grado === '4°' || grado === '5°') {
       selEspecialidad.style.display = '';
       labelEspecialidad.style.display = '';
-
-      especialidades.forEach(especialidad => {
-        const option = document.createElement('option');
-        option.value = especialidad;
-        option.textContent = especialidad;
-        selEspecialidad.appendChild(option);
-      });
+      selEspecialidad.required = true;
+      setOptions(selEspecialidad, ["TIC", "Diseño", "Gestión", "Medio"]);
     } else {
       selEspecialidad.style.display = 'none';
       labelEspecialidad.style.display = 'none';
+      selEspecialidad.required = false;
       selEspecialidad.value = '';
     }
-
     actualizarMateriasSegunGradoYEspecialidad();
   }
 
   function actualizarMateriasSegunGradoYEspecialidad() {
-    const gradoSeleccionado = selGrado.value;
-    const especialidadSeleccionada = selEspecialidad.value;
+    const grado = selGrado.value;
+    const esp = selEspecialidad.value;
 
     let materias = [];
-
-    if (gradoSeleccionado === '3°' || gradoSeleccionado === '4°' || gradoSeleccionado === '5°') {
-      materias = materiasPorGradoYEspecialidad[gradoSeleccionado][especialidadSeleccionada] || [];
+    if (grado === '3°' || grado === '4°' || grado === '5°') {
+      materias = (materiasPorGradoYEspecialidad[grado] && materiasPorGradoYEspecialidad[grado][esp]) || [];
     } else {
-      materias = materiasPorGradoYEspecialidad[gradoSeleccionado] || [];
+      materias = materiasPorGradoYEspecialidad[grado] || [];
     }
-
-    selMateria.innerHTML = '';
-
-    materias.forEach(materia => {
-      const option = document.createElement('option');
-      option.value = materia;
-      option.textContent = materia;
-      selMateria.appendChild(option);
-    });
+    setOptions(selMateria, materias, "Selecciona la materia");
   }
 
   selRecurso.addEventListener('change', actualizarPrecioSegunTipo);
   selGrado.addEventListener('change', actualizarEspecialidadesSegunGrado);
   selEspecialidad.addEventListener('change', actualizarMateriasSegunGradoYEspecialidad);
 
-
+  // Inicializa todo
   actualizarPrecioSegunTipo();
   actualizarEspecialidadesSegunGrado();
-});
 
-const Publicacion = {
-  Titulo1: ducument.getElementById("Titulo").value,
-  Descripcion1: ducument.getElementById("Descripcion").value,
-  Año1: ducument.getElementById("Año").value,
-  selMateria: ducument.getElementById("Materia").value,
-  selEspecialidad: ducument.getElementById("Especialiidad").value,
-  Fecha: Date.now()
-}
+  // Armado del objeto al enviar
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const publicacion = {
+      titulo: tituloInput.value.trim(),
+      descripcion: descripcionInput.value.trim(),
+      recurso: selRecurso.value,
+      grado: selGrado.value,
+      especialidad: (selGrado.value === '3°' || selGrado.value === '4°' || selGrado.value === '5°') ? selEspecialidad.value : "",
+      materia: selMateria.value,
+      precio: inputPrecio.required ? Number(inputPrecio.value) : 0,
+      fecha: Date.now()
+    };
+
+    console.log('Publicación lista para enviar/guardar:', publicacion);
+    // acá podemos guardar el form en el localStorage
+    form.reset();
+    actualizarPrecioSegunTipo();
+    actualizarEspecialidadesSegunGrado();
+    alert('¡Publicación creada!');
+  });
+});
