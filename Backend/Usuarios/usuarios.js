@@ -1,22 +1,33 @@
-// Usuarios.js
+import fs from "fs";
+import path from "path"; 
+import { fileURLToPath } from "url"; 
+import { dirname } from "path"; 
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const directorioJSON = path.resolve(__dirname, "usuarios.json");
 
-// Dependencias
+export function registrarUsuario(data) {
+  let usuarios = [];
 
-import { subscribePOSTEvent, subscribeGETEvent } from "soquetic";
-import fs from "fs"
-
-// Registro de usuarios
-
-subscribePOSTEvent("info", (data) => {
-    try{
-        fs.appendFileSync("usuarios.json", `${JSON.stringify(data)}\n`);
-        
-        return {success: true};
+  try {
+    if (!fs.existsSync(directorioJSON)) {
+      fs.writeFileSync(directorioJSON, "[]");
     }
-    catch{
-        console.log("Algo salió mal");
-        return {success: false};
-    }
-});
 
+    const jeison = fs.readFileSync(directorioJSON, "utf-8");
+
+    if (jeison !== "") {
+      usuarios = JSON.parse(jeison);
+    }
+
+    usuarios.push(data);
+    fs.writeFileSync(directorioJSON, JSON.stringify(usuarios, null, 2));
+    console.log("Usuario registrado con éxito");
+
+    return { success: true };
+  } catch (error) {
+    console.error("Algo salió mal:", error);
+    return { success: false };
+  }
+}
