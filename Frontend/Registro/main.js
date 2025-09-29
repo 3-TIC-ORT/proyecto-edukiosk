@@ -3,20 +3,12 @@ const contraseña = document.getElementById("Contraseña");
 const mail = document.getElementById("Email");
 const form = document.getElementById("form");
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 4dd45c74982e6ba1f1eae722a8a33bdf8643ea7c
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const nombreUsuario = usuario.value;
   const contraseñaUsuario = contraseña.value;
   const mailUsuario = mail.value;
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 4dd45c74982e6ba1f1eae722a8a33bdf8643ea7c
   fetch("http://localhost:3000/api/registro", {
     method: "POST",
     headers: { "Content-Type": "application/json" },

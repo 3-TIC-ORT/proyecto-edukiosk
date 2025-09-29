@@ -4,15 +4,10 @@
   --colorPrimario: #172d42;
 }
 
-<<<<<<< HEAD
 
 /* BODY */
 
 
-=======
-/* BODY */
-
->>>>>>> 4dd45c74982e6ba1f1eae722a8a33bdf8643ea7c
 body {
   background-color: var(--colorFondo);
   font-family: "Inter", sans-serif;
@@ -20,10 +15,6 @@ body {
   padding: 0;
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 4dd45c74982e6ba1f1eae722a8a33bdf8643ea7c
 /* TITULO */
 body > .titulo {
   display: flex;
@@ -34,25 +25,16 @@ body > .titulo {
   font-size: 16px;
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 4dd45c74982e6ba1f1eae722a8a33bdf8643ea7c
 body > .titulo h1 {
   font-weight: 200;
   font-variation-settings: "wght" 200;
   margin-bottom: 2%;
 }
 
-<<<<<<< HEAD
 
 /* FORMULARIO */
 
 
-=======
-/* FORMULARIO */
-
->>>>>>> 4dd45c74982e6ba1f1eae722a8a33bdf8643ea7c
 .formulario {
   display: flex;
   flex-direction: column;
@@ -62,19 +44,11 @@ body > .titulo h1 {
   justify-content: center;
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 4dd45c74982e6ba1f1eae722a8a33bdf8643ea7c
 .formulario label {
   margin-top: 10px;
   font-size: larger;
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 4dd45c74982e6ba1f1eae722a8a33bdf8643ea7c
 .formulario input {
   padding: 8px;
   margin-top: 4px;
@@ -82,10 +56,6 @@ body > .titulo h1 {
   border-radius: 6px;
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 4dd45c74982e6ba1f1eae722a8a33bdf8643ea7c
 .botonSubmit{
     margin-top: 10%;
     width: 50%;
@@ -98,18 +68,10 @@ body > .titulo h1 {
     cursor: pointer;
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 4dd45c74982e6ba1f1eae722a8a33bdf8643ea7c
 .botonSubmit:hover{
     opacity: 80%;
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 4dd45c74982e6ba1f1eae722a8a33bdf8643ea7c
 label[for="Terminos"]{
     text-align: start;
     font-size: small;
@@ -117,10 +79,6 @@ label[for="Terminos"]{
     font-variation-settings: "wght" 200;
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 4dd45c74982e6ba1f1eae722a8a33bdf8643ea7c
 /* HEADER */
 .header {
   display: flex;
@@ -133,18 +91,11 @@ label[for="Terminos"]{
   background-color: var(--colorPrimario);
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 4dd45c74982e6ba1f1eae722a8a33bdf8643ea7c
 .header img {
   width: 50px;
   height: 50px;
   padding: 10px;
 }
-<<<<<<< HEAD
 
 
 
-=======
->>>>>>> 4dd45c74982e6ba1f1eae722a8a33bdf8643ea7c
