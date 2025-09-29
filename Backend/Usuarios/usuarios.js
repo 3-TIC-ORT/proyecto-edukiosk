@@ -9,9 +9,14 @@ import fs from "fs"
 // Registro de usuarios
 
 subscribePOSTEvent("info", (data) => {
-    let parsedData = JSON.parse(data)
-    fs.appendFileSync("usuarios.json", `${JSON.stringify(parsedData)}\n`);
-    
-    return parsedData;
+    try{
+        fs.appendFileSync("usuarios.json", `${JSON.stringify(data)}\n`);
+        
+        return {success: true};
+    }
+    catch{
+        console.log("Algo salió mal");
+        return {success: false};
+    }
 });
 
