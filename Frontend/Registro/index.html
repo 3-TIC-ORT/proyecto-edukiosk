@@ -1,43 +1,49 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Edukiosk | Registro</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <!-- HEADER -->
     <header>
-        <div class="header">
-            <img src="/Imagenes/LogoClaro.png" alt="LOGO">
-        </div>
+      <div class="header">
+        <img src="/Imagenes/LogoClaro.png" alt="LOGO" />
+      </div>
     </header>
 
     <div class="titulo">
-        <img src="/Imagenes/LogoOscuro.png" alt="LOGO">
-        <h1>Registrarse a Edukiosk</h1>
+      <img src="/Imagenes/LogoOscuro.png" alt="LOGO" />
+      <h1>Registrarse a Edukiosk</h1>
     </div>
 
     <form class="formulario" id="form">
-        <label for="Usuario">Usuario:</label>
-        <input type="text"required id="Usuario" placeholder="">
+      <label for="Usuario">Usuario:</label>
+      <input type="text" required id="Usuario" placeholder="" />
 
-        <label for="Correo">Correo:</label>
-        <input type="email"required id="Correo" placeholder="">
+      <label for="Correo">Correo:</label>
+      <input type="email" required id="Correo" placeholder="" />
 
-        <label for="Contraseña">Contraseña:</label>
-        <input type="password" required id="Contraseña" placeholder="">
+      <label for="Contraseña">Contraseña:</label>
+      <input type="password" required id="Contraseña" placeholder="" />
 
-        <label for="Terminos">Has leido y aceptas los terminos y condiciones.</label>
-        <input type="checkbox" id="Terminos">
+      <label for="Terminos"
+        >Has leido y aceptas los terminos y condiciones.</label
+      >
+      <input type="checkbox" id="Terminos" />
 
-        <button type="submit" class="botonSubmit">Registrarse</button>
+      <button type="submit" class="botonSubmit">Registrarse</button>
     </form>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/JZylber/SoqueTIC-Client@v1.4.2/soquetic-client.js"></script>
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
