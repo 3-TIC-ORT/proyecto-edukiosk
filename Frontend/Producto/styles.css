@@ -76,3 +76,8 @@ box-shadow: 0 4px 10px
  border: black 8px;
 box-shadow: 0 2px 5px 
 }
+.comentario-btn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
