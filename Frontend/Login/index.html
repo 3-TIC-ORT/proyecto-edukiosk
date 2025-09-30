@@ -22,9 +22,9 @@
         <h1>Registrarse a Edukiosk</h1>
     </div>
 
-    <form class="formulario" id="form login">
+    <form class="formulario" id="form-login">
         <label for="Correo">Correo:</label >
-        <input type="email" required="Correo" placeholder="">
+        <input type="email"  id="Email" required="Correo" placeholder="">
 
         <label for="Contraseña">Contraseña:</label>
         <input type="password" required id="Contraseña" placeholder="">
@@ -34,7 +34,8 @@
 
         <button type="submit" class="botonSubmit">Logearse</button>
     </form>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/JZylber/SoqueTIC-Client@v1.4.2/soquetic-client.js"></script>
     <script src="main.js"></script>
 </body>
 </html>

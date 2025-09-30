@@ -64,7 +64,7 @@ form.addEventListener("submit", (e) => {
       "info",
       { user: nombreUsuario, password: contraseñaUsuario, email: mailUsuario },
       (data) => {
-        if (!success) {
+        if (!data.success) {
           alert("Algo salió mal, o el mail/usuario ya está registrado");
         } else {
           alert("Registro exitoso");

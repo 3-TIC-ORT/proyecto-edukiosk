@@ -2,30 +2,29 @@ const email = document.getElementById("Email");
 const password = document.getElementById("Contraseña");
 const formLogin = document.getElementById("form-login");
 
-formLogin.addEventListener("submit", async (e) => {
+connect2Server(3000);
+
+formLogin.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const body = {
-    mail: email.value.trim(),
-    contraseña: password.value, // en el backend se compara con hash
-  };
+  const mailUsuario = email.value.trim();
+  const contraseñaUsuario = password.value;
 
-  try {
-    const res = await fetch("http://localhost:3000/api/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      credentials: "include",
-      body: JSON.stringify(body),
-    }); // convierte el objeto a formato JSON y lo manda al servidor
-    if (!res.ok) {
-      const err = await res.json().catch(() => ({}));
-      alert(err.message || "Credenciales inválidas");
-      return;
-    }
-    // el servidor (backend) recibe el JSON con mail y contraseña, valida si coinciden con los datos guardados.
-    window.location.href = "/app.html"; // si el login es correcto
-  } catch (err) {
-    console.error(err);
-    alert("Error al iniciar sesión");
+  if (!mailUsuario || !contraseñaUsuario) {
+    alert("Debes completar todos los campos");
+    return;
   }
-}); //si el login no es correcto o si sucede algun error
+
+  postEvent(
+    "login",
+    { email: mailUsuario, password: contraseñaUsuario },
+    (data) => {
+      if (!data.success) {
+        alert("Credenciales inválidas o error en el login");
+      } else {
+        alert("Login exitoso");
+        window.location.href = "/frontend/home/index.html";
+      }
+    }
+  );
+});
