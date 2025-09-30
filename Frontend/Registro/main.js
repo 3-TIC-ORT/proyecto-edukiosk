@@ -19,7 +19,6 @@ const caracteresProhibidos = [
   "*",
   "+",
   "-",
-  "_",
   "{",
   "}",
   "[",
@@ -29,7 +28,6 @@ const caracteresProhibidos = [
   "`",
   ";",
   ",",
-  ".",
   "<",
   ">",
   ":",
@@ -46,19 +44,32 @@ form.addEventListener("submit", (e) => {
   const contraseñaUsuario = contraseña.value;
   const mailUsuario = mail.value;
 
-  if (
-    nombreUsuario.includes(caracteresProhibidos) ||
-    nombreUsuario.length >= 15
-  ) {
+  const tieneCaracterProhibido = caracteresProhibidos.some((char) =>
+    nombreUsuario.includes(char)
+  );
+
+  if (tieneCaracterProhibido || nombreUsuario.length >= 15) {
     alert(
       "El nombre de usuario no puede contener espacios ni caracteres especiales o exceder los 15 caracteres."
     );
-    nombreUsuario.value = "";
-    contraseñaUsuario.value = "";
-    mailUsuario.value = "";
+    usuario.value = "";
+    contraseña.value = "";
+    mail.value = "";
+    return;
   }
-  if (!mailUsuario.includes("ort.edu.ar" && "@")) {
-    alert("El correo debe ser institucional (terminar en @est.ort.edu.ar/@ort.edu.ar)");
+
+  const esMailValido =
+    mailUsuario.includes("@") && mailUsuario.includes("ort.edu.ar");
+
+  if (!esMailValido) {
+    alert(
+      "El correo debe ser institucional (terminar en @est.ort.edu.ar/@ort.edu.ar)"
+    );
+
+    usuario.value = "";
+    contraseña.value = "";
+    mail.value = "";
+    return;
   } else {
     postEvent(
       "info",
@@ -68,6 +79,10 @@ form.addEventListener("submit", (e) => {
           alert("Algo salió mal, o el mail/usuario ya está registrado");
         } else {
           alert("Registro exitoso");
+          usuario.value = "";
+          contraseña.value = "";
+          mail.value = "";
+          window.location.href = '/Frontend/Login/index.html';
         }
       }
     );

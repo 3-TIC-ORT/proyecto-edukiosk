@@ -23,7 +23,7 @@ formLogin.addEventListener("submit", (e) => {
         alert("Credenciales inválidas o error en el login");
       } else {
         alert("Login exitoso");
-        window.location.href = "/frontend/home/index.html";
+        window.location.href = '/Frontend/Home/index.html';
       }
     }
   );
