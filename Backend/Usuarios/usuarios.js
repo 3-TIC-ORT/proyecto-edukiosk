@@ -34,13 +34,21 @@ export function registrarUsuario(data) {
 
 export function loginUsuario(data) {
     try {
+        let usuarioSesion = null;
+
         if(fs.existsSync(directorioJSON)){
             const jeison = fs.readFileSync(directorioJSON, "utf-8");
             const usuarios = JSON.parse(jeison);
-            let usuarioSesion = usuarios.find(usuario => 
+            usuarioSesion = usuarios.find(usuario => 
                 data.email === usuario.email && data.password === usuario.password
-            )}
-            return usuarioSesion, { success: true }
+            );
+        }
+
+        if (usuarioSesion) {
+            return { success: true };
+        } else {
+            return { success: false };
+        }
 } catch {
     return { success: false }
 }};
