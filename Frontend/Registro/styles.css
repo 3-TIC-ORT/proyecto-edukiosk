@@ -4,7 +4,9 @@
   --colorPrimario: #172d42;
 }
 
+
 /* BODY */
+
 
 body {
   background-color: var(--colorFondo);
@@ -29,7 +31,9 @@ body > .titulo h1 {
   margin-bottom: 2%;
 }
 
+
 /* FORMULARIO */
+
 
 .formulario {
   display: flex;
@@ -92,3 +96,6 @@ label[for="Terminos"]{
   height: 50px;
   padding: 10px;
 }
+
+
+

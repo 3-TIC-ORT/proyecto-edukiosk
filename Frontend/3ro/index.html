@@ -3,10 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documento</title>
+     <title>publicaciones de 3°</title>
     <link rel="stylesheet" href="styles.css">
-</head>
+</head >  <script src="main.js" defer></script>
 <body>
-    <script src="main.js"></script>
-</body>
-</html>
+
+    <div id="publicaciones" class="publicaciones-container">
+      
+    </div>
+    <div class="header">
+        <img src="../../Imagenes/LogoClaro.png" alt="LOGO">
+        <ul>
+            <li>
+                <a href="../Home/index.html">
+                    <img src="../../Imagenes/home.png" alt="HOME">
+                </a>
+            </li>
+            <li>
+                <a href="../Perfil/index.html">
+                    <img src="../../Imagenes/perfil.png" alt="PERFIL">
+                </a>
+            </li>
+            <li>
+                <a href="../Publicar/index.html">
+                    <img src="../../Imagenes/crear.png" alt="CREAR">
+                </a>
+            </li>
+            <li>
+                 <img src="../../Imagenes/notificaciones.png" alt="NOTIFICACIONES">
+                 <!-- PROGRAMAR DESPUES XQ FUNCIONA DIFERENTE A LOS DEMAS -->
+            </li>
+        </ul>
+    </div>
+    <h1>Publicaciones de 3°</h1>
+    <label for="menu-principal">especialidad</label>
+    <select id="menu-principal">
+      <option value="">-- Elegir --</option>
+      <option value="TIC">TIC</option>
+      <option value="Medios">Medios</option>
+      <option value="Diseno">Diseño</option>
+      <option value="Gestion">Gestión</option>
+    </select>
+    <label for="recurso">Tipo de recurso:</label>
+    <select id="recurso">
+        <option value="">Selecciona una opción</option>
+        <option value="Libro">Libro</option>
+        <option value="Clases particulares">Clases particulares</option>
+        <option value="Resumen">Resumen</option>
+    </select>
+  
+    <label for="menu-secundario" style="display:none;">Especialidad:</label>
+    <select id="menu-secundario" style="display:none;"></select>

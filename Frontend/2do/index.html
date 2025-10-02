@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documento</title>
+    <title>Publicaciones de 2°</title>
+
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
         <!-- HEADER -->
     <header>
         <div class="header">
-            <img src="../../Imagenes/edukiosk.png" alt="LOGO">
+            <img src="../../Imagenes/LogoClaro.png" alt="LOGO">
             <ul>
+ 
                 <li>
                     <a href="../Home/index.html">
                         <img src="../../Imagenes/home.png" alt="HOME">
@@ -33,6 +35,33 @@
                 </li>
             </ul>
         </div>
+            <h1>Publicaciones de 2°</h1>
+                     <form class="menus-header">
+        <label for="recurso" class="sr-only">Tipo de recurso</label>
+        <select id="recurso" name="recurso">
+          <option value="">Tipo de recurso</option>
+          <option value="Libro">Libro</option>
+          <option value="Clases particulares">Clases particulares</option>
+          <option value="Resumen">Resumen</option>
+        </select>
+
+        <label for="materia" class="sr-only">Materia</label>
+        <select id="materia" name="materia" required>
+          <option value="">Materia</option>
+          <option>Artes</option>
+          <option>Biología</option>
+          <option>Educación Judía</option>
+          <option>Educación Tecnológica</option>
+          <option>Formación Ética y Ciudadana</option>
+          <option>Geografía</option>
+          <option>Historia</option>
+          <option>Lengua y Literatura</option>
+          <option>Matemática</option>
+          <option>Inglés</option>
+        </select>
+
+   
+      </form>
     </header>
     <script src="main.js"></script>
 </body>

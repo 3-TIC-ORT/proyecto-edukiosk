@@ -1,4 +1,8 @@
 /* CODIGO DEL HEADER */
+:root {
+  --colorFondo: #f3f3f3;
+  --colorPrimario: #172d42;
+}
 
 .header ul {
     list-style-type: none;
@@ -28,10 +32,37 @@
     margin: 0px;
     padding: 10px;
     width: 100%;
+    background-color: var(--colorPrimario)
 }
 
-.Titulo{
-    font-size: 25px;
-   align-self: center;
-   
+
+main {
+  display: flex;              
+  justify-content: center;    
+  align-items: center;        
+  min-height: 100vh;          
+}
+
+#formPublicar {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 50px;
+  border: 1px solid #ccc;
+  border-radius: 18px;
+  background-color: #f9f9f9;
+  max-width: 300px;
+  width: 100%;
+  margin-bottom: 40%;
+}
+.botonSubmit{
+    background-color: var(--colorPrimario);
+    color: white;
+    font-size: 1rem;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+
+
 }

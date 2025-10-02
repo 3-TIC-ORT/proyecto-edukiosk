@@ -1,5 +1,8 @@
 /* CODIGO DEL HEADER */
-
+:root {
+    --colorFondo: #f3f3f3;
+    --colorPrimario: #172d42;
+  }
 .header ul {
     list-style-type: none;
     padding-right: 50px;
@@ -28,4 +31,10 @@
     margin: 0px;
     padding: 10px;
     width: 100%;
+    background-color: var(--colorPrimario);
+}
+.header{
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
 }
