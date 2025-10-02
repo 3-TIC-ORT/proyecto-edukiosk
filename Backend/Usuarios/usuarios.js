@@ -1,7 +1,7 @@
 import fs from "fs";
-import path from "path"; 
-import { fileURLToPath } from "url"; 
-import { dirname } from "path"; 
+import path from "path";
+import { fileURLToPath } from "url";
+import { dirname } from "path";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -21,26 +21,50 @@ export function registrarUsuario(data) {
       usuarios = JSON.parse(jeison);
     }
 
+    const usernameExists = usuarios.some(
+      (useri) => (useri.username ?? "") === (data.user ?? "")
+    );
+    const emailExists = usuarios.some(
+      (useri) => (useri.email ?? "") === (data.email ?? "")
+    );
+
+    if (usernameExists || emailExists) {
+      return {
+        success: false,
+        info: "Nombre de usuario o correo ya registrado",
+        usernameExists,
+        emailExists
+      };
+    }
     usuarios.push(data);
     fs.writeFileSync(directorioJSON, JSON.stringify(usuarios, null, 2));
-    console.log("Usuario registrado con éxito");
 
-    return { success: true };
+    return { success: true, info: "Usuario registrado con éxito" };
   } catch (error) {
     console.error("Algo salió mal:", error);
-    return { success: false };
+    return { success: false, info: "Algo salió mal" };
   }
 }
 
 export function loginUsuario(data) {
-    try {
-        if(fs.existsSync(directorioJSON)){
-            const jeison = fs.readFileSync(directorioJSON, "utf-8");
-            const usuarios = JSON.parse(jeison);
-            let usuarioSesion = usuarios.find(usuario => 
-                data.email === usuario.email && data.password === usuario.password
-            )}
-            return usuarioSesion, { success: true }
-} catch {
-    return { success: false }
-}};
+  try {
+    let usuarioSesion = null;
+
+    if (fs.existsSync(directorioJSON)) {
+      const jeison = fs.readFileSync(directorioJSON, "utf-8");
+      const usuarios = JSON.parse(jeison);
+      usuarioSesion = usuarios.find(
+        (usuario) =>
+          data.email === usuario.email && data.password === usuario.password
+      );
+    }
+
+    if (usuarioSesion) {
+      return { success: true };
+    } else {
+      return { success: false };
+    }
+  } catch {
+    return { success: false };
+  }
+}

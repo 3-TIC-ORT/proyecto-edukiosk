@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Edukiosk | Registro</title>
+    <title>Registro | Edukiosk</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -11,6 +11,16 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="icon"
+      href="/Imagenes/LogoClaro.ico"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link
+      rel="icon"
+      href="/Imagenes/LogoOscuro.ico"
+      media="(prefers-color-scheme: light)"
+    />
   </head>
   <body>
     <!-- HEADER -->
@@ -37,15 +47,23 @@
       <input type="password" required id="Contraseña" placeholder="" />
 
       <label for="Terminos"
-        >Has leido y aceptas los terminos y condiciones.</label
+        >Has leido y aceptas los 
+        <a href="../Terminos/index.html">terminos y condiciones.</a></label
       >
       <input type="checkbox" id="Terminos" />
 
       <button type="submit" class="botonSubmit">Registrarse</button>
     </form>
+
+    <aside>
+      <p>
+        O <a href="../Login/index.html">iniciar sesión</a>
+      </p>
+    </aside>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/JZylber/SoqueTIC-Client@v1.4.2/soquetic-client.js"></script>
-    <script src="main.js"></script>
+    <script type="module" src="main.js"></script>
   </body>
 </html>
 
