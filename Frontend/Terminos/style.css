@@ -1,0 +1,118 @@
+/* VARIABLES */
+:root {
+  --colorFondo: #f3f3f3;
+  --colorPrimario: #172d42;
+  --colorTexto: #333333;
+}
+
+/* BASE STYLES */
+
+body {
+  background-color: var(--colorFondo);
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--colorTexto);
+  line-height: 1.6;
+}
+
+/* HEADER STYLES */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 3px solid var(--colorPrimario);
+  padding: 10px 20px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: var(--colorPrimario);
+}
+
+.header img {
+  width: 50px;
+  height: 50px;
+  padding: 0;
+}
+
+.header ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  gap: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-height: 25px;
+}
+
+.header ul li a {
+  align-self: center;
+  display: flex;
+}
+
+.header ul li{
+    max-height: 25px;
+}
+
+.header ul img {
+  width: 25px !important;
+  height: 25px !important;
+  object-fit: cover;
+}
+
+/* MAIN CONTENT STYLES */
+
+main {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+h1 {
+  color: var(--colorPrimario);
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2em;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+/* DESIGNER FIGURE STYLES */
+
+figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px 0;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #ffffff;
+}
+
+.DISEÑADOR {
+  width: 20vw;
+  max-width: 150px;
+  height: auto;
+  display: block;
+  margin: 10px auto; 
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+figure img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+figcaption {
+  margin-top: 10px;
+  font-style: italic;
+  color: #666;
+  font-size: 0.9em;
+  text-align: center;
+}

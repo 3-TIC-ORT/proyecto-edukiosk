@@ -51,41 +51,41 @@ dialog.fading-out {
 
 /* TITULO */
 body > .titulo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 16px;
 }
 
 body > .titulo h1 {
-  font-weight: 200;
-  font-variation-settings: "wght" 200;
-  margin-bottom: 2%;
+    font-weight: 200;
+    font-variation-settings: "wght" 200;
+    margin-bottom: 2%;
 }
 
 /* FORMULARIO */
 
 .formulario {
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-  margin: 20px auto;
-  transform: scale(1.2);
-  justify-content: center;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 20px auto;
+    transform: scale(1.2);
+    justify-content: center;
 }
 
 .formulario label {
-  margin-top: 10px;
-  font-size: larger;
+    margin-top: 10px;
+    font-size: larger;
 }
 
 .formulario input {
-  padding: 8px;
-  margin-top: 4px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+    padding: 8px;
+    margin-top: 4px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
 }
 
 .botonSubmit{
@@ -111,20 +111,49 @@ label[for="Terminos"]{
     font-variation-settings: "wght" 200;
 }
 
-/* HEADER */
+label[for="Terminos"] a { 
+    text-decoration: none;
+    color: var(--colorPrimario);
+}
+
+aside {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 2%;
+    padding-top: 5px;
+    width: auto;
+}
+
+aside p {
+    font-weight: 200;
+    border-top: 2px solid var(--colorPrimario);
+    padding-inline: 2.5%;
+    padding-top: 1%;
+}
+
+aside p a { 
+    text-decoration: none;
+    color: var(--colorPrimario);
+    font-weight: 200;
+}
+
+
+/* HEADER STYLES */
+
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 3px solid black;
-  margin: -10px;
-  padding: 10px;
+  border-bottom: 3px solid var(--colorPrimario);
+  padding: 10px 20px;
   width: 100%;
+  box-sizing: border-box;
   background-color: var(--colorPrimario);
 }
 
 .header img {
   width: 50px;
   height: 50px;
-  padding: 10px;
+  padding: 0;
 }

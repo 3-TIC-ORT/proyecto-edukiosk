@@ -2,6 +2,8 @@ const email = document.getElementById("Email");
 const password = document.getElementById("Contraseña");
 const formLogin = document.getElementById("form-login");
 
+import { mensajePopUp } from "../Funciones/popUp.js";
+
 connect2Server(3000);
 
 formLogin.addEventListener("submit", (e) => {
@@ -20,10 +22,12 @@ formLogin.addEventListener("submit", (e) => {
     { email: mailUsuario, password: contraseñaUsuario },
     (data) => {
       if (!data.success) {
-        alert("Credenciales inválidas o error en el login");
+        mensajePopUp("Credenciales inválidas o error en el login", "#e92828ff");
       } else {
-        alert("Login exitoso");
-        window.location.href = '/Frontend/Home/index.html';
+        mensajePopUp("Login exitoso", "#28e97dff");
+        setTimeout(() => {
+          window.location.href = "/Frontend/Home/index.html";
+        }, 1500);
       }
     }
   );
