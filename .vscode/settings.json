@@ -1,15 +1,11 @@
 {
-    // General VS Code watcher exclusion (Good practice)
     "files.watcherExclude": {
         "**/Backend/**": true,
         "**/node_modules/**": true 
     },
-
-    // 🎯 Final Fix: Ignore all JSON files, EXCEPT package.json
-    // This is the most reliable way to stop the refresh caused by file writing.
     "liveServer.settings.ignoreFiles": [
-        "**/*.json",         // Ignore all files ending in .json
-        "!**/package.json",  // EXCEPTION: DO NOT ignore package.json
+        "**/*.json",
+        "!**/package.json",
         "**/*.scss", 
         "**/*.sass"
     ]

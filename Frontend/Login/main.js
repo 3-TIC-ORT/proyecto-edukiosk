@@ -25,6 +25,7 @@ formLogin.addEventListener("submit", (e) => {
         mensajePopUp("Credenciales inválidas o error en el login", "#e92828ff");
       } else {
         mensajePopUp("Login exitoso", "#28e97dff");
+        localStorage.setItem("usuarioSesion", JSON.stringify(data.user));
         setTimeout(() => {
           window.location.href = "/Frontend/Home/index.html";
         }, 1500);
