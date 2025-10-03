@@ -12,4 +12,4 @@ enviarComentario.addEventListener("click", ()=> {
     const texto= nuevoComentario.value.trim();
     if (texto !== ""){
 
-}}
+}});

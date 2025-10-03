@@ -33,13 +33,16 @@ export function registrarUsuario(data) {
         success: false,
         info: "Nombre de usuario o correo ya registrado",
         usernameExists,
-        emailExists
+        emailExists,
       };
     }
     usuarios.push(data);
     fs.writeFileSync(directorioJSON, JSON.stringify(usuarios, null, 2));
 
-    return { success: true, info: "Usuario registrado con éxito" };
+    return {
+      success: true,
+      info: "Usuario registrado con éxito",
+    };
   } catch (error) {
     console.error("Algo salió mal:", error);
     return { success: false, info: "Algo salió mal" };
@@ -60,11 +63,26 @@ export function loginUsuario(data) {
     }
 
     if (usuarioSesion) {
-      return { success: true };
+      return {
+        success: true,
+        user: {
+          email: usuarioSesion.email,
+          username: usuarioSesion.user, 
+          profilePicture: usuarioSesion.profilePicture || "/Imagenes/fotosPerfil/defaultPerfil.jpg", 
+          rating: usuarioSesion.rating || 0, 
+          description: usuarioSesion.description || ""
+        }}
+
     } else {
-      return { success: false };
+      return {
+        success: false,
+        info: "Correo o contraseña incorrectos",
+      };
     }
   } catch {
-    return { success: false };
+    return {
+      success: false,
+      info: "Algo salió mal"
+    };
   }
 }

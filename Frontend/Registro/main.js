@@ -1,11 +1,10 @@
-import { mensajePopUp } from "../Funciones/popUp.js"
+import { mensajePopUp } from "../Funciones/popUp.js";
 
 const usuario = document.getElementById("Usuario");
 const contraseña = document.getElementById("Contraseña");
 const mail = document.getElementById("Correo");
 const form = document.getElementById("form");
 const tos = document.getElementById("Terminos");
-
 
 const caracteresProhibidos = [
   " ",
@@ -88,7 +87,14 @@ form.addEventListener("submit", (e) => {
   } else {
     postEvent(
       "info",
-      { user: nombreUsuario, password: contraseñaUsuario, email: mailUsuario },
+      {
+        user: nombreUsuario,
+        password: contraseñaUsuario,
+        email: mailUsuario,
+        pfp: "/Imagenes/fotosPerfil/defaultPerfil.jpg",
+        rating: 0,
+        descripcion: "",
+       },
       (data) => {
         if (!data.success) {
           mensajePopUp(
