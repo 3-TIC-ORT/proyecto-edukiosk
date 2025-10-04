@@ -17,12 +17,51 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- HEADER -->
+
     <header>
       <div class="header">
         <img src="../../Imagenes/LogoClaro.png" alt="LOGO" />
       </div>
     </header>
+
+    <main class="perfil-container">
+
+      <div class="perfil-imagen">
+        <img id="imagenPerfil" src="../../Imagenes/default.png">
+
+        <!-- input oculto real -->
+        <input type="file" id="editarImagen" style="display:none;" />
+
+        <!-- botones visibles solo en modo edición -->
+        <label for="editarImagen" id="editarImagenLabel" style="display:none;">Cambiar foto</label>
+        <button id="quitarImagenBtn" type="button" style="display:none;">Quitar foto</button>
+      </div>
+
+      <div class="perfil-datos">
+        <p>
+          <strong>Nombre:</strong> <span id="nombreTexto"></span>
+        </p>
+        <p>
+          <strong>Contraseña:</strong> 
+          <span id="passwordTexto"></span>
+          <button id="togglePassword" type="button">👁</button>
+        </p>
+        <p>
+          <strong>Descripción:</strong> <span id="descripcionTexto"></span>
+        </p>
+
+        <!-- inputs ocultos inicialmente -->
+        <input type="text" id="nombreInput" placeholder="Escriba su nombre" style="display:none;" />
+        <input type="password" id="passwordInput" placeholder="Escriba su contraseña" style="display:none;" />
+        <textarea id="descripcionInput" placeholder="Escriba su descripción" style="display:none;"></textarea>
+
+        <button id="toggleEditar">Editar</button>
+        <button id="guardarBtn" style="display:none;">Guardar cambios</button>
+      </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/JZylber/SoqueTIC-Client@v1.4.2/soquetic-client.js"></script>
 
     <script src="main.js"></script>
   </body>
