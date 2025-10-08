@@ -42,11 +42,21 @@
             <img src="../../Imagenes/descarga.png" alt="FOTO DE PERFIL" class="foto-de-producto1"></img>
             <button class="Precio-producto1">5000$</button>
             <h3 class="Descripcion-producto1">este es un libro de lengua muy fachero</h3>
-<button id="btnComentario" class="comentario-btn">💬</button>
-<div id="comentariosBox" class="comentarios-ocultos"> 
-<textarea id="nuevoComentario" placeholder="Escribe tu comentario"></textarea>
-<button id="EnviarComentario">Enviar</button>
-<ul id="ListaComentarios"></ul>
+
+  <button id="mostrarComentarios" class="comentario-toggle">💬 Ver comentarios</button>
+
+  <div id="seccionComentarios" class="comentarios" style="display:none;">
+    <div id="listaComentarios" class="lista-comentarios">
+    </div>
+    <button id="verMasComentarios" class="ver-mas" style="display:none;">▼ Ver más</button>
+    <button id="verMenosComentarios" class="ver-menos" style="display:none;">▲ Ver menos</button>
+
+    <div class="nuevo-comentario">
+      <input type="text" id="inputComentario" placeholder="Escribe un comentario...">
+      <button id="enviarComentario">Enviar</button>
+    </div>
+    <button id="eliminarComentarios" class="eliminar-btn">🗑 Eliminar todos</button>
+
 </div>
         </div>
 
