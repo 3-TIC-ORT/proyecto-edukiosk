@@ -1,3 +1,7 @@
+// ==== Usuarios.js ==== \\
+
+// Modulos y dependencias
+
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -6,6 +10,9 @@ import { dirname } from "path";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const directorioJSON = path.resolve(__dirname, "usuarios.json");
+const dirImagenes = path.join(__dirname, "../../Imagenes/fotosPerfil");
+
+// ==== Reigstrar Usuario ==== \\
 
 export function registrarUsuario(data) {
   let usuarios = [];
@@ -49,6 +56,8 @@ export function registrarUsuario(data) {
   }
 }
 
+// ==== Inicio de sesión ==== \\
+
 export function loginUsuario(data) {
   try {
     let usuarioSesion = null;
@@ -88,6 +97,10 @@ export function loginUsuario(data) {
   }
 }
 
+// ==== Página de perfil ==== \\
+
+// ==== Restrablecer foto de perfil ==== \\
+
 export function quitarFoto(data) {
   const { email, pfp } = data;
 
@@ -115,11 +128,12 @@ export function quitarFoto(data) {
   }
 }
 
-export function subirFotoPerfil(data) {
-  const { email, pfp } = data;
+// ==== Subir foto de perfil ==== \\
 
+export function subirFotoPerfil(data) {
+  const { email, file } = data;
   try {
-    if (!fs.existsSync(directorioJSON)) {
+    if (!fs.existsSync(directorioJSON) || !fs.existsSync(dirImagenes)) {
       return { success: false, info: "No se encontró el archivo de usuarios" };
     }
     const jeison = fs.readFileSync(directorioJSON, "utf-8");
@@ -130,16 +144,26 @@ export function subirFotoPerfil(data) {
     if (userIndex === -1) {
       return { success: false, info: "Usuario no encontrado." };
     }
+
+    const fileName = `${email.replace(/[@.]/g, "_")}.png`;
+    const filePath = path.join(dirImagenes, fileName);
+
+    const buffer = Buffer.from(file, "base64");
+    fs.writeFileSync(filePath, buffer);
+
+    usuarios[userIndex].pfp = `/Imagenes/fotosPerfil/${fileName}`;
+
     fs.writeFileSync(directorioJSON, JSON.stringify(usuarios, null, 2));
-    return { success: true, info: "Foto de perfil modificada" };
+    return { success: true, info: "Foto de perfil modificada", ruta: `/Imagenes/fotosPerfil/${fileName}` };
   } catch (error) {
-    console.error("Error al modificar la foto de perfil:", error);
     return {
       success: false,
       info: "Ha ocurrido un error en la modificación de la foto de perfil",
     };
   }
 }
+
+// Revisar si el nombre de usuario se encuentra en uso (pág perfil) \\
 
 export function checkeoUsername(data) {
   let usuarios = [];
@@ -159,6 +183,9 @@ export function checkeoUsername(data) {
     return { success: true, info: "El nombre de usuario está disponible" };
   }
 }
+
+// ==== Guardar modificaciones al perfil ==== \\
+// (Solo Desc, Nombre y Contra)
 
 export function guardarCambiosPerfil(data) {
   let usuarios = [];
