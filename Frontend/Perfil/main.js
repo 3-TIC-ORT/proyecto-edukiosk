@@ -1,3 +1,5 @@
+connect2Server();
+
 let modoEdicion = false;
 let passwordVisible = false;
 
@@ -86,7 +88,6 @@ guardarBtn.addEventListener("click", () => {
 
   // Actualizar en pantalla
   nombreTexto.textContent = userEditado.nombre;
-  passwordTexto.dataset.realPassword = userEditado.password;
   passwordTexto.textContent = "******";
   descripcionTexto.textContent = userEditado.descripcion;
 
@@ -120,8 +121,7 @@ quitarImagenBtn.addEventListener("click", () => {
   alert("Imagen de perfil restablecida.");
 });
 
-// Conexión con backend 
-connect2Server();
+
 
 window.onload = () => {
   // Primero miro si hay datos en localStorage
@@ -130,7 +130,6 @@ window.onload = () => {
     const data = JSON.parse(saved);
     imagenPerfil.src = data.imagen || "../../Imagenes/default.png";
     nombreTexto.textContent = data.nombre || "Sin nombre";
-    passwordTexto.dataset.realPassword = data.password || "";
     passwordTexto.textContent = "******";
     descripcionTexto.textContent = data.descripcion || "Sin descripción";
   } else {
@@ -139,7 +138,6 @@ window.onload = () => {
       if (!data) return;
       imagenPerfil.src = data.imagen || "../../Imagenes/default.png";
       nombreTexto.textContent = data.nombre || "Sin nombre";
-      passwordTexto.dataset.realPassword = data.password || "";
       passwordTexto.textContent = "******";
       descripcionTexto.textContent = data.descripcion || "Sin descripción";
 
