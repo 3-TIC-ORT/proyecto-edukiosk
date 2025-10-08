@@ -15,59 +15,6 @@ body {
   padding: 0;
 }
 
-/* POP UPS */
-
-dialog {
-    position: fixed; 
-    top: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    margin: 0; 
-    font-family: inherit; 
-    max-width: 300px; 
-    width: fit-content;
-    min-width: 200px;
-    padding: 20px 30px;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out, background-color 0.3s ease-in-out; 
-}
-
-dialog::backdrop {
-    background-color: transparent;  
-}
-
-dialog.popUp {
-    opacity: 1;
-    background-color: #333; 
-    color: white; 
-}
-
-dialog.fading-out {
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out; 
-}
-
-/* TITULO */
-body > .titulo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-size: 16px;
-}
-
-body > .titulo h1 {
-    font-weight: 200;
-    font-variation-settings: "wght" 200;
-    margin-bottom: 2%;
-}
-
-
 /* FORMULARIO */
 
 
