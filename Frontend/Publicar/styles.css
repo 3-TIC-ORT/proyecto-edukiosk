@@ -55,6 +55,11 @@ main {
   width: 100%;
   margin-bottom: 40%;
 }
+
+.botonSubmit:hover {
+  background: #0f1f30;
+}
+
 .botonSubmit{
     background-color: var(--colorPrimario);
     color: white;

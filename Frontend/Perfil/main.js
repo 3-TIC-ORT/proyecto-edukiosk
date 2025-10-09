@@ -1,21 +1,11 @@
+// Importaciones
+
 import { mensajePopUp } from "../Funciones/popUp.js";
 import { caracteresProhibidos } from "../Funciones/checkeoSesion.js";
+import { fileToBase64 } from "../Funciones/buffer.js"
+
 // Conexión con backend
 connect2Server();
-
-// Funcion para el buffer
-
-function fileToBase64(file) {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onload = () => {
-      const base64 = reader.result.split(",")[1]; // remove "data:image/png;base64,"
-      resolve(base64);
-    };
-    reader.onerror = reject;
-    reader.readAsDataURL(file);
-  });
-}
 
 let modoEdicion = false;
 let passwordVisible = false;
@@ -182,39 +172,6 @@ editarImagenInput.addEventListener("change", (e) => {
 // Quitar imagen
 
 quitarImagenBtn.addEventListener("click", () => {
-  const sessionJSON = localStorage.getItem("usuarioSesion");
-  if (!sessionJSON) {
-    mensajePopUp("Error: Sesión no encontrada.", "#e92828ff");
-    return;
-  }
-  const perfilReal = JSON.parse(sessionJSON);
-  console.log(perfilReal.username);
-  postEvent(
-    "resetPFP",
-    {
-      email: perfilReal.email,
-      pfp: "/Imagenes/fotosPerfil/defaultPerfil.jpg",
-    },
-    (data) => {
-      if (data && data.success) {
-        perfilReal.pfp = "/Imagenes/fotosPerfil/defaultPerfil.jpg";
-        localStorage.setItem("usuarioSesion", JSON.stringify(perfilReal));
-
-        imagenPerfil.src = "../../Imagenes/fotosPerfil/defaultPerfil.jpg";
-        mensajePopUp("Imagen de perfil restablecida.", "#28e97dff");
-      } else {
-        mensajePopUp("Error al restablecer la imagen de perfil.", "#e92828ff");
-      }
-    }
-  );
-});
-
-// Cerrar sesión
-
-logout.addEventListener("click", (e) => {
-  localStorage.clear("usuarioSesion");
-  mensajePopUp("Sesion Cerrada", "#e92828ff");
-  setTimeout(() => {
-    window.location.reload();
-  }, 1000);
+  imagenPerfil.src = "../../Imagenes/default.png";
+  alert("Imagen de perfil restablecida.");
 });
