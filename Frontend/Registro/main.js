@@ -1,44 +1,11 @@
 import { mensajePopUp } from "../Funciones/popUp.js";
+import { caracteresProhibidos } from "../Funciones/checkeoSesion.js";
 
 const usuario = document.getElementById("Usuario");
 const contraseña = document.getElementById("Contraseña");
 const mail = document.getElementById("Correo");
 const form = document.getElementById("form");
 const tos = document.getElementById("Terminos");
-
-const caracteresProhibidos = [
-  " ",
-  "!",
-  "#",
-  "$",
-  "%",
-  "&",
-  "/",
-  "(",
-  ")",
-  "=",
-  "?",
-  "¡",
-  "¿",
-  "*",
-  "+",
-  "-",
-  "{",
-  "}",
-  "[",
-  "]",
-  "^",
-  "~",
-  "`",
-  ";",
-  ",",
-  "<",
-  ">",
-  ":",
-  '"',
-  "'",
-  "\\",
-];
 
 connect2Server(3000);
 
