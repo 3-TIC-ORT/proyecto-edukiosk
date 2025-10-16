@@ -15,54 +15,170 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="/Imagenes/LogoClaro.ico" />
+    <link
+      rel="icon"
+      href="/Imagenes/LogoOscuro.ico"
+      media="(prefers-color-scheme: light)"
+    />
   </head>
   <body>
 
-    <header>
-      <div class="header">
-        <img src="../../Imagenes/LogoClaro.png" alt="LOGO" />
-      </div>
+    <!-- HEADER -->
+
+    <header
+      style="
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 3px solid var(--colorPrimario);
+        padding: 10px 20px;
+        width: 100%;
+        box-sizing: border-box;
+        background-color: var(--colorPrimario);
+      "
+    >
+      <img
+        src="../../Imagenes/LogoClaro.png"
+        alt="LOGO"
+        style="width: 50px; height: 50px; padding: 0"
+      />
+
+      <ul
+        style="
+          list-style-type: none;
+          padding: 0;
+          margin: 0;
+          gap: 50px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          max-height: 25px;
+        "
+      >
+        <li style="max-height: 25px; position: relative">
+          <img
+            src="../../Imagenes/notificaciones.png"
+            alt="NOTIFICACIONES"
+            style="
+              width: 25px !important;
+              height: 25px !important;
+              object-fit: cover;
+            "
+          />
+        </li>
+        <li style="max-height: 25px">
+          <a
+            href="../Publicar/index.html"
+            style="align-self: center; display: flex"
+          >
+            <img
+              src="../../Imagenes/PUBLICAR.png"
+              alt="CREAR"
+              style="
+                width: 25px !important;
+                height: 25px !important;
+                object-fit: cover;
+              "
+            />
+          </a>
+        </li>
+        <li style="max-height: 25px">
+          <a
+            href="../Perfil/index.html"
+            style="align-self: center; display: flex"
+          >
+            <img
+              src="../../Imagenes/fotoPerfil.png"
+              alt="PERFIL"
+              style="
+                width: 25px !important;
+                height: 25px !important;
+                object-fit: cover;
+              "
+            />
+          </a>
+        </li>
+        <li style="max-height: 25px">
+          <a
+            href="../Home/index.html"
+            style="align-self: center; display: flex"
+          >
+            <img
+              src="../../Imagenes/home.png"
+              alt="HOME"
+              style="
+                width: 25px !important;
+                height: 25px !important;
+                object-fit: cover;
+              "
+            />
+          </a>
+        </li>
+      </ul>
     </header>
 
-    <main class="perfil-container">
+    <!-- HEADER FIN -->
 
+    <main class="perfil-container">
       <div class="perfil-imagen">
-        <img id="imagenPerfil" src="../../Imagenes/default.png">
+        <img id="imagenPerfil" src="../../Imagenes/default.png" />
 
         <!-- input oculto real -->
-        <input type="file" id="editarImagen" style="display:none;" />
+        <input
+          type="file"
+          id="editarImagen"
+          style="display: none"
+          accept="image/*"
+        />
 
         <!-- botones visibles solo en modo edición -->
-        <label for="editarImagen" id="editarImagenLabel" style="display:none;">Cambiar foto</label>
-        <button id="quitarImagenBtn" type="button" style="display:none;">Quitar foto</button>
+        <label for="editarImagen" id="editarImagenLabel" style="display: flex"
+          >Cambiar foto</label
+        >
+        <button id="quitarImagenBtn" type="button" style="display: flex">
+          Quitar foto
+        </button>
+
+        <button id="btnCerrarSesion" type="button" style="display: flex;">Cerrar Sesión</button>
       </div>
 
       <div class="perfil-datos">
+        <p><strong>Nombre:</strong> <span id="nombreTexto"></span></p>
         <p>
-          <strong>Nombre:</strong> <span id="nombreTexto"></span>
-        </p>
-        <p>
-          <strong>Contraseña:</strong> 
+          <strong>Contraseña:</strong>
           <span id="passwordTexto"></span>
           <button id="togglePassword" type="button">👁</button>
         </p>
-        <p>
-          <strong>Descripción:</strong> <span id="descripcionTexto"></span>
-        </p>
+        <p><strong>Descripción:</strong> <span id="descripcionTexto"></span></p>
 
         <!-- inputs ocultos inicialmente -->
-        <input type="text" id="nombreInput" placeholder="Escriba su nombre" style="display:none;" />
-        <input type="password" id="passwordInput" placeholder="Escriba su contraseña" style="display:none;" />
-        <textarea id="descripcionInput" placeholder="Escriba su descripción" style="display:none;"></textarea>
+        <input
+          type="text"
+          id="nombreInput"
+          placeholder="Escriba su nombre"
+          style="display: none"
+        />
+        <input
+          type="text"
+          id="passwordInput"
+          placeholder="Escriba su contraseña"
+          style="display: none"
+        />
+        <textarea
+          id="descripcionInput"
+          placeholder="Escriba su descripción"
+          style="display: none"
+        ></textarea>
 
         <button id="toggleEditar">Editar</button>
-        <button id="guardarBtn" style="display:none;">Guardar cambios</button>
+        <button id="guardarBtn" style="display: none">Guardar cambios</button>
       </div>
     </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/JZylber/SoqueTIC-Client@v1.4.2/soquetic-client.js"></script>
 
-    <script src="main.js"></script>
+    <script src="main.js" type="module"></script>
   </body>
 </html>

@@ -1,18 +1,18 @@
 [
   {
-    "user": "roccoaltie",
-    "password": "]i'.9\"wcGziFWxD",
-    "email": "mail@ort.edu.ar",
-    "pfp": "/Imagenes/fotosPerfil/defaultPerfil.jpg",
+    "user": "Santiago",
+    "password": "12345678",
+    "email": "49764315@est.ort.edu.ar",
+    "pfp": "/Imagenes/fotosPerfil/49764315_est_ort_edu_ar.png",
     "rating": 0,
-    "descripcion": ""
+    "descripcion": "3er año tic, respect 100% diseñador"
   },
   {
-    "user": "edukiosk",
-    "password": "lkjhgfd",
-    "email": "fdfdf@ort.edu.ar",
-    "pfp": "/Imagenes/fotosPerfil/defaultPerfil.jpg",
+    "user": "Rocco",
+    "password": "perrro",
+    "email": "ba0783@est.ort.edu.ar",
+    "pfp": "/Imagenes/fotosPerfil/ba0783_est_ort_edu_ar.png",
     "rating": 0,
-    "descripcion": ""
+    "descripcion": "rocco altie"
   }
 ]

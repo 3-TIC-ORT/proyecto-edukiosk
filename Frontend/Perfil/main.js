@@ -1,34 +1,61 @@
+
+import { mensajePopUp } from "../Funciones/popUp.js";
+import { caracteresProhibidos } from "../Funciones/checkeoSesion.js";
+// Conexión con backend
 connect2Server();
+
+// Funcion para el buffer
+
+function fileToBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      const base64 = reader.result.split(",")[1]; // remove "data:image/png;base64,"
+      resolve(base64);
+    };
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
 
 let modoEdicion = false;
 let passwordVisible = false;
 
-const nombreTexto       = document.getElementById("nombreTexto");
-const passwordTexto     = document.getElementById("passwordTexto");
-const descripcionTexto  = document.getElementById("descripcionTexto");
+const nombreTexto = document.getElementById("nombreTexto");
+const passwordTexto = document.getElementById("passwordTexto");
+const descripcionTexto = document.getElementById("descripcionTexto");
 
-const nombreInput       = document.getElementById("nombreInput");
-const passwordInput     = document.getElementById("passwordInput");
-const descripcionInput  = document.getElementById("descripcionInput");
+const nombreInput = document.getElementById("nombreInput");
+const passwordInput = document.getElementById("passwordInput");
+const descripcionInput = document.getElementById("descripcionInput");
 
 const togglePasswordBtn = document.getElementById("togglePassword");
-const toggleEditarBtn   = document.getElementById("toggleEditar");
-const guardarBtn        = document.getElementById("guardarBtn");
+const toggleEditarBtn = document.getElementById("toggleEditar");
+const guardarBtn = document.getElementById("guardarBtn");
 const editarImagenInput = document.getElementById("editarImagen");
 const editarImagenLabel = document.getElementById("editarImagenLabel");
-const quitarImagenBtn   = document.getElementById("quitarImagenBtn");
-const imagenPerfil      = document.getElementById("imagenPerfil");
+const quitarImagenBtn = document.getElementById("quitarImagenBtn");
+const imagenPerfil = document.getElementById("imagenPerfil");
+const logout = document.getElementById("btnCerrarSesion");
 
+const real = localStorage.getItem("usuarioSesion");
+const perfilReal = JSON.parse(real);
+let userEditado;
 
+// ==== Rellenar datos iniciales ====
+
+nombreTexto.textContent = perfilReal.username;
+descripcionTexto.textContent = perfilReal.description;
+imagenPerfil.src = perfilReal.pfp;
+passwordTexto.textContent = "******";
 
 // ==== Mostrar / ocultar contraseña ====
 togglePasswordBtn.addEventListener("click", () => {
-  const real = passwordTexto.dataset.realPassword || "";
   if (passwordVisible) {
     passwordTexto.textContent = "******";
     passwordVisible = false;
   } else {
-    passwordTexto.textContent = real;
+    passwordTexto.textContent = perfilReal.contraseña;
     passwordVisible = true;
   }
 });
@@ -39,37 +66,26 @@ toggleEditarBtn.addEventListener("click", () => {
 
   if (modoEdicion) {
     // rellenar inputs con los datos visibles
-    nombreInput.value      = nombreTexto.textContent;
-    passwordInput.value    = passwordTexto.dataset.realPassword || "";
+    nombreInput.value = nombreTexto.textContent;
+    passwordInput.value = perfilReal.contraseña;
     descripcionInput.value = descripcionTexto.textContent;
 
-    nombreTexto.style.display      = "none";
-    passwordTexto.style.display    = "none";
-    descripcionTexto.style.display = "none";
-    togglePasswordBtn.style.display = "none";
-
-    nombreInput.style.display      = "block";
-    passwordInput.style.display    = "block";
+    nombreInput.style.display = "block";
+    passwordInput.style.display = "block";
     descripcionInput.style.display = "block";
-    guardarBtn.style.display       = "inline-block";
-
-    editarImagenLabel.style.display = "inline-block";
-    quitarImagenBtn.style.display   = "inline-block";
+    guardarBtn.style.display = "inline-block";
 
     toggleEditarBtn.innerText = "Cancelar";
   } else {
-    nombreTexto.style.display      = "inline";
-    passwordTexto.style.display    = "inline";
+    nombreTexto.style.display = "inline";
+    passwordTexto.style.display = "inline";
     descripcionTexto.style.display = "inline";
     togglePasswordBtn.style.display = "inline";
 
-    nombreInput.style.display      = "none";
-    passwordInput.style.display    = "none";
+    nombreInput.style.display = "none";
+    passwordInput.style.display = "none";
     descripcionInput.style.display = "none";
-    guardarBtn.style.display       = "none";
-
-    editarImagenLabel.style.display = "none";
-    quitarImagenBtn.style.display   = "none";
+    guardarBtn.style.display = "none";
 
     toggleEditarBtn.innerText = "Editar";
     passwordTexto.textContent = "******";
@@ -79,70 +95,131 @@ toggleEditarBtn.addEventListener("click", () => {
 
 // ==== Guardar cambios ====
 guardarBtn.addEventListener("click", () => {
-  const userEditado = {
-    nombre: nombreInput.value || "Sin nombre",
-    password: passwordInput.value || "",
-    descripcion: descripcionInput.value || "",
-    imagen: imagenPerfil.src
-  };
+  const tieneCaracterProhibido = caracteresProhibidos.some((char) =>
+    nombreInput.value.includes(char)
+  );
+  const nuevoUsername = nombreInput.value.trim();
 
   // Actualizar en pantalla
   nombreTexto.textContent = userEditado.nombre;
   passwordTexto.textContent = "******";
   descripcionTexto.textContent = userEditado.descripcion;
+  if (nuevoUsername.length >= 15 || tieneCaracterProhibido) {
+    mensajePopUp(
+      "El nombre de usuario no puede tener más de 15 caracteres ni caracteres especiales.",
+      "#e92828ff"
+    );
+    return;
+  }
 
-  // Guardar también en localStorage
-  localStorage.setItem("userData", JSON.stringify(userEditado));
+  postEvent("check", { user: nuevoUsername }, (data) => {
+    if (data.success || nuevoUsername === perfilReal.username) {
+      const userEditado = {
+        email: perfilReal.email,
+        username: nuevoUsername,
+        contraseña: passwordInput.value,
+        pfp: perfilReal.pfp,
+        description: descripcionInput.value,
+        rating: perfilReal.rating,
+      };
 
-  // Mandar al backend
-  postEvent("updateUserData", userEditado, (res) => {
-    if (res && res.status === "ok") {
-      alert("Datos guardados correctamente.");
+      postEvent(
+        "guardar",
+        {
+          user: userEditado.username,
+          password: userEditado.contraseña,
+          email: userEditado.email,
+          pfp: userEditado.pfp,
+          rating: userEditado.rating,
+          descripcion: userEditado.description,
+        },
+        (data) => {
+          console.log(userEditado);
+          if (data && data.success) {
+            localStorage.setItem("usuarioSesion", JSON.stringify(userEditado));
+
+            mensajePopUp("Información actualizada con exito", "#28e97dff");
+            toggleEditarBtn.click();
+            setTimeout(() => {
+              window.location.reload();
+            }, 1000);
+          } else {
+            mensajePopUp("Error al actualizar la información", "#e92828ff");
+          }
+        }
+      );
     } else {
-      alert("Error: no se pudieron guardar los datos.");
+      mensajePopUp(
+        "El nombre de usuario que intentó ingresar se encuentra en uso",
+        "#e92828ff"
+      );
+      return;
     }
   });
-
-  toggleEditarBtn.click();
 });
 
 // Subir nueva imagen
-editarImagenInput.addEventListener("change", function () {
-  const file = this.files[0];
-  if (!file) return;
-  const reader = new FileReader();
-  reader.onload = (e) => { imagenPerfil.src = e.target.result; };
-  reader.readAsDataURL(file);
+
+editarImagenInput.addEventListener("change", (e) => {
+  const file = e.target.files;
+  fileToBase64(file[0]).then((base64) => {
+    postEvent(
+      "cambiarFoto",
+      {
+        email: perfilReal.email,
+        file: base64,
+      },
+      (data) => {
+        if (data && data.success) {
+          imagenPerfil.src = data.ruta;
+          perfilReal.pfp = data.ruta;
+          localStorage.setItem("usuarioSesion", JSON.stringify(perfilReal));
+
+          mensajePopUp("Foto de perfil modifcada", "#28e97dff");
+        } else {
+          mensajePopUp("Error al subir imagen", "#e92828ff");
+        }
+      }
+    );
+  });
 });
 
-// Quitar imagen 
+// Quitar imagen
+
 quitarImagenBtn.addEventListener("click", () => {
-  imagenPerfil.src = "../../Imagenes/default.png";
-  alert("Imagen de perfil restablecida.");
+  const sessionJSON = localStorage.getItem("usuarioSesion");
+  if (!sessionJSON) {
+    mensajePopUp("Error: Sesión no encontrada.", "#e92828ff");
+    return;
+  }
+  const perfilReal = JSON.parse(sessionJSON);
+  console.log(perfilReal.username);
+  postEvent(
+    "resetPFP",
+    {
+      email: perfilReal.email,
+      pfp: "/Imagenes/fotosPerfil/defaultPerfil.jpg",
+    },
+    (data) => {
+      if (data && data.success) {
+        perfilReal.pfp = "/Imagenes/fotosPerfil/defaultPerfil.jpg";
+        localStorage.setItem("usuarioSesion", JSON.stringify(perfilReal));
+
+        imagenPerfil.src = "../../Imagenes/fotosPerfil/defaultPerfil.jpg";
+        mensajePopUp("Imagen de perfil restablecida.", "#28e97dff");
+      } else {
+        mensajePopUp("Error al restablecer la imagen de perfil.", "#e92828ff");
+      }
+    }
+  );
 });
 
+// Cerrar sesión
 
-
-window.onload = () => {
-  // Primero miro si hay datos en localStorage
-  const saved = localStorage.getItem("userData");
-  if (saved) {
-    const data = JSON.parse(saved);
-    imagenPerfil.src = data.imagen || "../../Imagenes/default.png";
-    nombreTexto.textContent = data.nombre || "Sin nombre";
-    passwordTexto.textContent = "******";
-    descripcionTexto.textContent = data.descripcion || "Sin descripción";
-  } else {
-    // Si no hay nada guardado, pido al backend
-    postEvent("getUserData", {}, (data) => {
-      if (!data) return;
-      imagenPerfil.src = data.imagen || "../../Imagenes/default.png";
-      nombreTexto.textContent = data.nombre || "Sin nombre";
-      passwordTexto.textContent = "******";
-      descripcionTexto.textContent = data.descripcion || "Sin descripción";
-
-      // y lo guardo en localStorage también
-      localStorage.setItem("userData", JSON.stringify(data));
-    });
-  }
-};
+logout.addEventListener("click", (e) => {
+  localStorage.clear("usuarioSesion");
+  mensajePopUp("Sesion Cerrada", "#e92828ff");
+  setTimeout(() => {
+    window.location.reload();
+  }, 1000);
+});

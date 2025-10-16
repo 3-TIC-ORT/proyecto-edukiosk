@@ -1,9 +1,12 @@
 {
     "files.watcherExclude": {
         "**/Backend/**": true,
-        "**/node_modules/**": true 
+        "**/node_modules/**": true, 
+        "**/Imagenes/**": true,
     },
     "liveServer.settings.ignoreFiles": [
+            "**/*.png",
+        "**/*.jpg",
         "**/*.json",
         "!**/package.json",
         "**/*.scss", 
