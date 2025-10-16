@@ -1,0 +1,62 @@
+[
+  {
+    "titulo": "CHAMPS",
+    "descripcion": "123456",
+    "recurso": "Libro",
+    "imagen": "/Imagenes/fotosPublicacion/Rocco-champs-function now() { [native code] }.png",
+    "grado": "2°",
+    "especialidad": "",
+    "materia": "Matemática",
+    "precio": 5,
+    "fecha": 1760620612729,
+    "dueño": "Rocco"
+  },
+  {
+    "titulo": "lkjhg",
+    "descripcion": "bhnm,",
+    "recurso": "Libro",
+    "imagen": "/Imagenes/fotosPublicacion/Rocco-lkjhg-function timeStamp() { [native code] }.png",
+    "grado": "2°",
+    "especialidad": "",
+    "materia": "Lengua y Literatura",
+    "precio": 5,
+    "fecha": 1760620754956,
+    "dueño": "Rocco"
+  },
+  {
+    "titulo": "htjk",
+    "descripcion": "fghjk",
+    "recurso": "Libro",
+    "imagen": "/Imagenes/fotosPublicacion/Rocco-htjk-function random() { [native code] }.png",
+    "grado": "2°",
+    "especialidad": "",
+    "materia": "Inglés",
+    "precio": 77,
+    "fecha": 1760621044811,
+    "dueño": "Rocco"
+  },
+  {
+    "titulo": "09iuyt",
+    "descripcion": "ytd",
+    "recurso": "Libro",
+    "imagen": "/Imagenes/fotosPublicacion/Rocco-09iuyt-729247.png",
+    "grado": "2°",
+    "especialidad": "",
+    "materia": "Lengua y Literatura",
+    "precio": 1,
+    "fecha": 1760621763684,
+    "dueño": "Rocco"
+  },
+  {
+    "titulo": "hgfds",
+    "descripcion": "poihg",
+    "recurso": "Libro",
+    "imagen": "/Imagenes/fotosPublicacion/Rocco-hgfds-575908.png",
+    "grado": "4°",
+    "especialidad": "TIC",
+    "materia": "Matemática",
+    "precio": 11,
+    "fecha": 1760622027317,
+    "dueño": "Rocco"
+  }
+]

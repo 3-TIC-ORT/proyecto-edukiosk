@@ -1,5 +1,6 @@
 import { startServer, subscribeGETEvent, subscribePOSTEvent } from "soquetic";
 import { registrarUsuario, loginUsuario, quitarFoto, checkeoUsername, guardarCambiosPerfil, subirFotoPerfil }  from "./Usuarios/usuarios.js";
+import { guardarPublicacion, obtenerPublicacionesPerfil } from "./Publicaciones/publiaciones.js";
 import path from "path";
 import { fileURLToPath } from "url"; 
 import { dirname } from "path";     
@@ -8,6 +9,8 @@ import fs from "fs";
 
 startServer(3000);
 
+
+    // ==== Usuarios ==== //
 
 // Registro de usuario
 subscribePOSTEvent("info", registrarUsuario);
@@ -25,4 +28,12 @@ subscribePOSTEvent("cambiarFoto", subirFotoPerfil)
 subscribePOSTEvent("check", checkeoUsername)
 
 // Guardar las modificaciones realizadas en la página de perfil
-subscribePOSTEvent("guardar", guardarCambiosPerfil)
+subscribePOSTEvent("guardar", guardarCambiosPerfil);
+
+    // ==== Publicaciones ==== /
+
+// Guardar publicación
+subscribePOSTEvent('publicar', guardarPublicacion);
+
+// Importar publicacion 
+subscribePOSTEvent('obtenerPublicacionesPerfil', obtenerPublicacionesPerfil);
