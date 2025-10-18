@@ -1,93 +1,138 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <script type="module">
-      import { checkeoSesion } from "../Funciones/checkeoSesion.js";
-      checkeoSesion();
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Publicaciones</title>
-    <link rel="stylesheet" href="styles.css">
+  <script type="module">
+    import { checkeoSesion } from "../Funciones/checkeoSesion.js";
+    checkeoSesion();
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Publicar | EduKiosk</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <!-- HEADER -->
-    <header>
-        <div class="header">
-            <img src="../../Imagenes/edukiosk.png" alt="LOGO">
-            <ul>
-                <li>
-                    <a href="../Home/index.html">
-                        <img src="../../Imagenes/home.png" alt="HOME">
-                    </a>
-                </li>
-                <li>
-                    <a href="../Perfil/index.html">
-                        <img src="../../Imagenes/perfil.png" alt="PERFIL">
-                    </a>
-                </li>
-                <li>
-                    <a href="../Publicar/index.html">
-                        <img src="../../Imagenes/crear.png" alt="CREAR">
-                    </a>
-                </li>
-                <li>
-                    <img src="../../Imagenes/notificaciones.png" alt="NOTIFICACIONES">
-                </li>
-            </ul>
+
+  <header class="header">
+    <div class="cfbe-d-a"></div>
+    <div class="iconos-nav-bar">
+      <div class="frame">
+        <a href="../Publicar/index.html"><img src="../../Imagenes/PUBLICAR.png" alt="PUBLICAR"></a>
+        <a href="../Perfil/index.html"><img src="../../Imagenes/fotoPerfil.png" alt="PERFIL"></a>
+        <img class="notificaciones" src="../../Imagenes/notificaciones.png" alt="NOTIFICACIONES">
+        <a href="../Home/index.html"><img src="../../Imagenes/home.png" alt="HOME"></a>
+      </div>
+    </div>
+  </header>
+
+  <div class="page">
+    <main class="main">
+      <div class="group">
+
+        <div class="col form-col">
+          <form id="formPublicar" class="form-figma">
+
+            <div class="input-email">
+              <div class="text-wrapper">Título</div>
+              <input id="Titulo" type="text" required class="barra-mail">
+            </div>
+
+            <div class="input-email">
+              <div class="text-wrapper">Descripción</div>
+              <textarea id="descripcion" class="barra-mail"></textarea>
+            </div>
+
+            <div class="input-email">
+              <div class="text-wrapper">Recurso</div>
+              <select id="recurso" required class="barra-mail">
+                <option value=""></option>
+                <option value="Libro">Libro</option>
+                <option value="Clases particulares">Clases particulares</option>
+                <option value="Resumen">Resumen</option>
+              </select>
+            </div>
+
+            <div class="input-email">
+              <div class="text-wrapper">Año escolar</div>
+              <input id="Año-Escolar" type="text" required class="barra-mail">
+            </div>
+
+            <div class="input-email">
+              <div class="text-wrapper">Profesor</div>
+              <input id="profesor" type="text" required class="barra-mail">
+            </div>
+
+            <div class="input-email">
+              <div class="text-wrapper">Año</div>
+              <select id="grado" required class="barra-mail">
+                <option value=""></option>
+                <option value="1°">1°</option>
+                <option value="2°">2°</option>
+                <option value="3°">3°</option>
+                <option value="4°">4°</option>
+                <option value="5°">5°</option>
+              </select>
+            </div>
+
+            <div class="input-email" id="campoEspecialidad">
+              <div class="text-wrapper">Especialidad</div>
+              <select id="especialidad" class="barra-mail">
+                <option value=""></option>
+              </select>
+            </div>
+
+            <div class="input-email">
+              <div class="text-wrapper">Materia</div>
+              <select id="materia" required class="barra-mail">
+                <option value=""></option>
+              </select>
+            </div>
+
+            <div class="input-email" id="campoprecios" style="display:none;">
+              <div class="text-wrapper">Precio</div>
+              <input id="Precios" type="number" class="barra-mail">
+            </div>
+
+            <div class="div-wrapper">
+              <button type="submit" class="text-wrapper-6">Publicar</button>
+            </div>
+
+          </form>
         </div>
-    </header>
 
-    <h1>Formulario para publicar</h1>
-<main id="Publicacion">
-    <form id="formPublicar">
-        <label for="Titulo">Título:</label>
-        <input id="Titulo" type="text" placeholder="Ponga un título" required>
+        <aside class="col media-col">
+          <div id="previewRect" class="rectangle" title="Haz click para elegir imagen"></div>
 
-        <label for="imagen">Imagen:</label>
-        <input type="file" id="imagen">
+          <label for="imagen" class="agregar-imagen">
+            <img src="../../Imagenes/MasOscuro.png" alt="+" class="icono-mas">
+            <span>Agregar imagen</span>
+          </label>
 
-        <label for="descripcion">Descripción:</label>
-        <textarea id="descripcion" placeholder="Ponga una breve descripción"></textarea>
-        
-        <label for="recurso">Tipo de recurso:</label>
-        <select id="recurso" required>
-            <option value="">Selecciona una opción</option>
-            <option value="Libro">Libro</option>
-            <option value="Clases particulares">Clases particulares</option>
-            <option value="Resumen">Resumen</option>
-        </select>
+          <input type="file" id="imagen" accept="image/*" class="input-oculto">
+        </aside>
 
-        <label for="grado">Seleccione un año:</label>
-        <select id="grado" required>
-            <option value="">Selecciona una opción</option>
-            <option value="1°">1°</option>
-            <option value="2°">2°</option>
-            <option value="3°">3°</option>
-            <option value="4°">4°</option>
-            <option value="5°">5°</option>            
-        </select>
-
-        <label for="especialidad" style="display:none;">Especialidad:</label>
-        <select id="especialidad" style="display:none;">
-            <option value="">Selecciona una opción</option>
-        </select>
-
-        <label for="materia">Materia:</label>
-        <select id="materia" required>
-            <option value="">Selecciona una opción</option>
-        </select>
-        
-        <div id="campoprecios" style="display:none;">
-            <label for="Precios">Precio:</label>
-            <input id="Precios" type="number" placeholder="0" min="0">
+      </div>
+    </main>
+    
+    <footer class="FOOTER">
+      <div class="footer">
+        <div class="footer-inner">
+          <div class="logo-footer"></div>
+          <div class="contacto">
+            <div class="text-wrapper-8">CONTACTO</div>
+            <div class="text-wrapper-9">edukiosk@gmail.com</div>
+          </div>
+          <div class="sobre-nosotros">
+            <div class="text-wrapper-7">SOBRE NOSOTROS</div>
+            <p class="descripcion-footer">
+              Somos un grupo de estudiantes que desarrollamos esta plataforma para facilitar el acceso a resúmenes,
+              libros y apuntes.
+            </p>
+          </div>
         </div>
+      </div>
+    </footer>
+  </div>
 
-        <button type="submit" class="botonSubmit">Publicar</button>
-
-    </form> 
-</main>
-
-    <script src="main.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
