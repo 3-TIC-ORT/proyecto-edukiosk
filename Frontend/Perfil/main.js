@@ -1,21 +1,9 @@
-import { mensajePopUp } from "../Funciones/popUp.js";
+import { mensajePopUp, colores } from "../Funciones/popUp.js";
 import { caracteresProhibidos } from "../Funciones/checkeoSesion.js";
+import { fileToBase64 } from "../Funciones/buffer.js";
+import { cajaProducto } from "../Funciones/crearCajaPublicacion.js";
 // Conexión con backend
 connect2Server();
-
-// Funcion para el buffer
-
-function fileToBase64(file) {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onload = () => {
-      const base64 = reader.result.split(",")[1]; // remove "data:image/png;base64,"
-      resolve(base64);
-    };
-    reader.onerror = reject;
-    reader.readAsDataURL(file);
-  });
-}
 
 let modoEdicion = false;
 let passwordVisible = false;
@@ -37,9 +25,20 @@ const quitarImagenBtn = document.getElementById("quitarImagenBtn");
 const imagenPerfil = document.getElementById("imagenPerfil");
 const logout = document.getElementById("btnCerrarSesion");
 
+const cajasDePublicacion = document.getElementsByClassName("claseCajaPublicacion");
+
 const real = localStorage.getItem("usuarioSesion");
 const perfilReal = JSON.parse(real);
 let userEditado;
+
+postEvent("obtenerPublicacionesPerfil", perfilReal, (res) => {
+  if (res && res.success) {
+    cajaProducto(res.publicacionesPropias);
+  } else {
+    mensajePopUp("Error al importar productos", colores.error);
+  }
+});
+
 
 // ==== Rellenar datos iniciales ====
 

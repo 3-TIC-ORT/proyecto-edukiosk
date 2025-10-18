@@ -1,3 +1,8 @@
+export const colores = {
+  error: "#e92828ff",
+  exito: "#28e97dff"
+}
+
 export function mensajePopUp(texto, color) {
   const popUp = document.createElement("dialog");
   popUp.style.position = "fixed";
@@ -18,6 +23,7 @@ export function mensajePopUp(texto, color) {
   popUp.style.transition = "opacity 0.3s ease-in-out, background-color 0.3s ease-in-out";
   popUp.style.backgroundColor = color;
   popUp.style.color = "white";
+  popUp.style.fontFamily = "Inter, sans-serif"
   popUp.innerText = texto;
   document.body.appendChild(popUp);
   popUp.showModal();

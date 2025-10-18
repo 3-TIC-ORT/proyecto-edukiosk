@@ -101,3 +101,43 @@ body {
 .perfil-datos button:hover {
   background: #0f1f30;
 }
+
+
+#containerProductos {
+
+}
+
+.claseCajaPublicacion {
+
+}
+
+
+.claseCajaPublicacion:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.claseCajaPublicacion a {
+
+}
+
+
+.imagenCaja {
+
+}
+
+.tituloCaja {
+
+}
+
+.descripcionCaja {
+
+}
+
+.descripcionCaja h2 {
+
+}
+
+.descripcionCaja h2:first-child {
+
+}

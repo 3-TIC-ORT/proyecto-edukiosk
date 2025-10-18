@@ -1,93 +1,97 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
+  <head>
     <script type="module">
       import { checkeoSesion } from "../Funciones/checkeoSesion.js";
       checkeoSesion();
     </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Publicaciones</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/JZylber/SoqueTIC-Client@v1.4.2/soquetic-client.js"></script>
+  </head>
+  <body>
     <!-- HEADER -->
     <header>
-        <div class="header">
-            <img src="../../Imagenes/edukiosk.png" alt="LOGO">
-            <ul>
-                <li>
-                    <a href="../Home/index.html">
-                        <img src="../../Imagenes/home.png" alt="HOME">
-                    </a>
-                </li>
-                <li>
-                    <a href="../Perfil/index.html">
-                        <img src="../../Imagenes/perfil.png" alt="PERFIL">
-                    </a>
-                </li>
-                <li>
-                    <a href="../Publicar/index.html">
-                        <img src="../../Imagenes/crear.png" alt="CREAR">
-                    </a>
-                </li>
-                <li>
-                    <img src="../../Imagenes/notificaciones.png" alt="NOTIFICACIONES">
-                </li>
-            </ul>
-        </div>
+      <div class="header">
+        <img src="../../Imagenes/edukiosk.png" alt="LOGO" />
+        <ul>
+          <li>
+            <a href="../Home/index.html">
+              <img src="../../Imagenes/home.png" alt="HOME" />
+            </a>
+          </li>
+          <li>
+            <a href="../Perfil/index.html">
+              <img src="../../Imagenes/perfil.png" alt="PERFIL" />
+            </a>
+          </li>
+          <li>
+            <a href="../Publicar/index.html">
+              <img src="../../Imagenes/crear.png" alt="CREAR" />
+            </a>
+          </li>
+          <li>
+            <img src="../../Imagenes/notificaciones.png" alt="NOTIFICACIONES" />
+          </li>
+        </ul>
+      </div>
     </header>
 
     <h1>Formulario para publicar</h1>
-<main id="Publicacion">
-    <form id="formPublicar">
+    <main id="Publicacion">
+      <form id="formPublicar">
         <label for="Titulo">Título:</label>
-        <input id="Titulo" type="text" placeholder="Ponga un título" required>
+        <input id="Titulo" type="text" placeholder="Ponga un título" required />
 
         <label for="imagen">Imagen:</label>
-        <input type="file" id="imagen">
+        <input type="file" id="imagen" />
 
         <label for="descripcion">Descripción:</label>
-        <textarea id="descripcion" placeholder="Ponga una breve descripción"></textarea>
-        
+        <textarea
+          id="descripcion"
+          placeholder="Ponga una breve descripción"
+        ></textarea>
+
         <label for="recurso">Tipo de recurso:</label>
         <select id="recurso" required>
-            <option value="">Selecciona una opción</option>
-            <option value="Libro">Libro</option>
-            <option value="Clases particulares">Clases particulares</option>
-            <option value="Resumen">Resumen</option>
+          <option value="">Selecciona una opción</option>
+          <option value="Libro">Libro</option>
+          <option value="Clases particulares">Clases particulares</option>
+          <option value="Resumen">Resumen</option>
         </select>
 
         <label for="grado">Seleccione un año:</label>
         <select id="grado" required>
-            <option value="">Selecciona una opción</option>
-            <option value="1°">1°</option>
-            <option value="2°">2°</option>
-            <option value="3°">3°</option>
-            <option value="4°">4°</option>
-            <option value="5°">5°</option>            
+          <option value="">Selecciona una opción</option>
+          <option value="1°">1°</option>
+          <option value="2°">2°</option>
+          <option value="3°">3°</option>
+          <option value="4°">4°</option>
+          <option value="5°">5°</option>
         </select>
 
-        <label for="especialidad" style="display:none;">Especialidad:</label>
-        <select id="especialidad" style="display:none;">
-            <option value="">Selecciona una opción</option>
+        <label for="especialidad" style="display: none">Especialidad:</label>
+        <select id="especialidad" style="display: none">
+          <option value="">Selecciona una opción</option>
         </select>
 
         <label for="materia">Materia:</label>
         <select id="materia" required>
-            <option value="">Selecciona una opción</option>
+          <option value="">Selecciona una opción</option>
         </select>
-        
-        <div id="campoprecios" style="display:none;">
-            <label for="Precios">Precio:</label>
-            <input id="Precios" type="number" placeholder="0" min="0">
+
+        <div id="campoprecios" style="display: none">
+          <label for="Precios">Precio:</label>
+          <input id="Precios" type="number" placeholder="0" min="0" />
         </div>
 
         <button type="submit" class="botonSubmit">Publicar</button>
+      </form>
+    </main>
 
-    </form> 
-</main>
-
-    <script src="main.js"></script>
-</body>
+    <script src="main.js" type="module"></script>
+  </body>
 </html>
