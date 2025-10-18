@@ -62,6 +62,9 @@ box-shadow: 0 2px 5px
 }
 .Precio-producto1{
   margin-top: 18px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800
+
 }
 .Puntuacion{
     display: flex;
@@ -69,4 +72,17 @@ box-shadow: 0 2px 5px
   gap: 2px; 
    align-self: flex-start;
    margin-top: -20px;
+     justify-content: space-between;
+}
+.Estrella-Titulo {
+  color: #6b6a6a; 
+  font-size: 16px;
+  margin: 0;
+  margin-left: 190px;
+  font-style: italic;
+}
+.Principal-producto1{
+    font-size: 21px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 800
 }
