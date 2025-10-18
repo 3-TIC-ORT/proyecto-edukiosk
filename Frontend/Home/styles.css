@@ -1,138 +1,118 @@
-/* VARIABLES */
 :root {
-  --colorFondo: #f3f3f3;
+  --colorFondo: #ffffff;
   --colorPrimario: #172d42;
+  --colorSecundario: #224668;
 }
 
-html,
-body {
+html, body {
   margin: 0;
   padding: 0;
-}
-
-body {
   font-family: "Inter", sans-serif;
   background-color: var(--colorFondo);
-  text-align: center;
 }
 
-body h1{
-    margin-top: 100px;
-    font-weight: 700;
-    font-size: 3rem;
-}
-
-/* HEADER STYLES */
-
+/* ================= HEADER ================= */
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: var(--colorSecundario);
+  padding: 15px 60px;
   border-bottom: 3px solid var(--colorPrimario);
-  padding: 10px 20px;
-  width: 100%;
-  box-sizing: border-box; 
-  background-color: var(--colorPrimario);
 }
 
-.header img {
+.header .logo {
+  width: 110px;
+  height: auto;
+}
+
+.iconos-nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 59px;
+}
+
+.iconos-nav-bar img {
   width: 50px;
   height: 50px;
-  padding: 0;
+  object-fit: contain;
+  transition: transform 0.2s;
 }
 
-.header ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  gap: 50px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  max-height: 25px;
-}
-
-.header ul li a {
-  align-self: center;
-  display: flex;
-}
-
-.header ul li {
-  max-height: 25px;
-}
-
-.header ul img {
-  width: 25px !important;
-  height: 25px !important;
-  object-fit: cover;
-}
-
-/* AÑOS - RESPONSIVE FIXES APPLIED */
-
-.AÑOS {
-  display: flex;
-  justify-content: space-around; 
-  font-family: serif;
+.main-section {
   text-align: center;
-  flex-wrap: wrap; 
-  border-bottom: 2px solid black;
+
 }
 
+.titulo {
+  font-size: 64px;
+  color: #000;
+  margin-bottom: 60px;
+}
 
-.AÑOS a {
-  margin: 10px 15px; 
-  margin-block: 50px;
-  background-color: #224668;
-  outline: none;
-  color: white;
-  padding: 1.5em 2em; 
+.años-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 20px;
+}
+
+.año-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 150px;
+  background-color: #fff;
+  border: 10px solid var(--colorSecundario);
   border-radius: 20px;
+  color: #000;
+  font-size: 36px;
+  font-weight: 900;
+}
+
+.año-card:hover {
+  background-color: var(--colorSecundario);
+}
+
+.footer {
   display: flex;
   align-items: center;
-  justify-content: center; 
-  font-size: 1.5rem; 
-  font-weight: 600;
-  text-decoration: none;
+  justify-content: space-between;
+  background-color: var(--colorSecundario);
+  color: #fff;
+  padding: 15px 60px;           
+  border-top: 3px solid var(--colorPrimario);
   font-family: "Inter", sans-serif;
-  min-width: 120px;
-  min-height: 120px;
-  flex-grow: 1; 
-  flex-basis: 150px; 
-  white-space: normal; 
+  margin-top: 100px;         
 }
-
-/* ABOUT */
-
-.ABOUT {
+.footer-logo img {
+  width: 110px;                
+  height: auto;
+}
+.footer-contacto {
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  /* Adjusted padding to be consistent */
-  padding: 1rem 5%; 
-  color: white;
-  background-color: var(--colorPrimario);
-  border-top: 3px solid black;
+  justify-content: center;
+}
+.footer-contacto h2 {
+  margin: 0
+}
+.footer-contacto a {
+  color: #fff;
+}
+.footer-info {
+  max-width: 550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.footer-info p {
+  margin: 0;
 }
 
-/* FIX: Corrected invalid nested H1 syntax and used a responsive font size */
-.ABOUT h1 {
-  font-weight: 700;
-  font-size: 2.5rem; 
-  margin-top: 0; /* Ensures proper spacing from the top edge of .ABOUT */
-}
 
-.ABOUT p {
-  width: 100%;
-  max-width: 40rem;
-  margin: 1% 0; /* Adjusted margin to prevent issues with text-align */
-  /* FIX: Used a responsive font size */
-  font-size: 1.25rem; 
-  font-weight: 550;
-}
-
-/* FOOTER */
-
-.FOOTER {
-  border-top: 3px solid black;
-}

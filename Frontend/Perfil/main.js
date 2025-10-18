@@ -1,16 +1,13 @@
 
 import { mensajePopUp } from "../Funciones/popUp.js";
-import { caracteresProhibidos } from "../Funciones/checkeoSesion.js";
-// Conexión con backend
-connect2Server();
-
-// Funcion para el buffer
+import { caracteresProhibidos } from "../Funciones/checkeoSesion.js";nd
+connect2Server();er
 
 function fileToBase64(file) {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
     reader.onload = () => {
-      const base64 = reader.result.split(",")[1]; // remove "data:image/png;base64,"
+      const base64 = reader.result.split(",")[1]; 
       resolve(base64);
     };
     reader.onerror = reject;
@@ -42,14 +39,11 @@ const real = localStorage.getItem("usuarioSesion");
 const perfilReal = JSON.parse(real);
 let userEditado;
 
-// ==== Rellenar datos iniciales ====
-
 nombreTexto.textContent = perfilReal.username;
 descripcionTexto.textContent = perfilReal.description;
 imagenPerfil.src = perfilReal.pfp;
 passwordTexto.textContent = "******";
 
-// ==== Mostrar / ocultar contraseña ====
 togglePasswordBtn.addEventListener("click", () => {
   if (passwordVisible) {
     passwordTexto.textContent = "******";
@@ -60,12 +54,10 @@ togglePasswordBtn.addEventListener("click", () => {
   }
 });
 
-// ==== Alternar edición ====
 toggleEditarBtn.addEventListener("click", () => {
   modoEdicion = !modoEdicion;
 
   if (modoEdicion) {
-    // rellenar inputs con los datos visibles
     nombreInput.value = nombreTexto.textContent;
     passwordInput.value = perfilReal.contraseña;
     descripcionInput.value = descripcionTexto.textContent;
@@ -93,14 +85,12 @@ toggleEditarBtn.addEventListener("click", () => {
   }
 });
 
-// ==== Guardar cambios ====
 guardarBtn.addEventListener("click", () => {
   const tieneCaracterProhibido = caracteresProhibidos.some((char) =>
     nombreInput.value.includes(char)
   );
   const nuevoUsername = nombreInput.value.trim();
 
-  // Actualizar en pantalla
   nombreTexto.textContent = userEditado.nombre;
   passwordTexto.textContent = "******";
   descripcionTexto.textContent = userEditado.descripcion;
@@ -158,8 +148,6 @@ guardarBtn.addEventListener("click", () => {
   });
 });
 
-// Subir nueva imagen
-
 editarImagenInput.addEventListener("change", (e) => {
   const file = e.target.files;
   fileToBase64(file[0]).then((base64) => {
@@ -184,7 +172,6 @@ editarImagenInput.addEventListener("change", (e) => {
   });
 });
 
-// Quitar imagen
 
 quitarImagenBtn.addEventListener("click", () => {
   const sessionJSON = localStorage.getItem("usuarioSesion");
@@ -213,8 +200,6 @@ quitarImagenBtn.addEventListener("click", () => {
     }
   );
 });
-
-// Cerrar sesión
 
 logout.addEventListener("click", (e) => {
   localStorage.clear("usuarioSesion");
