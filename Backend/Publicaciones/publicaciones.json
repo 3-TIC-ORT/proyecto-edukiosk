@@ -76,5 +76,35 @@
     "fecha": 1760749475964,
     "dueño": "Rocco",
     "mail": "ba0783@est.ort.edu.ar"
+  },
+  {
+    "titulo": "clickclak",
+    "descripcion": "poiytf",
+    "recurso": "Libro",
+    "imagen": "/Imagenes/fotosPublicacion/49764315_est_ort_edu_ar-clickclak-948102.png",
+    "grado": "1°",
+    "especialidad": "",
+    "materia": "Educación Judía",
+    "precio": 111,
+    "fecha": 1760967118409,
+    "dueño": "Santiago",
+    "mail": "49764315@est.ort.edu.ar",
+    "reseñas": 0,
+    "comentarios": []
+  },
+  {
+    "titulo": "mami no le mienta solo dile la verdad",
+    "descripcion": "",
+    "recurso": "Clases particulares",
+    "imagen": "/Imagenes/fotosPublicacion/49764315_est_ort_edu_ar-mami_no_le_mienta_solo_dile_la_verdad-122301.png",
+    "grado": "4°",
+    "especialidad": "Gestión",
+    "materia": "Sistemas de Información Contable",
+    "precio": 9999,
+    "fecha": 1760982931948,
+    "dueño": "Santiago",
+    "mail": "49764315@est.ort.edu.ar",
+    "reseñas": 0,
+    "comentarios": []
   }
 ]

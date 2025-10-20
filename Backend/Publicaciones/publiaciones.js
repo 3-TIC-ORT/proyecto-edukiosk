@@ -101,10 +101,80 @@ export function obtenerPublicaciones(data) {
       publicaciones = JSON.parse(jeison);
     }
 
-    publicacionesAño = publicaciones.filter(publicacion => publicacion.grado === data);
+    publicacionesAño = publicaciones.filter(
+      (publicacion) => publicacion.grado === data
+    );
 
-    return { success: true, publicacionesAño, info: "Publicaciones importadas exitosamente" }
+    return {
+      success: true,
+      publicacionesAño,
+      info: "Publicaciones importadas exitosamente",
+    };
   } catch {
-    return { success: false, info: "Error al importar publicaciones" }
+    return { success: false, info: "Error al importar publicaciones" };
+  }
+}
+
+export function borrarPublicacion(data) {
+  const { mail, fecha } = data;
+  let publicaciones = [];
+
+  try {
+    if (fs.existsSync(directorioJSON) && fs.statSync(directorioJSON).size > 0) {
+      const jeison = fs.readFileSync(directorioJSON, "utf-8");
+      if (jeison.trim().length > 0) {
+        publicaciones = JSON.parse(jeison);
+      }
+    } else {
+      return {
+        success: false,
+        info: "No se encontro el archivo de publicaciones",
+      };
+    }
+    const fechaBuscada =
+      typeof data === "object" && data !== null ? data.fecha : data;
+
+    const indexToDelete = publicaciones.findIndex(
+      (publicacion) => publicacion.fecha === fechaBuscada
+    );
+    if (indexToDelete !== -1) {
+      const imagenWeb = publicaciones[indexToDelete].imagen || "";
+      const imagenPath = imagenWeb.startsWith("/")
+        ? path.resolve(__dirname, "..", "..", imagenWeb.slice(1))
+        : path.resolve(__dirname, "..", "..", imagenWeb);
+
+      if (imagenWeb && fs.existsSync(imagenPath)) {
+        try {
+          fs.unlinkSync(imagenPath);
+        } catch (err) {
+          return {
+            success: false,
+            info: err
+          }
+        }
+      } 
+      else {
+        return { 
+          success: false,
+          info: "Error al encontrar imagen"
+        }
+      }
+      publicaciones.splice(indexToDelete, 1);
+      fs.writeFileSync(directorioJSON, JSON.stringify(publicaciones, null, 2));
+      return {
+        success: true,
+        info: "Se borro la publicacion de manera exitosa",
+      };
+    } else {
+      return {
+        success: false,
+        info: "La publicación a borrar no fue encontrada (índice -1).",
+      };
+    }
+  } catch (error) {
+    return {
+      success: false,
+      info: "Ocurrió un error al borrar la publicación",
+    };
   }
 }

@@ -1,6 +1,6 @@
 import { startServer, subscribeGETEvent, subscribePOSTEvent } from "soquetic";
 import { registrarUsuario, loginUsuario, quitarFoto, checkeoUsername, guardarCambiosPerfil, subirFotoPerfil }  from "./Usuarios/usuarios.js";
-import { guardarPublicacion, obtenerPublicacionesPerfil, obtenerPublicaciones } from "./Publicaciones/publiaciones.js";
+import { guardarPublicacion, obtenerPublicacionesPerfil, obtenerPublicaciones, borrarPublicacion } from "./Publicaciones/publiaciones.js";
 import path from "path";
 import { fileURLToPath } from "url"; 
 import { dirname } from "path";     
@@ -40,3 +40,6 @@ subscribePOSTEvent('obtenerPublicacionesPerfil', obtenerPublicacionesPerfil);
 
 // Guardar lista de publicaciones en pág publicación
 subscribePOSTEvent('obtenerPublicaciones', obtenerPublicaciones);
+
+// Borrar publicación
+subscribePOSTEvent('borrarPublicacion', borrarPublicacion);
