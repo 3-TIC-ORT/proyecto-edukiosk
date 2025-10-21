@@ -6,6 +6,7 @@ const contraseña = document.getElementById("Contraseña");
 const mail = document.getElementById("Correo");
 const form = document.getElementById("form");
 const tos = document.getElementById("Terminos");
+const tel = document.getElementById("tel");
 
 connect2Server(3000);
 
@@ -14,6 +15,7 @@ form.addEventListener("submit", (e) => {
   const nombreUsuario = usuario.value;
   const contraseñaUsuario = contraseña.value;
   const mailUsuario = mail.value;
+  const numTel = tel.value;
 
   const tieneCaracterProhibido = caracteresProhibidos.some((char) =>
     nombreUsuario.includes(char)
@@ -35,6 +37,7 @@ form.addEventListener("submit", (e) => {
     usuario.value = "";
     contraseña.value = "";
     mail.value = "";
+    tel.value = "";
     return;
   }
 
@@ -61,6 +64,8 @@ form.addEventListener("submit", (e) => {
         pfp: "/Imagenes/fotosPerfil/defaultPerfil.jpg",
         rating: 0,
         descripcion: "",
+        numTel: "",
+        notificaciones: []
        },
       (data) => {
         if (!data.success) {

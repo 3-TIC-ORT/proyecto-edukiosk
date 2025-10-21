@@ -25,20 +25,73 @@ const quitarImagenBtn = document.getElementById("quitarImagenBtn");
 const imagenPerfil = document.getElementById("imagenPerfil");
 const logout = document.getElementById("btnCerrarSesion");
 
-const cajasDePublicacion = document.getElementsByClassName("claseCajaPublicacion");
+const containerProductos = document.getElementById("containerProductos");
 
 const real = localStorage.getItem("usuarioSesion");
 const perfilReal = JSON.parse(real);
 let userEditado;
+let publicaciones = [];
 
 postEvent("obtenerPublicacionesPerfil", perfilReal, (res) => {
   if (res && res.success) {
     cajaProducto(res.publicacionesPropias);
+    publicaciones = res.publicacionesPropias;
+    botonesBorrar();
   } else {
     mensajePopUp("Error al importar productos", colores.error);
   }
 });
+function botonesBorrar() {
+  const cajasDePublicacion = document.querySelectorAll(".claseCajaPublicacion");
+  cajasDePublicacion.forEach((caja, i) => {
+    const pub = publicaciones[i];
+    const but = document.createElement("button");
 
+    caja.style.position = "relative";
+    // 2. Ensure the parent acts like a predictable container (Block element)
+    //    This is crucial if the external CSS sets 'display: contents' or 'flex'.
+    caja.style.display = "block";
+    // --- FIX END ---
+
+    but.textContent = "X";
+    but.style.backgroundColor = colores.error;
+    but.style.color = "#FFFFFF";
+    but.classList.add("botonBorrar");
+    caja.appendChild(but);
+
+    // Styling the button itself (retaining absolute position logic)
+    but.style.position = "absolute";
+    but.style.top = "5px";
+    but.style.left = "5px";
+    but.style.zIndex = "10";
+    but.style.width = "50px";
+    but.style.height = "50px";
+    but.style.padding = "0";
+    but.style.borderRadius = "10px";
+
+    // FIX 2: Set the positioning context for the button's parent
+    // NOTE: This style should ideally be in CSS, but included here for completeness
+    // If you prefer to keep your main CSS clean, you can put this style in the CSS file:
+    // .claseCajaPublicacion { position: relative; }
+    caja.style.position = "relative";
+    caja.appendChild(but);
+
+    but.addEventListener("click", () => {
+      postEvent("borrarPublicacion", pub.fecha, (res) => {
+        if (res && res.success) {
+          publicaciones[i] = "";
+          mensajePopUp("¡Publicación borrada con exito!", colores.exito);
+          caja.remove();
+        } else {
+          mensajePopUp(
+            "Ocurrio un error al borrar la publicación.",
+            colores.error
+          );
+        }
+      });
+    });
+  });
+}
 
 // ==== Rellenar datos iniciales ====
 

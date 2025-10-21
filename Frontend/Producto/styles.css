@@ -2,6 +2,8 @@
 :root {
     --colorFondo: #f3f3f3;
     --colorPrimario: #172d42;
+     --colorSecundario: #eaf2fb; 
+    --colorTextoDescripcion: #1f2b3a; 
   }
 .header ul {
     list-style-type: none;
@@ -43,41 +45,44 @@
     flex-direction: column;     
     align-items: center;
     justify-content: center;
-    background-color: #f0f0f0;
+background-color: #f3f3f3;
     padding: 20px;
+      position: relative;
     width: 300px;
-border-radius: 10%;
+    height: 450px;
+border-radius: 7%;
 margin-top: 30px;
+margin-left: 30px;
 border: 2px solid black;
-box-shadow: 0 4px 10px
 }
 
-.Descripcion-producto1  {
-    font-size: 16px;
-    color: #666;
-    text-align: center;
-    
-}
-.Precio-producto1 {
-    color: white; 
-    font-size: 18px; 
-    font-weight: bold;
-    padding: 15px 30px; 
-   background-color:darkturquoise;
-   margin-top: 10px;
-
-
-   border: black;
-   border-radius: 50px;
-   cursor: pointer; 
-   text-align: center;
-}
 .foto-de-producto1{
  border: black 8px;
 box-shadow: 0 2px 5px 
 }
-.comentario-btn{
+.Precio-producto1{
+  margin-top: 18px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800
+
+}
+.Puntuacion{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+  align-items: center; 
+  gap: 2px; 
+   align-self: flex-start;
+   margin-top: -20px;
+     justify-content: space-between;
+}
+.Estrella-Titulo {
+  color: #6b6a6a; 
+  font-size: 16px;
+  margin: 0;
+  margin-left: 190px;
+  font-style: italic;
+}
+.Principal-producto1{
+    font-size: 21px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 800
 }

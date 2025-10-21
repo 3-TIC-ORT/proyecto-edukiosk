@@ -122,7 +122,9 @@ document.addEventListener("DOMContentLoaded", () => {
       precio: inputPrecio.required ? Number(inputPrecio.value) : 0,
       fecha: Date.now(),
       dueño: dueño.username,
-      mail: dueño.email
+      mail: dueño.email,
+      reseñas: 0,
+      comentarios: []
     };
     console.log(publicacion);
     postEvent("publicar", publicacion, (data) => {

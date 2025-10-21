@@ -5,7 +5,7 @@
     "email": "49764315@est.ort.edu.ar",
     "pfp": "/Imagenes/fotosPerfil/defaultPerfil.jpg",
     "rating": 0,
-    "descripcion": "3er año tic, respect 100% diseñador"
+    "descripcion": "auuuuu"
   },
   {
     "user": "Rocco",
@@ -14,5 +14,13 @@
     "pfp": "/Imagenes/fotosPerfil/ba0783_est_ort_edu_ar.png",
     "rating": 0,
     "descripcion": "rocco altie"
+  },
+  {
+    "user": "Axel",
+    "password": "<h1>axel</h1>",
+    "email": "axel@est.ort.edu.ar",
+    "pfp": "/Imagenes/fotosPerfil/axel_est_ort_edu_ar.png",
+    "rating": 0,
+    "descripcion": "<p>Axel</p>"
   }
 ]

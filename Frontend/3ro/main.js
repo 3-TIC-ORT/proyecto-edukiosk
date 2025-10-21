@@ -14,7 +14,7 @@ const containerProductos = document.getElementById("containerProductos");
 connect2Server(3000);
 
 let publicaciones = [];
-const grado = "5°";
+const grado = "3°";
 
 function popularFiltros() {
     const dataGrado = materiasPorGradoYEspecialidad[grado];
