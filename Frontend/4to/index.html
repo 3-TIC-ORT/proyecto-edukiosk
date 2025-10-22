@@ -1,79 +1,72 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <script type="module">
-      import { checkeoSesion } from "../Funciones/checkeoSesion.js";
-      checkeoSesion();
-    </script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>publicaciones de 4°</title>
-    <link rel="stylesheet" href="styles.css" />
+  <script type="module">
+    import { checkeoSesion } from "../Funciones/checkeoSesion.js";
+    checkeoSesion();
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Publicaciones de 3°</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
   <div class="page-container">
+
     <header class="header">
-      <img src="../../Imagenes/LogoClaro.png" alt="LOGO" class="logo" />
-      <ul class="header-icons">
-        <li>
-          <a href="../Home/index.html">
-            <img src="../../Imagenes/home.png" alt="HOME" class="icon" />
-          </a>
-        </li>
-        <li>
-          <a href="../Perfil/index.html">
-            <img src="../../Imagenes/fotoPerfil.png" alt="PERFIL" class="icon" />
-          </a>
-        </li>
-        <li>
-          <a href="../Publicar/index.html">
-            <img src="../../Imagenes/PUBLICAR.png" alt="CREAR" class="icon" />
-          </a>
-        </li>
-        <li>
-          <img src="../../Imagenes/notificaciones.png" alt="NOTIFICACIONES" class="icon" />
-          <!-- PROGRAMAR DESPUES XQ FUNCIONA DIFERENTE A LOS DEMAS -->
-        </li>
-      </ul>
+      <div class="header1">
+        <img class="logo" src="../../Imagenes/LogoClaro.png" alt="Logo EduKiosk" />
+      </div>
+
+      <div class="header2">
+        <div class="header-icons">
+          <a href="../Publicar/index.html"><img src="../../Imagenes/PUBLICAR.png" alt="PUBLICAR"></a>
+          <a href="../Perfil/index.html"><img src="../../Imagenes/fotoPerfil.png" alt="PERFIL"></a>
+          <img class="notificaciones" src="../../Imagenes/notificaciones.png" alt="NOTIFICACIONES">
+          <a href="../Home/index.html"><img src="../../Imagenes/home.png" alt="HOME"></a>
+        </div>
+      </div>
     </header>
 
     <main class="main-content">
-      <h1>Publicaciones de 4°</h1>
+      <div id="publicaciones" class="publicaciones-container"></div>
 
-      <label for="menu-principal">especialidad</label>
-      <select id="menu-principal">
-        <option value="">-- Elegir --</option>
-        <option value="TIC">TIC</option>
-        <option value="Medios">Medios</option>
-        <option value="Diseno">Diseño</option>
-        <option value="Gestion">Gestión</option>
-      </select>
+      <form class="filtros-form">
+        <select id="menu-principal" class="menu-principal">
+          <option value="">Especialidad</option>
+          <option value="TIC">TIC</option>
+          <option value="Medios">Medios</option>
+          <option value="Diseno">Diseño</option>
+          <option value="Gestion">Gestión</option>
+        </select>
 
-      <label for="recurso">Tipo de recurso:</label>
-      <select id="recurso">
-        <option value="">Selecciona una opción</option>
-        <option value="Libro">Libro</option>
-        <option value="Clases particulares">Clases particulares</option>
-        <option value="Resumen">Resumen</option>
-      </select>
+        <select id="recurso" class="recurso">
+          <option value="">Recurso</option>
+          <option value="Libro">Libro</option>
+          <option value="Clases particulares">Clases particulares</option>
+          <option value="Resumen">Resumen</option>
+        </select>
 
-      <label for="menu-secundario" style="display:none;">Especialidad:</label>
-      <select id="menu-secundario" style="display:none;"></select>
+        <select id="menu-secundario" class="sr-only" style="display:none;"></select>
+      </form>
     </main>
 
-    <footer class="footer">
-        <img src="../../Imagenes/LogoClaro.png" alt="Logo EduKiosk" class="logo" />
-        <div class="footer-left">
-          <div class="footer-titulo">CONTACTO</div>
-          <div class="footer-email">edukiosk@gmail.com</div>
-        </div>
-        <div class="footer-right">
-          <div class="footer-titulo">SOBRE NOSOTROS</div>
-          <p class="footer-texto">
-            Somos un grupo de estudiantes que desarrollamos esta plataforma para facilitar el acceso a resúmenes y apuntes.
-          </p>
-        </div>
-      </footer>
+         <footer class="footer">
+      <img class="logo" src="../../Imagenes/LogoClaro.png" alt="Logo EduKiosk" />
+      <div class="footer-left">
+        <div class="footer-titulo">CONTACTO</div>
+        <div class="footer-email">edukiosk@gmail.com</div>
+      </div>
+      <div class="footer-right">
+        <div class="footer-titulo">SOBRE NOSOTROS</div>
+        <p class="footer-texto">
+          Somos un grupo de estudiantes que desarrollamos esta plataforma para
+          facilitar el acceso a resúmenes y apuntes.
+        </p>
+      </div>
+    </footer>
+
   </div>
 
   <script src="main.js" defer></script>

@@ -4,12 +4,57 @@
   --colorPrimario: #172d42;
 }
 
-/* BODY */
-body {
-  background-color: var(--colorFondo);
-  font-family: "Inter", sans-serif;
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  background-color: #f3f3f3;
+  color: #1f2b3a;
+}
+
+.header {
+  width: 100%;
+  height: 112px;
+  background-color: #224668;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 80px;
+}
+
+.logo {
+  width: 120px;
+  height: 90px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.header1 {
+  display: flex;
+  align-items: center;
+}
+
+.header2 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 55px;
 }
 
 /* PERFIL */

@@ -10,51 +10,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login | Edukiosk</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" href="/Imagenes/LogoClaro.ico" />
-    <link
-      rel="icon"
-      href="/Imagenes/LogoOscuro.ico"
-      media="(prefers-color-scheme: light)"
-    />
-  </head>
-  <body>
-    <!-- HEADER -->
 
-    <header>
-      <div class="header">
-        <img src="../../Imagenes/LogoClaro.png" alt="LOGO" />
-      </div>
+    <link rel="icon" href="/Imagenes/LogoClaro.png" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="/Imagenes/LogoOscuro.png" media="(prefers-color-scheme: light)" />
+  </head>
+
+  <body>
+    <header class="header">
+      <img src="../../Imagenes/LogoClaro.png" alt="LOGO" />
     </header>
 
-    <div class="titulo">
-      <img src="/Imagenes/LogoOscuro.png" alt="LOGO" />
-      <h1>Inciar Sesión en Edukiosk</h1>
-    </div>
+    <main class="contenedor">
+      <h1 class="titulo-principal">Iniciar sesión</h1>
 
-    <!-- LOGIN -->
+      <form class="formulario" id="form-login">
+        <label for="Email">Correo</label>
+        <input type="email" id="Email" required />
 
-    <form class="formulario" id="form-login">
-      <label for="Correo">Correo:</label>
-      <input type="email" id="Email" required="Correo" placeholder="" />
+        <label for="Contraseña">Contraseña</label>
+        <input type="password" id="Contraseña" required />
 
-      <label for="Contraseña">Contraseña:</label>
-      <input type="password" required id="Contraseña" placeholder="" />
+        <button type="submit" class="botonSubmit">Iniciar Sesión</button>
+      </form>
 
-      <button type="submit" class="botonSubmit">Iniciar Sesión</button>
-    </form>
-
-    <aside>
-      <p>O<a href="../Registro/index.html"> Registrarse</a></p>
-    </aside>
-
-    <!-- DEPENDENCIAS -->
+      <div class="separador"></div>
+      <p class="alternativo">O <a href="../Registro/index.html">registrarse</a></p>
+    </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/JZylber/SoqueTIC-Client@v1.4.2/soquetic-client.js"></script>

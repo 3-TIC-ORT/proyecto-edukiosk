@@ -10,73 +10,62 @@
   <title>Publicaciones de 3°</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
   <div class="page-container">
-    <!-- HEADER -->
+
     <header class="header">
-      <img src="../../Imagenes/LogoClaro.png" alt="LOGO" class="logo" />
-      <ul class="header-icons">
-        <li>
-          <a href="../Home/index.html">
-            <img src="../../Imagenes/home.png" alt="HOME" />
-          </a>
-        </li>
-        <li>
-          <a href="../Perfil/index.html">
-            <img src="../../Imagenes/fotoPerfil.png" alt="PERFIL" />
-          </a>
-        </li>
-        <li>
-          <a href="../Publicar/index.html">
-            <img src="../../Imagenes/PUBLICAR.png" alt="CREAR" />
-          </a>
-        </li>
-        <li>
-          <img src="../../Imagenes/notificaciones.png" alt="NOTIFICACIONES" />
-        </li>
-      </ul>
+      <div class="header1">
+        <img class="logo" src="../../Imagenes/LogoClaro.png" alt="Logo EduKiosk" />
+      </div>
+
+      <div class="header2">
+        <div class="header-icons">
+          <a href="../Publicar/index.html"><img src="../../Imagenes/PUBLICAR.png" alt="PUBLICAR"></a>
+          <a href="../Perfil/index.html"><img src="../../Imagenes/fotoPerfil.png" alt="PERFIL"></a>
+          <img class="notificaciones" src="../../Imagenes/notificaciones.png" alt="NOTIFICACIONES">
+          <a href="../Home/index.html"><img src="../../Imagenes/home.png" alt="HOME"></a>
+        </div>
+      </div>
     </header>
 
     <main class="main-content">
-      <h1 id="publicaciones-titulo">Publicaciones de 3°</h1>
-
       <div id="publicaciones" class="publicaciones-container"></div>
 
       <form class="filtros-form">
-        <label for="menu-principal" class="label-filtro">Especialidad</label>
-        <select id="menu-principal" name="menu-principal">
-          <option value="">-- Elegir --</option>
+        <select id="menu-principal" class="menu-principal">
+          <option value="">Especialidad</option>
           <option value="TIC">TIC</option>
           <option value="Medios">Medios</option>
           <option value="Diseno">Diseño</option>
           <option value="Gestion">Gestión</option>
         </select>
 
-        <label for="recurso" class="label-filtro">Tipo de recurso:</label>
-        <select id="recurso" name="recurso">
-          <option value="">Selecciona una opción</option>
+        <select id="recurso" class="recurso">
+          <option value="">Recurso</option>
           <option value="Libro">Libro</option>
           <option value="Clases particulares">Clases particulares</option>
           <option value="Resumen">Resumen</option>
         </select>
 
-        <label for="menu-secundario" class="sr-only">Especialidad:</label>
-        <select id="menu-secundario" style="display:none;"></select>
+        <select id="menu-secundario" class="sr-only" style="display:none;"></select>
       </form>
     </main>
-    <footer class="footer">
-        <img src="../../Imagenes/LogoClaro.png" alt="Logo EduKiosk" class="logo" />
-        <div class="footer-left">
-          <div class="footer-titulo">CONTACTO</div>
-          <div class="footer-email">edukiosk@gmail.com</div>
-        </div>
-        <div class="footer-right">
-          <div class="footer-titulo">SOBRE NOSOTROS</div>
-          <p class="footer-texto">
-            Somos un grupo de estudiantes que desarrollamos esta plataforma para facilitar el acceso a resúmenes y apuntes.
-          </p>
-        </div>
-      </footer>
+
+         <footer class="footer">
+      <img class="logo" src="../../Imagenes/LogoClaro.png" alt="Logo EduKiosk" />
+      <div class="footer-left">
+        <div class="footer-titulo">CONTACTO</div>
+        <div class="footer-email">edukiosk@gmail.com</div>
+      </div>
+      <div class="footer-right">
+        <div class="footer-titulo">SOBRE NOSOTROS</div>
+        <p class="footer-texto">
+          Somos un grupo de estudiantes que desarrollamos esta plataforma para
+          facilitar el acceso a resúmenes y apuntes.
+        </p>
+      </div>
+    </footer>
 
   </div>
 
