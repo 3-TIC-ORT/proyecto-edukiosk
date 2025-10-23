@@ -15,6 +15,8 @@
     const form = document.getElementById('formPublicar');
     const tituloInput = document.getElementById('Titulo');
     const descripcionInput = document.getElementById('descripcion');
+    const profesor = Document.getElementById('profesor')
+    const añoEscolar =Document.getElementById('Año-Escolar')
 
     const materiasPorGradoYEspecialidad = {
       '1°': [
@@ -199,6 +201,8 @@
         recurso: selRecurso.value,
         grado: selGrado.value,
         especialidad: ['3°', '4°', '5°'].includes(selGrado.value) ? selEspecialidad.value : "",
+        profesor: profesor,
+        añoEscolar: añoEscolar,
         materia: selMateria.value,
         precio: inputPrecio.required ? Number(inputPrecio.value) : 0,
         fecha: Date.now()
