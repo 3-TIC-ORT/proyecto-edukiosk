@@ -15,8 +15,8 @@
     const form = document.getElementById('formPublicar');
     const tituloInput = document.getElementById('Titulo');
     const descripcionInput = document.getElementById('descripcion');
-    const profesor = Document.getElementById('profesor')
-    const añoEscolar =Document.getElementById('Año-Escolar')
+    const profesor = document.getElementById('profesor')
+    const añoEscolar =document.getElementById('Año-Escolar')
 
     const materiasPorGradoYEspecialidad = {
       '1°': [
