@@ -1,60 +1,53 @@
 :root {
-  --colorFondo: #ffffff;
+  --colorFondo: #f3f3f3;
   --colorPrimario: #172d42;
-  --colorSecundario: #224668;
+    --colorSecundario: #224668;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow-x: hidden; 
 }
 
 body {
-  margin: 0;
-  padding: 0;
+  width: 100%;
+  min-height: 100vh;
   font-family: "Inter", sans-serif;
   background-color: var(--colorFondo);
-}
-
-.header {
+  color: #1f2b3a;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: var(--colorSecundario);
-  padding: 15px 60px;
-  border-bottom: 3px solid var(--colorPrimario);
+  flex-direction: column;
 }
 
-.header .logo {
-  width: 110px;
-  height: auto;
-}
-
-.iconos-nav-bar {
+.page-container {
+  flex: 1; 
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 59px;
-}
-
-.iconos-nav-bar img {
-  width: 50px;
-  height: 50px;
-  object-fit: contain;
-  transition: transform 0.2s;
+  flex-direction: column;
 }
 
 .main-section {
   text-align: center;
-
+  flex: 1;
+  padding-top: 100px; 
+  padding-bottom: 60px;
 }
 
 .titulo {
   font-size: 64px;
   color: #000;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
 }
 
 .años-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  gap: 60px;         
   padding: 20px;
 }
 
@@ -62,56 +55,113 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 200px;
-  height: 150px;
+  width: 230px;        
+  height: 170px;       
   background-color: #fff;
   border: 10px solid var(--colorSecundario);
   border-radius: 20px;
   color: #000;
-  font-size: 36px;
+  font-size: 38px;     
   font-weight: 900;
+  text-decoration: none;
 }
 
 .año-card:hover {
   background-color: var(--colorSecundario);
+  color: #fff;
+}
+
+.header {
+  width: 100%;
+  height: 112px;
+  background-color: #224668;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 80px;
+  flex-shrink: 0;
+}
+
+.header1 {
+  display: flex;
+  align-items: center;
+}
+
+.header2 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 55px;
+}
+
+.logo {
+  width: 120px;
+  height: 90px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
 }
 
 .footer {
+    width: 100%;
+    height: 112px;
+    background-color: #224668;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 80px;
+}
+
+.footer-left {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: var(--colorSecundario);
-  color: #fff;
-  padding: 15px 60px;           
-  border-top: 3px solid var(--colorPrimario);
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  padding-left: 10px;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: right;
+  max-width: 500px;
+  padding-left: 50px;
+}
+
+.footer-titulo {
   font-family: "Inter", sans-serif;
-  margin-top: 100px;         
-}
-.footer-logo img {
-  width: 110px;                
-  height: auto;
-}
-.footer-contacto {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.footer-contacto h2 {
-  margin: 0
-}
-.footer-contacto a {
-  color: #fff;
-}
-.footer-info {
-  max-width: 550px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.footer-info p {
-  margin: 0;
+  font-weight: 900;
+  font-size: 16px;
+  letter-spacing: 0.3px;
+  margin-bottom: 8px;
 }
 
+.footer-email {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.4;
+  margin-top: 6px;
+}
 
+.footer-texto {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.5;
+  margin-top: 6px;
+}

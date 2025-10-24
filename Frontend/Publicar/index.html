@@ -10,12 +10,16 @@
   <title>Publicar | EduKiosk</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
 
   <header class="header">
-    <div class="cfbe-d-a"></div>
-    <div class="iconos-nav-bar">
-      <div class="frame">
+    <div class="header1">
+      <img class="logo" src="../../Imagenes/LogoClaro.png" alt="Logo EduKiosk" />
+    </div>
+
+    <div class="header2">
+      <div class="header-icons">
         <a href="../Publicar/index.html"><img src="../../Imagenes/PUBLICAR.png" alt="PUBLICAR"></a>
         <a href="../Perfil/index.html"><img src="../../Imagenes/fotoPerfil.png" alt="PERFIL"></a>
         <img class="notificaciones" src="../../Imagenes/notificaciones.png" alt="NOTIFICACIONES">
@@ -24,13 +28,11 @@
     </div>
   </header>
 
-  <div class="page">
+  <div class="page-container">
     <main class="main">
       <div class="group">
-
         <div class="col form-col">
           <form id="formPublicar" class="form-figma">
-
             <div class="input-email">
               <div class="text-wrapper">Título</div>
               <input id="Titulo" type="text" required class="barra-mail">
@@ -46,19 +48,18 @@
               <select id="recurso" required class="barra-mail">
                 <option value=""></option>
                 <option value="Libro">Libro</option>
-                <option value="Clases particulares">Clases particulares</option>
                 <option value="Resumen">Resumen</option>
               </select>
             </div>
 
-            <div class="input-email">
+            <div class="input-email" id="campoAnioEscolar" style="display:none;">
               <div class="text-wrapper">Año escolar</div>
-              <input id="Año-Escolar" type="text" required class="barra-mail">
+              <input id="Año-Escolar" type="text" class="barra-mail" placeholder="2023, 2024, 2025...">
             </div>
 
-            <div class="input-email">
+            <div class="input-email" id="campoProfesor" style="display:none;">
               <div class="text-wrapper">Profesor</div>
-              <input id="profesor" type="text" required class="barra-mail">
+              <input id="profesor" type="text" class="barra-mail" placeholder="Nombre del profesor">
             </div>
 
             <div class="input-email">
@@ -73,7 +74,7 @@
               </select>
             </div>
 
-            <div class="input-email" id="campoEspecialidad">
+            <div class="input-email" id="campoEspecialidad" style="display:none;">
               <div class="text-wrapper">Especialidad</div>
               <select id="especialidad" class="barra-mail">
                 <option value=""></option>
@@ -86,51 +87,45 @@
                 <option value=""></option>
               </select>
             </div>
+
             <div class="input-email" id="campoprecios" style="display:none;">
               <div class="text-wrapper">Precio</div>
               <input id="Precios" type="number" class="barra-mail">
-          </div>
+            </div>
+
             <div class="div-wrapper">
               <button type="submit" class="text-wrapper-6">Publicar</button>
             </div>
-
           </form>
         </div>
 
         <aside class="col media-col">
           <div id="previewRect" class="rectangle" title="Haz click para elegir imagen"></div>
-
           <label for="imagen" class="agregar-imagen">
             <img src="../../Imagenes/MasOscuro.png" alt="+" class="icono-mas">
             <span>Agregar imagen</span>
           </label>
-
           <input type="file" id="imagen" accept="image/*" class="input-oculto">
         </aside>
-
       </div>
     </main>
-    
-    <footer class="FOOTER">
-      <div class="footer">
-        <div class="footer-inner">
-          <div class="logo-footer"></div>
-          <div class="contacto">
-            <div class="text-wrapper-8">CONTACTO</div>
-            <div class="text-wrapper-9">edukiosk@gmail.com</div>
-          </div>
-          <div class="sobre-nosotros">
-            <div class="text-wrapper-7">SOBRE NOSOTROS</div>
-            <p class="descripcion-footer">
-              Somos un grupo de estudiantes que desarrollamos esta plataforma para facilitar el acceso a resúmenes,
-              libros y apuntes.
-            </p>
-          </div>
-        </div>
+
+    <footer class="footer">
+      <img class="logo" src="../../Imagenes/LogoClaro.png" alt="Logo EduKiosk" />
+      <div class="footer-left">
+        <div class="footer-titulo">CONTACTO</div>
+        <div class="footer-email">edukiosk@gmail.com</div>
+      </div>
+      <div class="footer-right">
+        <div class="footer-titulo">SOBRE NOSOTROS</div>
+        <p class="footer-texto">
+          Somos un grupo de estudiantes que desarrollamos esta plataforma para
+          facilitar el acceso a resúmenes y apuntes.
+        </p>
       </div>
     </footer>
   </div>
 
-  <script src="main.js"></script>
+  <script type="module" src="main.js"></script>
 </body>
 </html>
