@@ -36,6 +36,10 @@ export function registrarUsuario(data) {
       (useri) => (useri.email ?? "") === (data.email ?? "")
     );
 
+    const telExists = usuarios.some(
+      (useri) => (useri.tel ?? "") === (data.tel ?? "")
+    )
+
     if (usernameExists || emailExists) {
       return {
         success: false,
@@ -43,6 +47,12 @@ export function registrarUsuario(data) {
         usernameExists,
         emailExists,
       };
+    }
+    if (telExists){
+      return {
+        success: false,
+        info: "Número de telefono ya registrado"
+      }
     }
     usuarios.push(data);
     fs.writeFileSync(directorioJSON, JSON.stringify(usuarios, null, 2));

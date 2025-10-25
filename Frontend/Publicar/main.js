@@ -1,6 +1,6 @@
 import { mensajePopUp, colores } from "../Funciones/popUp.js";
 import { fileToBase64 } from "../Funciones/buffer.js";
-import { materiasPorGradoYEspecialidad } from "../Funciones/filtrado.js"
+import { materiasPorGradoYEspecialidad } from "../Funciones/filtrado.js";
 
 connect2Server(3000);
 
@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("formPublicar");
   const tituloInput = document.getElementById("Titulo");
   const descripcionInput = document.getElementById("descripcion");
-
 
   function setOptions(select, opciones, placeholder = "Selecciona una opción") {
     select.innerHTML = "";
@@ -122,9 +121,11 @@ document.addEventListener("DOMContentLoaded", () => {
       precio: inputPrecio.required ? Number(inputPrecio.value) : 0,
       fecha: Date.now(),
       dueño: dueño.username,
-      mail: dueño.email,
-      reseñas: 0,
-      comentarios: []
+      contacto: {
+        mail: dueño.email,
+        tel: dueño.tel,
+      },
+      comentarios: [],
     };
     console.log(publicacion);
     postEvent("publicar", publicacion, (data) => {

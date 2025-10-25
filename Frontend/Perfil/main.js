@@ -2,6 +2,7 @@ import { mensajePopUp, colores } from "../Funciones/popUp.js";
 import { caracteresProhibidos } from "../Funciones/checkeoSesion.js";
 import { fileToBase64 } from "../Funciones/buffer.js";
 import { cajaProducto } from "../Funciones/crearCajaPublicacion.js";
+import { validarNumeroTelefono } from "../Funciones/validarNumTel.js"
 // Conexión con backend
 connect2Server();
 

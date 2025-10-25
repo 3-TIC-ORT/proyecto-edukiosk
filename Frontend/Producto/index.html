@@ -4,14 +4,14 @@
     <script type="module">
       import { checkeoSesion } from "../Funciones/checkeoSesion.js";
       import { mensajePopUp, colores } from "../Funciones/popUp.js";
-      import { cargarPublicacionActualJSON } from "../Funciones/cargarPublicacionActual.js";
       checkeoSesion();
-      const publicacionActual = cargarPublicacionActualJSON();
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Documento</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/JZylber/SoqueTIC-Client@v1.4.2/soquetic-client.js"></script>
 </head>
 <body>
     <!-- HEADER -->
@@ -35,11 +35,12 @@
                     </a>
                 </li>
                 <li>
-                     <img src="../../Imagenes/notificaciones.png" alt="NOTIFICACIONES">
-                     <!-- PROGRAMAR DESPUES XQ FUNCIONA DIFERENTE A LOS DEMAS -->
+                    <img src="../../Imagenes/notificaciones.png" alt="NOTIFICACIONES">
+                    <!-- PROGRAMAR DESPUES XQ FUNCIONA DIFERENTE A LOS DEMAS -->
                 </li>
             </ul>
         </div>
+    </header> 
         <div class="producto1-contenedor">
             <h2 class="Principal-producto1">La casa de Bernarda Alba</h2>    
             <img src="../../Imagenes/descarga.png" alt="FOTO DE PERFIL" class="foto-de-producto1"></img>
@@ -48,13 +49,16 @@
                 <h2 class="Estrella-Numero">4.3</h2>
                   <h2 class="Estrella-Titulo">Libro</h2>
             </div>
-
-
-
-</div>
         </div>
-
-    </header> 
+    <main>
+        <h1 id="titulo" class="info"></h1>
+        <h1 id="descripcion" class="info"></h1>
+        <h1 id="especialidad" class="info"></h1>
+        <h1 id="titulo" class="info"></h1>
+        <h1 id="titulo" class="info"></h1>
+        <h1 id="titulo" class="info"></h1>
+        <h1 id="titulo" class="info"></h1>
+    </main>
     <script src="main.js" type="module"></script>
 </body>
 </html>
