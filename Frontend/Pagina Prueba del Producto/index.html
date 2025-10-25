@@ -1,45 +1,53 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <script type="module">
-    import { checkeoSesion } from "../Funciones/checkeoSesion.js";
-    checkeoSesion();
-  </script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Edukiosk | Home</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
   <div class="page-container">
+
     <header class="header">
       <div class="header1">
         <img class="logo" src="../../Imagenes/LogoClaro.png" alt="Logo EduKiosk" />
       </div>
-
       <div class="header2">
         <div class="header-icons">
           <a href="../Publicar/index.html"><img src="../../Imagenes/PUBLICAR.png" alt="PUBLICAR"></a>
           <a href="../Perfil/index.html"><img src="../../Imagenes/fotoPerfil.png" alt="PERFIL"></a>
-           <a href="../Notificaciones/"></a><img src="../../Imagenes/notificaciones.png" alt="NOTIFICACIONES">
+          <img class="notificaciones" src="../../Imagenes/notificaciones.png" alt="NOTIFICACIONES">
           <a href="../Home/index.html"><img src="../../Imagenes/home.png" alt="HOME"></a>
         </div>
       </div>
     </header>
-    <main class="main-section">
-      <h1 class="titulo">ELEGIR AÑO</h1>
-      <div class="años-container">
-        <a href="../1ro/index.html" class="año-card">1° AÑO</a>
-        <a href="../2do/index.html" class="año-card">2° AÑO</a>
-        <a href="../3ro/index.html" class="año-card">3° AÑO</a>
-        <a href="../4to/index.html" class="año-card">4° AÑO</a>
-        <a href="../5to/index.html" class="año-card">5° AÑO</a>
+
+    <main class="main-content">
+      <div class="detalle-container">
+        <div class="info-libro">
+          <h1 class="Titulo" id="Titulo">Resumen Historia</h1>
+          <hr>
+          <h2 class="Materia" id="Materia">Historia</h2>
+          <hr>
+          <h2 class="Especialidad" id="Especialidad">Especialidad: No</h2>
+          <hr>
+          <h2 class="Año" id="Año">3° Año</h2>
+          <hr>
+          <h2 class="Profesor" id="Profesor">Tomas Puentes</h2>
+          <hr>
+          <h2 class="AñoPosta" id="AñoPosta">2023</h2>
+           <hr>
+       <h2 class="Descripcion" id="Descripcion">Es del tercer bimestre</h2>
+        </div>
+
+        <div class="imagen-libro">
+          <img id="Imagen" src="../../Imagenes/Toldot israel 3.png" alt="Imagen del libro Toldot Israel 3">
+        </div>
       </div>
     </main>
+
     <footer class="footer">
       <img class="logo" src="../../Imagenes/LogoClaro.png" alt="Logo EduKiosk" />
       <div class="footer-left">
@@ -56,6 +64,5 @@
     </footer>
 
   </div>
-  <script src="main.js"></script>
 </body>
 </html>
