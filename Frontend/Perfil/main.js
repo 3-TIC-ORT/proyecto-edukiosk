@@ -1,19 +1,10 @@
-
-import { mensajePopUp } from "../Funciones/popUp.js";
-import { caracteresProhibidos } from "../Funciones/checkeoSesion.js";nd
-connect2Server();er
-
-function fileToBase64(file) {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onload = () => {
-      const base64 = reader.result.split(",")[1]; 
-      resolve(base64);
-    };
-    reader.onerror = reject;
-    reader.readAsDataURL(file);
-  });
-}
+import { mensajePopUp, colores } from "../Funciones/popUp.js";
+import { caracteresProhibidos } from "../Funciones/checkeoSesion.js";
+import { fileToBase64 } from "../Funciones/buffer.js";
+import { cajaProducto } from "../Funciones/crearCajaPublicacion.js";
+import { validarNumeroTelefono } from "../Funciones/validarNumTel.js"
+// Conexión con backend
+connect2Server();
 
 let modoEdicion = false;
 let passwordVisible = false;
@@ -35,15 +26,82 @@ const quitarImagenBtn = document.getElementById("quitarImagenBtn");
 const imagenPerfil = document.getElementById("imagenPerfil");
 const logout = document.getElementById("btnCerrarSesion");
 
+const containerProductos = document.getElementById("containerProductos");
+
 const real = localStorage.getItem("usuarioSesion");
 const perfilReal = JSON.parse(real);
 let userEditado;
+let publicaciones = [];
+
+postEvent("obtenerPublicacionesPerfil", perfilReal, (res) => {
+  if (res && res.success) {
+    cajaProducto(res.publicacionesPropias);
+    publicaciones = res.publicacionesPropias;
+    botonesBorrar();
+  } else {
+    mensajePopUp("Error al importar productos", colores.error);
+  }
+});
+function botonesBorrar() {
+  const cajasDePublicacion = document.querySelectorAll(".claseCajaPublicacion");
+  cajasDePublicacion.forEach((caja, i) => {
+    const pub = publicaciones[i];
+    const but = document.createElement("button");
+
+    caja.style.position = "relative";
+    // 2. Ensure the parent acts like a predictable container (Block element)
+    //    This is crucial if the external CSS sets 'display: contents' or 'flex'.
+    caja.style.display = "block";
+    // --- FIX END ---
+
+    but.textContent = "X";
+    but.style.backgroundColor = colores.error;
+    but.style.color = "#FFFFFF";
+    but.classList.add("botonBorrar");
+    caja.appendChild(but);
+
+    // Styling the button itself (retaining absolute position logic)
+    but.style.position = "absolute";
+    but.style.top = "5px";
+    but.style.left = "5px";
+    but.style.zIndex = "10";
+    but.style.width = "50px";
+    but.style.height = "50px";
+    but.style.padding = "0";
+    but.style.borderRadius = "10px";
+
+    // FIX 2: Set the positioning context for the button's parent
+    // NOTE: This style should ideally be in CSS, but included here for completeness
+    // If you prefer to keep your main CSS clean, you can put this style in the CSS file:
+    // .claseCajaPublicacion { position: relative; }
+    caja.style.position = "relative";
+    caja.appendChild(but);
+
+    but.addEventListener("click", () => {
+      postEvent("borrarPublicacion", pub.fecha, (res) => {
+        if (res && res.success) {
+          publicaciones[i] = "";
+          mensajePopUp("¡Publicación borrada con exito!", colores.exito);
+          caja.remove();
+        } else {
+          mensajePopUp(
+            "Ocurrio un error al borrar la publicación.",
+            colores.error
+          );
+        }
+      });
+    });
+  });
+}
+
+// ==== Rellenar datos iniciales ====
 
 nombreTexto.textContent = perfilReal.username;
 descripcionTexto.textContent = perfilReal.description;
 imagenPerfil.src = perfilReal.pfp;
 passwordTexto.textContent = "******";
 
+// ==== Mostrar / ocultar contraseña ====
 togglePasswordBtn.addEventListener("click", () => {
   if (passwordVisible) {
     passwordTexto.textContent = "******";
@@ -54,10 +112,12 @@ togglePasswordBtn.addEventListener("click", () => {
   }
 });
 
+// ==== Alternar edición ====
 toggleEditarBtn.addEventListener("click", () => {
   modoEdicion = !modoEdicion;
 
   if (modoEdicion) {
+    // rellenar inputs con los datos visibles
     nombreInput.value = nombreTexto.textContent;
     passwordInput.value = perfilReal.contraseña;
     descripcionInput.value = descripcionTexto.textContent;
@@ -85,15 +145,13 @@ toggleEditarBtn.addEventListener("click", () => {
   }
 });
 
+// ==== Guardar cambios ====
 guardarBtn.addEventListener("click", () => {
   const tieneCaracterProhibido = caracteresProhibidos.some((char) =>
     nombreInput.value.includes(char)
   );
   const nuevoUsername = nombreInput.value.trim();
 
-  nombreTexto.textContent = userEditado.nombre;
-  passwordTexto.textContent = "******";
-  descripcionTexto.textContent = userEditado.descripcion;
   if (nuevoUsername.length >= 15 || tieneCaracterProhibido) {
     mensajePopUp(
       "El nombre de usuario no puede tener más de 15 caracteres ni caracteres especiales.",
@@ -148,6 +206,8 @@ guardarBtn.addEventListener("click", () => {
   });
 });
 
+// Subir nueva imagen
+
 editarImagenInput.addEventListener("change", (e) => {
   const file = e.target.files;
   fileToBase64(file[0]).then((base64) => {
@@ -172,6 +232,7 @@ editarImagenInput.addEventListener("change", (e) => {
   });
 });
 
+// Quitar imagen
 
 quitarImagenBtn.addEventListener("click", () => {
   const sessionJSON = localStorage.getItem("usuarioSesion");
@@ -200,6 +261,8 @@ quitarImagenBtn.addEventListener("click", () => {
     }
   );
 });
+
+// Cerrar sesión
 
 logout.addEventListener("click", (e) => {
   localStorage.clear("usuarioSesion");

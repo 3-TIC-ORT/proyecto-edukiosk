@@ -1,3 +1,8 @@
+export const colores = {
+  error: "#e92828ff",
+  exito: "#28e97dff"
+}
+
 export function mensajePopUp(texto, color) {
   const popUp = document.createElement("dialog");
   popUp.style.position = "fixed";

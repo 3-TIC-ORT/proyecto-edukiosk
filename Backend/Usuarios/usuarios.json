@@ -14,5 +14,13 @@
     "pfp": "/Imagenes/fotosPerfil/ba0783_est_ort_edu_ar.png",
     "rating": 0,
     "descripcion": "rocco altie"
+  },
+  {
+    "user": "Soltera",
+    "password": "123456789",
+    "email": "ort@ort.edu.ar",
+    "pfp": "/Imagenes/fotosPerfil/defaultPerfil.jpg",
+    "rating": 0,
+    "descripcion": "plo plo plo"
   }
 ]

@@ -164,3 +164,81 @@ body {
     line-height: 1.5;
     margin-top: 6px; 
   }
+
+    /* PRODUCT GALLERY WRAPPER */
+#containerProductos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 30px 0;
+  justify-content: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+/* Actualiza la clase .claseCajaPublicacion para eliminar el display: contents */
+.claseCajaPublicacion {
+  display: flex; /* Cambiado para mantener el flujo de layout */
+  flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
+  align-items: center; /* Centra los elementos horizontalmente */
+  justify-content: center; /* Centra los elementos verticalmente */
+  background-color: #dedede; /* Fondo de la tarjeta */
+  padding: 15px; /* Espaciado interno */
+  border-radius: 7%; /* Bordes redondeados */
+  border: 2px solid black; /* Borde de la tarjeta */
+  box-sizing: border-box; /* Asegura que el padding y el border se incluyan en el tamaño total */
+  width: 400px; /* Ancho fijo de la tarjeta */
+  height: 450px; /* Alto fijo de la tarjeta */
+  margin: 10px; /* Espaciado entre tarjetas */
+}
+
+.claseCajaPublicacion:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra al pasar el ratón */
+  transform: translateY(-5px); /* Levanta la tarjeta ligeramente */
+  transition: all 0.3s ease; /* Suaviza la transición */
+  cursor: pointer;
+}
+
+/* Elimina el padding y el margin del contenedor de producto */
+.producto1-contenedor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px; /* Espaciado entre elementos dentro del contenedor */
+  width: 100%; /* Asegura que ocupe todo el ancho de la tarjeta */
+}
+.foto-de-producto1 {
+  display: block;          /* elimina gaps inline */
+  width: 320px;            /* ancho deseado */
+  height: 240px;           /* alto deseado */
+  object-fit: fill;        /* fuerza estirado/distorsión si no respeta ratio */
+  flex: 0 0 auto;          /* no permitir que el flex container cambie su tamaño */
+  box-sizing: border-box;
+  border: 3px solid black;
+  margin: 10px 0;
+}
+
+
+.Principal-producto1, .Precio-producto1 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  text-align: center;
+  width: 100%;
+  color: black;
+  
+  /* FIX: Elimina el margen por defecto del h2 */
+  margin: 0; 
+}
+
+.Principal-producto1 {
+  font-size: 40px; 
+  
+  /* Ahora aplica solo el margen superior deseado */
+  margin-top: 5px; 
+  margin-bottom: 5px;
+}
+
+.Precio-producto1 {
+  font-size: 20px; 
+  margin-top: 15px;
+  margin-bottom: 5px;
+}

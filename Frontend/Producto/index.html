@@ -1,57 +1,72 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <script type="module">
-      import { checkeoSesion } from "../Funciones/checkeoSesion.js";
-      checkeoSesion();
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documento</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Publicación | Edukiosk</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/JZylber/SoqueTIC-Client@v1.4.2/soquetic-client.js"></script>
+    <script type="module" src="main.js"></script>
 </head>
+
 <body>
-    <!-- HEADER -->
-    <header>
-        <div class="header">
-            <img src="../../Imagenes/edukiosk.png" alt="LOGO">
-            <ul>
-                <li>
-                    <a href="../Home/index.html">
-                        <img src="../../Imagenes/home.png" alt="HOME">
-                    </a>
-                </li>
-                <li>
-                    <a href="../Perfil/index.html">
-                        <img src="../../Imagenes/perfil.png" alt="PERFIL">
-                    </a>
-                </li>
-                <li>
-                    <a href="../Publicar/index.html">
-                        <img src="../../Imagenes/crear.png" alt="CREAR">
-                    </a>
-                </li>
-                <li>
-                     <img src="../../Imagenes/notificaciones.png" alt="NOTIFICACIONES">
-                     <!-- PROGRAMAR DESPUES XQ FUNCIONA DIFERENTE A LOS DEMAS -->
-                </li>
-            </ul>
-        </div>
-        <div class="producto1-contenedor">
-            <h2 class="Principal-producto1">La casa de Bernarda Alba</h2>    
-            <img src="../../Imagenes/descarga.png" alt="FOTO DE PERFIL" class="foto-de-producto1"></img>
-            <h2 class="Precio-producto1">5000$</h2>
-            <div class="Puntuacion"><img src="../../Imagenes/Estrella-Azul.png" alt="estrella azul" width="24" height="24">
-                <h2 class="Estrella-Numero">4.3</h2>
-                  <h2 class="Estrella-Titulo">Libro</h2>
+    <div class="page-container">
+
+        <header class="header">
+            <div class="header1">
+                <img class="logo" src="../../Imagenes/LogoClaro.png" alt="Logo EduKiosk" />
+            </div>
+            <div class="header2">
+                <div class="header-icons">
+                    <a href="../Publicar/index.html"><img src="../../Imagenes/PUBLICAR.png" alt="PUBLICAR"></a>
+                    <a href="../Perfil/index.html"><img src="../../Imagenes/fotoPerfil.png" alt="PERFIL"></a>
+                    <img class="notificaciones" src="../../Imagenes/notificaciones.png" alt="NOTIFICACIONES">
+                    <a href="../Home/index.html"><img src="../../Imagenes/home.png" alt="HOME"></a>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="publicacion-detalle">
+                
+                <div class="media-container">
+                    <img id="imagenPublicacion" src="" alt="Imagen de la Publicación" class="imagen-publicacion" />
+                </div>
+                
+                <div class="info-container">
+                    <h1 class="Titulo" id="titulo"></h1>
+                    <p class="Descripcion" id="descripcion"></p>
+
+                    <div class="detalles-grid">
+                        <div class="detalle-item"><strong></strong> <span id="especialidad"></span></div>
+                        <div class="detalle-item"><strong></strong> <span id="materiaOGrado"></span></div>
+                        <div class="detalle-item"><strong></strong> <span id="gradoOProfesor"></span></div>
+                        <div class="detalle-item"><strong></strong> <span id="añoOPrecio"></span></div>
+                    </div>
+                    
+                    <p class="contacto-info" id="infoContacto"></p>
+
+                    <button id="btnSolicitar" class="btn-primario">Solicitar Recurso</button>
+                </div>
             </div>
 
+            <section class="comentarios-seccion">
+                <h2>Comentarios</h2>
+                
+                <div id="campoComentarios" class="comentarios-lista">
+                    </div>
 
+                <div class="nuevo-comentario">
+                    <textarea id="comentariosInput" placeholder="Escribe un comentario..." rows="3"></textarea>
+                    <button id="btnComentario" class="btn-secundario">Enviar Comentario</button>
+                </div>
+            </section>
+        </main>
 
-</div>
-        </div>
+        <footer class="footer">
+            </footer>
 
-    </header> 
-    <script src="main.js"></script>
+    </div>
 </body>
 </html>
