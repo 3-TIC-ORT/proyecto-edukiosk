@@ -72,27 +72,23 @@ export function registrarUsuario(data) {
 export function loginUsuario(data) {
   try {
     let usuarioSesion = null;
+    let usuarioIndex = null;
 
     if (fs.existsSync(directorioJSON)) {
       const jeison = fs.readFileSync(directorioJSON, "utf-8");
-      const usuarios = JSON.parse(jeison);
+      var usuarios = JSON.parse(jeison);
       usuarioSesion = usuarios.find(
         (usuario) =>
           data.email === usuario.email && data.password === usuario.password
       );
+      usuarioIndex = usuarios.findIndex(
+        (user) => data.email === user.email
+      )
     }
-
     if (usuarioSesion) {
       return {
         success: true,
-        user: {
-          email: usuarioSesion.email,
-          username: usuarioSesion.user,
-          contraseña: usuarioSesion.password,
-          pfp: usuarioSesion.pfp || "/Imagenes/fotosPerfil/defaultPerfil.jpg",
-          rating: usuarioSesion.rating || 0,
-          description: usuarioSesion.description || "",
-        },
+        usuarioSesion: usuarios[usuarioIndex]
       };
     } else {
       return {

@@ -226,7 +226,7 @@ export function solicitarRecurso(data) {
     fs.writeFileSync(directorioJSON, JSON.stringify(publicaciones, null, 2));
     fs.writeFileSync(dirUsuarios, JSON.stringify(usuarios, null, 2));
 
-    return { success: true, info: "Solicitud agregada con exito"};
+    return { success: true, info: "Solicitud agregada con exito", publicacionATrabajar: JSON.stringify(publicacionATrabajar), usuarioATrabajar: JSON.stringify(usuarioATrabajar) };
   } catch (error) {
     return {
       success: false,
