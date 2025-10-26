@@ -169,3 +169,24 @@ body {
   font-size: 15px;
   line-height: 1.4;
 }
+#nuevoComentario {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: 6px;
+  background-color: #d9d9d9; 
+  outline: none; 
+  margin-top: 8px;
+  transition: background-color 0.2s ease;
+}
+
+#nuevoComentario::placeholder {
+  color: #555;
+  font-weight: 600;
+}
+
+#nuevoComentario:focus {
+  background-color: #cfcfcf; 
+}
