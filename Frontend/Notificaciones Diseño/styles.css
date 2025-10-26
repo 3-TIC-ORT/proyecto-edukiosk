@@ -1,74 +1,27 @@
 :root {
   --colorFondo: #f3f3f3;
-  --colorPrimario: #172d42;
-    --colorSecundario: #224668;
+  --colorPrimario: #224668;
 }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
-  height: 100%;
-  overflow-x: hidden; 
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 body {
   width: 100%;
   min-height: 100vh;
   font-family: "Inter", sans-serif;
-  background-color: var(--colorFondo);
+  background-color: #f3f3f3;
   color: #1f2b3a;
-  display: flex;
-  flex-direction: column;
-}
-
-.page-container {
-  flex: 1; 
-  display: flex;
-  flex-direction: column;
-}
-
-.main-section {
-  text-align: center;
-  flex: 1;
-  padding-top: 100px; 
-  padding-bottom: 60px;
-}
-
-.titulo {
-  font-size: 64px;
-  color: #000;
-  margin-bottom: 80px;
-}
-
-.años-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 60px;         
-  padding: 20px;
-}
-
-.año-card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 230px;        
-  height: 170px;       
-  background-color: #fff;
-  border: 10px solid var(--colorSecundario);
-  border-radius: 20px;
-  color: #000;
-  font-size: 38px;     
-  font-weight: 900;
-  text-decoration: none;
-}
-
-.año-card:hover {
-  background-color: var(--colorSecundario);
-  color: #fff;
+  height: 100%;
 }
 
 .header {
@@ -79,7 +32,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0 80px;
-  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 .header1 {
@@ -106,23 +59,72 @@ body {
   cursor: pointer;
   transition: transform 0.2s ease;
 }
-
-.icon {
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-  transition: transform 0.2s ease, filter 0.2s ease;
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
+.main-content {
+  flex: 1;
+}
+.actividad-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+  padding: 100px 0;
+}
+
+.actividad-card {
+  position: relative;
+  width: 940px;
+  min-height: 130px;
+  background-color: rgba(34, 70, 104, 0.25); 
+  border-radius: 10px;
+  padding: 20px 50px;
+  font-size: 26px;
+  color: #000;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.actividad-card p strong {
+  font-weight: 900;
+}
+
+.actividad-card p span {
+  font-weight: 600;
+}
+
+.accion {
+  position: absolute;
+  bottom: 15px;
+  right: 80px;
+  color: red;
+  font-weight: 900;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.icono-eliminar {
+  position: absolute;
+  bottom: 10px;
+  right: 40px;
+  width: 25px;
+  height: 25px;
+}
 .footer {
-    width: 100%;
-    height: 112px;
-    background-color: #224668;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 80px;
+  width: 100%;
+  height: 112px;
+  background-color: var(--colorPrimario);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 80px;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.15);
+  margin-top: 80px;
 }
 
 .footer-left {

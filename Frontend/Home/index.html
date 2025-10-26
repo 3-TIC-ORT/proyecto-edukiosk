@@ -29,27 +29,22 @@
     />
   </head>
 
-  <body>
-    <!-- HEADER -->
+<body>
+  <div class="page-container">
     <header class="header">
-      <img class="logo" src="../../Imagenes/LogoClaro.png" alt="LOGO" />
-      <div class="iconos-nav-bar">
-        <a href="../Publicar/index.html"
-          ><img src="../../Imagenes/PUBLICAR.png" alt="PUBLICAR"
-        /></a>
-        <a href="../Perfil/index.html"
-          ><img src="../../Imagenes/fotoPerfil.png" alt="PERFIL"
-        /></a>
-        <a href="#"
-          ><img src="../../Imagenes/notificaciones.png" alt="NOTIFICACIONES"
-        /></a>
-        <a href="../Home/index.html"
-          ><img src="../../Imagenes/home.png" alt="HOME"
-        /></a>
+      <div class="header1">
+        <img class="logo" src="../../Imagenes/LogoClaro.png" alt="Logo EduKiosk" />
+      </div>
+
+      <div class="header2">
+        <div class="header-icons">
+          <a href="../Publicar/index.html"><img src="../../Imagenes/PUBLICAR.png" alt="PUBLICAR"></a>
+          <a href="../Perfil/index.html"><img src="../../Imagenes/fotoPerfil.png" alt="PERFIL"></a>
+           <a href="../Notificaciones/index.html"><img src="../../Imagenes/notificaciones.png" alt="NOTIFICACIONES"></a>
+          <a href="../Home/index.html"><img src="../../Imagenes/home.png" alt="HOME"></a>
+        </div>
       </div>
     </header>
-
-    <!-- SECCIÓN AÑOS -->
     <main class="main-section">
       <h1 class="titulo">ELEGIR AÑO</h1>
       <div class="años-container">
@@ -60,28 +55,22 @@
         <a href="../5to/index.html" class="año-card">5° AÑO</a>
       </div>
     </main>
-
     <footer class="footer">
-      <div class="footer-logo">
-        <img src="../../Imagenes/LogoClaro.png" alt="Logo Edukiosk" />
+      <img class="logo" src="../../Imagenes/LogoClaro.png" alt="Logo EduKiosk" />
+      <div class="footer-left">
+        <div class="footer-titulo">CONTACTO</div>
+        <div class="footer-email">edukiosk@gmail.com</div>
       </div>
-
-      <div class="footer-contacto">
-        <h2>CONTACTO</h2>
-        <p>
-          <a href="mailto:facundo.nahon@gmail.com">facundo.nahon@gmail.com</a>
-        </p>
-      </div>
-
-      <div class="footer-info">
-        <h2>SOBRE NOSOTROS</h2>
-        <p>
+      <div class="footer-right">
+        <div class="footer-titulo">SOBRE NOSOTROS</div>
+        <p class="footer-texto">
           Somos un grupo de estudiantes que desarrollamos esta plataforma para
-          facilitar el acceso a resúmenes, libros y apuntes.
+          facilitar el acceso a resúmenes y apuntes.
         </p>
       </div>
     </footer>
 
-    <script src="main.js"></script>
-  </body>
+  </div>
+  <script src="main.js" type="module"></script>
+</body>
 </html>

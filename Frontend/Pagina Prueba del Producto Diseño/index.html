@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Document</title>
-
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -26,13 +25,35 @@
     </header>
 
     <main class="main-content">
-      <h1 class="Titulo" id="Titulo">Toldot Israel 3</h1>
-      <h2 class="Descripcion" id="Descripcion">El libro esta en perfecto estado</h2>
-      <h2 class="Especialidad" id="Especialidad">Especialida: No</h2>
-      <h2 class="Materia" id="Materia">Historia judia</h2>
-      <h2 class="Año" id="Año">3° Año </h2>
-      <h2 class="Precio" id="Precio">$12000</h2>
-      <h2 class="Contacto" id="Contacto">Facundito Nahon 100% respect</h2>
+      <div class="detalle-container">
+        <div class="info-libro">
+          <h1 class="Titulo" id="Titulo">Resumen Historia</h1>
+          <hr>
+          <h2 class="Materia" id="Materia">Historia</h2>
+          <hr>
+          <h2 class="Especialidad" id="Especialidad">Especialidad: No</h2>
+          <hr>
+          <h2 class="Año" id="Año">3° Año</h2>
+          <hr>
+          <h2 class="Profesor" id="Profesor">Tomas Puentes</h2>
+          <hr>
+          <h2 class="AñoPosta" id="AñoPosta">2023</h2>
+           <hr>
+       <h2 class="Descripcion" id="Descripcion">Es del tercer bimestre</h2>
+       <hr>
+                       <h2 class="Subtitulo">Añadir comentario</h2>
+      <input type="text" id="nuevoComentario" placeholder="Escribe tu comentario...">
+      <button id="btnComentar">Comentar</button>
+
+      <h2 class="Subtitulo"></h2>
+      <div id="comentariosLista" class="comentarios-lista"></div>
+
+        </div>
+
+        <div class="imagen-libro">
+          <img id="Imagen" src="../../Imagenes/Resumen-Historia.png" alt="Imagen del libro Toldot Israel 3">
+        </div>
+      </div>
     </main>
 
     <footer class="footer">
