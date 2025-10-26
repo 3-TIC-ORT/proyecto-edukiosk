@@ -6,7 +6,7 @@ import { mensajePopUp, colores } from "../Funciones/popUp.js";
 import { materiasPorGradoYEspecialidad } from "../Funciones/filtrado.js";
 
 const publicacionActual = cargarPublicacionActualJSON();
-const usuarioSesion = localStorage.getItem('usuarioSesion')
+const usuarioSesion = JSON.parse(localStorage.getItem('usuarioSesion'));
 
 connect2Server(3000);
 
@@ -52,7 +52,8 @@ imagenPublicacion.src = publicacionActual.imagen;
 
 btnSolicitar.addEventListener("click", () => {
     postEvent('solicitarRecurso', {
-        
+        solicitante: usuarioSesion,
+        fecha: publicacionActual.fecha
     }, (res) => {
         if (res && res.success) {
             mensajePopUp('Producto solicitado con exito', colores.exito);

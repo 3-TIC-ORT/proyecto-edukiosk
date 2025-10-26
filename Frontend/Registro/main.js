@@ -76,10 +76,10 @@ form.addEventListener("submit", (e) => {
       password: contraseñaUsuario,
       email: mailUsuario,
       pfp: "/Imagenes/fotosPerfil/defaultPerfil.jpg",
-      rating: 0,
       descripcion: "",
       tel: numTel,
       notificaciones: [],
+      solicitudes: []
     },
     (data) => {
       if (!data.success) {

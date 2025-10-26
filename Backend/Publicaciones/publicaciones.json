@@ -1,23 +1,24 @@
 [
   {
-    "titulo": "22222",
-    "descripcion": "3333",
+    "titulo": "1",
+    "descripcion": "1",
     "recurso": "Libro",
     "grado": "5°",
-    "especialidad": "Medios",
-    "profesor": "yeah",
-    "añoEscolar": "222",
-    "materia": "Taller Anual de Producción Gráfica",
-    "precio": 432,
-    "fecha": 1761426448210,
-    "imagen": "/Imagenes/fotosPublicacion/ort_ort_edu_ar-22222-121061.png",
-    "dueño": "Soltera",
-    "mail": "ort@ort.edu.ar",
+    "especialidad": "TIC",
+    "profesor": "1",
+    "añoEscolar": "1",
+    "materia": "Lengua y Literatura",
+    "precio": 1,
+    "fecha": 1761517688577,
+    "imagen": "/Imagenes/fotosPublicacion/49764315_est_ort_edu_ar-1-504026.png",
+    "dueño": "Santiago",
+    "mail": "49764315@est.ort.edu.ar",
     "contacto": {
-      "mail": "ort@ort.edu.ar",
+      "mail": "49764315@est.ort.edu.ar",
       "tel": "N/A"
     },
     "comentarios": [],
-    "solicitudes": []
+    "solicitudes": [
+    ]
   }
 ]

@@ -103,7 +103,6 @@ document.addEventListener("DOMContentLoaded", () => {
             selMateria,
             selRecurso,
             selEspecialidad,
-            null,
             cajaProducto,
             containerProductos
         );

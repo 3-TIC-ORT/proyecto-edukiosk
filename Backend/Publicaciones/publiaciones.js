@@ -149,15 +149,14 @@ export function borrarPublicacion(data) {
         } catch (err) {
           return {
             success: false,
-            info: err
-          }
+            info: err,
+          };
         }
-      } 
-      else {
-        return { 
+      } else {
+        return {
           success: false,
-          info: "Error al encontrar imagen"
-        }
+          info: "Error al encontrar imagen",
+        };
       }
       publicaciones.splice(indexToDelete, 1);
       fs.writeFileSync(directorioJSON, JSON.stringify(publicaciones, null, 2));
@@ -180,5 +179,63 @@ export function borrarPublicacion(data) {
 }
 
 export function solicitarRecurso(data) {
-  
+  const dirUsuarios = path.resolve(__dirname, "../Usuarios/usuarios.json");
+  const { fecha, solicitante } = data;
+  let publicaciones = [];
+  let usuarios = [];
+  try {
+    if (!fs.existsSync(directorioJSON)) {
+      fs.writeFileSync(directorioJSON, "[]");
+    }
+    if (!fs.existsSync(dirUsuarios)) {
+      fs.writeFileSync(dirUsuarios, "[]");
+    }
+    const jeisonPublicaciones = fs.readFileSync(directorioJSON, "utf-8");
+    const jeisonUsuarios = fs.readFileSync(dirUsuarios, "utf-8");
+
+    if (jeisonPublicaciones !== "" && jeisonUsuarios !== "") {
+      publicaciones = JSON.parse(jeisonPublicaciones);
+      usuarios = JSON.parse(jeisonUsuarios);
+    }
+    const indicePublicacion = publicaciones.findIndex(
+      (publicacion) => fecha === publicacion.fecha
+    );
+
+    const indiceUsuario = usuarios.findIndex(
+      (usuario) => solicitante.email === usuario.email
+    );
+
+    if (indicePublicacion == -1 || indiceUsuario == -1) {
+      return {
+        success: false,
+        info: "No se encontro la publicacion",
+        indicePublicacion,
+        indiceUsuario,
+        solicitante,
+      };
+    }
+
+    const publicacionATrabajar = publicaciones[indicePublicacion];
+    const usuarioATrabajar = usuarios[indiceUsuario];
+
+    publicacionATrabajar.solicitudes.push(solicitante.username);
+    usuarioATrabajar.solicitudes.push(publicacionATrabajar.fecha);
+    usuarioATrabajar.notificaciones.push(
+      `${solicitante.username} ha solicitado tu ${publicacionATrabajar.recurso}, "${publicacionATrabajar.titulo}"`
+    );
+    fs.writeFileSync(directorioJSON, JSON.stringify(publicaciones, null, 2));
+    fs.writeFileSync(dirUsuarios, JSON.stringify(usuarios, null, 2));
+
+    return { success: true, info: "Solicitud agregada con exito"};
+  } catch (error) {
+    return {
+      success: false,
+      info: "Ocurrió un error (runtime crash)",
+      errorDetail: error.message || "Not Found",
+      solicitante: solicitante || "Not Found",
+      fecha: fecha || "Not found", 
+      indicePublicacion: indicePublicacion || "Not Found",
+      indiceUsuario: indiceUsuario || "Not Found",
+    };
+  }
 }
