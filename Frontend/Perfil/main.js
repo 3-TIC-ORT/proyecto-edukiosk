@@ -77,7 +77,8 @@ function botonesBorrar() {
     caja.style.position = "relative";
     caja.appendChild(but);
 
-    but.addEventListener("click", () => {
+    but.addEventListener("click", (e) => {
+      e.stopPropagation();
       postEvent("borrarPublicacion", pub.fecha, (res) => {
         if (res && res.success) {
           publicaciones[i] = "";

@@ -58,7 +58,7 @@ body {
   font-size: 18px;
   padding: 0 10px;
 }
-#Usuario {
+#Usuario, #tel {
   background-color: #d9d9d9;
   border: 1px solid var(--colorTexto);
   border-radius: 6px;

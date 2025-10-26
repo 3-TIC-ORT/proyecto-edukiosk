@@ -1,59 +1,87 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <script type="module">
-    import { checkeoSesion } from "../Funciones/checkeoSesion.js";
-    checkeoSesion();
-  </script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Edukiosk | Home</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
-</head>
+  <head>
+    <script type="module">
+      import { checkeoSesion } from "../Funciones/checkeoSesion.js";
+      checkeoSesion();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edukiosk | Home</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/Imagenes/LogoClaro.ico"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/Imagenes/LogoOscuro.ico"
+      media="(prefers-color-scheme: light)"
+    />
+  </head>
 
-<body>
-  <!-- HEADER -->
-  <header class="header">
-    <img class="logo" src="../../Imagenes/LogoClaro.png" alt="LOGO">
-    <div class="iconos-nav-bar">
-      <a href="../Publicar/index.html"><img src="../../Imagenes/PUBLICAR.png" alt="PUBLICAR"></a>
-      <a href="../Perfil/index.html"><img src="../../Imagenes/fotoPerfil.png" alt="PERFIL"></a>
-      <a href="#"><img src="../../Imagenes/notificaciones.png" alt="NOTIFICACIONES"></a>
-      <a href="../Home/index.html"><img src="../../Imagenes/home.png" alt="HOME"></a>
-    </div>
-  </header>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <img class="logo" src="../../Imagenes/LogoClaro.png" alt="LOGO" />
+      <div class="iconos-nav-bar">
+        <a href="../Publicar/index.html"
+          ><img src="../../Imagenes/PUBLICAR.png" alt="PUBLICAR"
+        /></a>
+        <a href="../Perfil/index.html"
+          ><img src="../../Imagenes/fotoPerfil.png" alt="PERFIL"
+        /></a>
+        <a href="#"
+          ><img src="../../Imagenes/notificaciones.png" alt="NOTIFICACIONES"
+        /></a>
+        <a href="../Home/index.html"
+          ><img src="../../Imagenes/home.png" alt="HOME"
+        /></a>
+      </div>
+    </header>
 
-  <!-- SECCIÓN AÑOS -->
-  <main class="main-section">
-    <h1 class="titulo">ELEGIR AÑO</h1>
-    <div class="años-container">
-      <a href="../1ro/index.html" class="año-card">1° AÑO</a>
-      <a href="../2do/index.html" class="año-card">2° AÑO</a>
-      <a href="../3ro/index.html" class="año-card">3° AÑO</a>
-      <a href="../4to/index.html" class="año-card">4° AÑO</a>
-      <a href="../5to/index.html" class="año-card">5° AÑO</a>
-    </div>
-  </main>
+    <!-- SECCIÓN AÑOS -->
+    <main class="main-section">
+      <h1 class="titulo">ELEGIR AÑO</h1>
+      <div class="años-container">
+        <a href="../1ro/index.html" class="año-card">1° AÑO</a>
+        <a href="../2do/index.html" class="año-card">2° AÑO</a>
+        <a href="../3ro/index.html" class="año-card">3° AÑO</a>
+        <a href="../4to/index.html" class="año-card">4° AÑO</a>
+        <a href="../5to/index.html" class="año-card">5° AÑO</a>
+      </div>
+    </main>
 
-  <footer class="footer">
-    <div class="footer-logo">
-      <img src="../../Imagenes/LogoClaro.png" alt="Logo Edukiosk">
-    </div>
+    <footer class="footer">
+      <div class="footer-logo">
+        <img src="../../Imagenes/LogoClaro.png" alt="Logo Edukiosk" />
+      </div>
 
-    <div class="footer-contacto">
-      <h2>CONTACTO</h2>
-      <p><a href="mailto:facundo.nahon@gmail.com">facundo.nahon@gmail.com</a></p>
-    </div>
+      <div class="footer-contacto">
+        <h2>CONTACTO</h2>
+        <p>
+          <a href="mailto:facundo.nahon@gmail.com">facundo.nahon@gmail.com</a>
+        </p>
+      </div>
 
-    <div class="footer-info">
-      <h2>SOBRE NOSOTROS</h2>
-      <p>Somos un grupo de estudiantes que desarrollamos esta plataforma para facilitar el acceso a resúmenes, libros y apuntes.</p>
-    </div>
-  </footer>
+      <div class="footer-info">
+        <h2>SOBRE NOSOTROS</h2>
+        <p>
+          Somos un grupo de estudiantes que desarrollamos esta plataforma para
+          facilitar el acceso a resúmenes, libros y apuntes.
+        </p>
+      </div>
+    </footer>
 
-  <script src="main.js"></script>
-</body>
+    <script src="main.js"></script>
+  </body>
 </html>

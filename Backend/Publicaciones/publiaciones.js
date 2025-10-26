@@ -178,3 +178,7 @@ export function borrarPublicacion(data) {
     };
   }
 }
+
+export function solicitarRecurso(data) {
+  
+}

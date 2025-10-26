@@ -11,8 +11,16 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" href="/Imagenes/LogoClaro.png" media="(prefers-color-scheme: dark)" />
-    <link rel="icon" href="/Imagenes/LogoOscuro.png" media="(prefers-color-scheme: light)" />
+    <link
+      rel="icon"
+      href="/Imagenes/LogoClaro.png"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link
+      rel="icon"
+      href="/Imagenes/LogoOscuro.png"
+      media="(prefers-color-scheme: light)"
+    />
   </head>
 
   <body>
@@ -30,6 +38,9 @@
         <label for="Correo">Correo</label>
         <input type="email" id="Correo" required />
 
+        <label for="tel">Número Telefonico</label>
+        <input type="tel" id="tel" required />
+
         <label for="Contraseña">Contraseña</label>
         <input type="password" id="Contraseña" required />
 
@@ -37,7 +48,11 @@
           <input type="checkbox" id="Terminos" />
           <label for="Terminos">
             Acepto los
-            <a href="../Terminos/index.html" target="_blank" rel="noopener noreferrer">
+            <a
+              href="../Terminos/index.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               términos y condiciones
             </a>
           </label>
@@ -47,7 +62,9 @@
       </form>
 
       <div class="separador"></div>
-      <p class="alternativo">O <a href="../Login/index.html">iniciar sesión</a></p>
+      <p class="alternativo">
+        O <a href="../Login/index.html">iniciar sesión</a>
+      </p>
     </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.js"></script>

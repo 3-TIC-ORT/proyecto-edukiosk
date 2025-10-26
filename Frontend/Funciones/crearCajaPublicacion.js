@@ -16,6 +16,12 @@ export function cajaProducto(publicaciones) {
     caja.classList.add("claseCajaPublicacion");
     container.appendChild(caja);
     caja.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isDeleteButton = e.target.closest(".botonBorrar");
+
+      if (isDeleteButton) {
+        return; // 🛑 Stop execution and prevent navigation
+      }
       const publicacionActual = localStorage.getItem("publicacionActual");
       if (publicacionActual) {
         localStorage.removeItem("publicacionActual");
