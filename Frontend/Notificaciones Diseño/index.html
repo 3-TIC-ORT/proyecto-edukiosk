@@ -3,18 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Notificaciones | Edukiosk</title>
+  <title>Document</title>
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="/Imagenes/LogoClaro.ico" />
-  <link
-    rel="icon"
-    href="/Imagenes/LogoOscuro.ico"
-    media="(prefers-color-scheme: light)"
-  />
 </head>
 
 <body>
   <div class="page-container">
+
     <header class="header">
       <div class="header1">
         <img class="logo" src="../../Imagenes/LogoClaro.png" alt="Logo EduKiosk" />
@@ -29,9 +24,36 @@
       </div>
     </header>
 
-    <main class="main-content">
-<section class="actividad-container"></section>
-    </main>
+<main class="main-content">
+  <section class="actividad-container">
+    <div class="actividad-card">
+      <p>
+        <strong>Matías</strong> ha comentado en
+        "<span>Resumen Historia Judía de 3° Año</span>": “Es útil, pero le falta explicar el mesianismo.”
+      </p>
+      <div class="accion eliminar-comentario">Eliminar comentario</div>
+      <img src="../../Imagenes/IconoBasura.png" alt="Eliminar" class="icono-eliminar">
+    </div>
+
+    <div class="actividad-card">
+      <p>
+        <strong>Has publicado</strong> en <strong>Resumen</strong>:
+        "<span>Resumen Historia Judía de 3° Año</span>"
+      </p>
+      <div class="accion eliminar-publicacion">Eliminar publicación</div>
+      <img src="../../Imagenes/IconoBasura.png" alt="Eliminar" class="icono-eliminar">
+    </div>
+
+    <div class="actividad-card">
+      <p>
+        <strong>Has publicado</strong> en <strong>Libro</strong>:
+        "<span>Toldot Israel de 3° Año</span>"
+      </p>
+      <div class="accion eliminar-publicacion">Eliminar publicación</div>
+      <img src="../../Imagenes/IconoBasura.png" alt="Eliminar" class="icono-eliminar">
+    </div>
+  </section>
+</main>
 
     <footer class="footer">
       <img class="logo" src="../../Imagenes/LogoClaro.png" alt="Logo EduKiosk" />
@@ -47,11 +69,7 @@
         </p>
       </div>
     </footer>
+
   </div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/JZylber/SoqueTIC-Client@v1.4.2/soquetic-client.js"></script>
-
-  <script src="main.js" type="module"></script>
 </body>
 </html>

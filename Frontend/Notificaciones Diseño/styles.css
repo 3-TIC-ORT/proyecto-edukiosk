@@ -9,42 +9,30 @@
   box-sizing: border-box;
 }
 
-body {
-  width: 100%;
-  min-height: 100vh;
-  font-family: "Inter", sans-serif;
-  background-color: var(--colorFondo);
-  color: #1f2b3a;
-}
-
 .page-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-/* ===== HEADER ===== */
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  background-color: #f3f3f3;
+  color: #1f2b3a;
+  height: 100%;
+}
+
 .header {
   width: 100%;
   height: 112px;
-  background-color: var(--colorPrimario);
+  background-color: #224668;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 80px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-}
-
-.logo {
-  width: 120px;
-  height: 90px;
-  object-fit: contain;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.logo:hover {
-  transform: scale(1.05);
 }
 
 .header1 {
@@ -64,11 +52,22 @@ body {
   gap: 55px;
 }
 
-/* ===== MAIN ===== */
+.logo {
+  width: 120px;
+  height: 90px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .main-content {
   flex: 1;
 }
-
 .actividad-container {
   display: flex;
   flex-direction: column;
@@ -81,14 +80,13 @@ body {
   position: relative;
   width: 940px;
   min-height: 130px;
-  background-color: rgba(34, 70, 104, 0.25);
+  background-color: rgba(34, 70, 104, 0.25); 
   border-radius: 10px;
   padding: 20px 50px;
   font-size: 26px;
   color: #000;
   line-height: 1.4;
   font-weight: 500;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .actividad-card p strong {
@@ -115,10 +113,7 @@ body {
   right: 40px;
   width: 25px;
   height: 25px;
-  cursor: pointer;
 }
-
-/* ===== FOOTER ===== */
 .footer {
   width: 100%;
   height: 112px;
@@ -132,26 +127,33 @@ body {
   margin-top: 80px;
 }
 
-.footer-left,
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  padding-left: 10px;
+}
+
 .footer-right {
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-.footer-right {
   text-align: right;
   max-width: 500px;
   padding-left: 50px;
 }
 
 .footer-titulo {
+  font-family: "Inter", sans-serif;
   font-weight: 900;
   font-size: 16px;
+  letter-spacing: 0.3px;
   margin-bottom: 8px;
 }
 
 .footer-email {
+  font-family: "Inter", sans-serif;
   font-weight: 700;
   font-size: 15px;
   line-height: 1.4;
@@ -159,6 +161,7 @@ body {
 }
 
 .footer-texto {
+  font-family: "Inter", sans-serif;
   font-weight: 600;
   font-size: 15px;
   line-height: 1.5;

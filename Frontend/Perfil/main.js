@@ -1,7 +1,7 @@
 
 import { mensajePopUp } from "../Funciones/popUp.js";
-import { caracteresProhibidos } from "../Funciones/checkeoSesion.js";nd
-connect2Server();er
+import { caracteresProhibidos } from "../Funciones/checkeoSesion.js";
+connect2Server();
 
 function fileToBase64(file) {
   return new Promise((resolve, reject) => {
