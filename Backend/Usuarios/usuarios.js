@@ -73,10 +73,11 @@ export function loginUsuario(data) {
   try {
     let usuarioSesion = null;
     let usuarioIndex = null;
+    let usuarios = []
 
     if (fs.existsSync(directorioJSON)) {
       const jeison = fs.readFileSync(directorioJSON, "utf-8");
-      var usuarios = JSON.parse(jeison);
+      usuarios = JSON.parse(jeison);
       usuarioSesion = usuarios.find(
         (usuario) =>
           data.email === usuario.email && data.password === usuario.password

@@ -239,3 +239,9 @@ export function solicitarRecurso(data) {
     };
   }
 }
+
+// Comentarios logica
+
+export function crearComentario(data) {
+  
+}

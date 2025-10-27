@@ -3,6 +3,7 @@
 import { cargarPublicacionActualJSON } from "../Funciones/cargarPublicacionActual.js";
 import { mensajePopUp, colores } from "../Funciones/popUp.js";
 import { materiasPorGradoYEspecialidad } from "../Funciones/filtrado.js";
+import { cargarComentarios } from "../Funciones/comentarios.js"
 
 const publicacionActual = cargarPublicacionActualJSON();
 const usuarioSesion = JSON.parse(localStorage.getItem("usuarioSesion"));
@@ -99,7 +100,15 @@ function revisarComentario(comentario) {
   }
 }
 botonC.addEventListener("click", () => {
-  if (revisarComentario == true) {
-    
+  const comentarioTexto = campoComentarios.value;
+  if (revisarComentario(comentarioTexto) == true) {
+    postEvent('agregarComentario', comentarioTexto, (data) => {
+      if (res && res.success) {
+        
+      }
+      else {
+        mensajePopUp('Ocurrio un error al publicar el comentario', colores.error)
+      }
+    })
   }
 });
