@@ -41,5 +41,25 @@
     "solicitudes": [
       "rocco"
     ]
+  },
+  {
+    "titulo": "67",
+    "descripcion": "67",
+    "recurso": "Libro",
+    "grado": "2°",
+    "especialidad": "",
+    "profesor": "Aura",
+    "añoEscolar": "6767",
+    "materia": "Historia",
+    "precio": 6767,
+    "fecha": 1761575398350,
+    "imagen": "/Imagenes/fotosPublicacion/ba_est_ort_edu_ar-67-649413.png",
+    "mail": "ba@est.ort.edu.ar",
+    "contacto": {
+      "mail": "ba@est.ort.edu.ar",
+      "tel": "1136701972"
+    },
+    "comentarios": [],
+    "solicitudes": []
   }
 ]

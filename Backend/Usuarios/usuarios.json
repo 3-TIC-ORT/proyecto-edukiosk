@@ -19,5 +19,15 @@
     "solicitudes": [
       1761568508749
     ]
+  },
+  {
+    "user": "Rocco2",
+    "password": "1234",
+    "email": "ba@est.ort.edu.ar",
+    "pfp": "/Imagenes/fotosPerfil/ba_est_ort_edu_ar.png",
+    "descripcion": "",
+    "tel": "1136701972",
+    "notificaciones": [],
+    "solicitudes": []
   }
 ]
