@@ -27,24 +27,7 @@ body {
  .main-content {
   flex: 1; /* empuja el footer hacia abajo */
 }
-:root {
-  --colorFondo: #f3f3f3;
-  --colorPrimario: #224668;
-}
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  width: 100%;
-  min-height: 100vh;
-  font-family: "Inter", sans-serif;
-  background-color: var(--colorFondo);
-  color: #1f2b3a;
-}
 
 .page-container {
   display: flex;
@@ -137,4 +120,3 @@ body {
   line-height: 1.5;
   margin-top: 6px;
 }
-  
