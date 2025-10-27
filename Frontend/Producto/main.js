@@ -90,8 +90,16 @@ btnSolicitar.addEventListener("click", () => {
 
 // Enviar comentario
 
+function revisarComentario(comentario) {
+  if (comentario == "" ) {
+    return false;
+  }
+  else {
+    return true;
+  }
+}
 botonC.addEventListener("click", () => {
-  if (campoComentarios.value !== "") {
+  if (revisarComentario == true) {
     
   }
 });
