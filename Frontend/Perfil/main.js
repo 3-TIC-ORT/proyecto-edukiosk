@@ -97,7 +97,7 @@ function botonesBorrar() {
 
 // ==== Rellenar datos iniciales ====
 
-nombreTexto.textContent = perfilReal.username;
+nombreTexto.textContent = perfilReal.user;
 descripcionTexto.textContent = perfilReal.description;
 imagenPerfil.src = perfilReal.pfp;
 passwordTexto.textContent = "******";

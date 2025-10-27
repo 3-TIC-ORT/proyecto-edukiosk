@@ -18,7 +18,28 @@
       "tel": "N/A"
     },
     "comentarios": [],
+    "solicitudes": []
+  },
+  {
+    "titulo": "auuuuuuu",
+    "descripcion": "auuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu",
+    "recurso": "Resumen",
+    "grado": "1°",
+    "especialidad": "",
+    "profesor": "estani",
+    "añoEscolar": "2001",
+    "materia": "Historia",
+    "precio": 0,
+    "fecha": 1761568508749,
+    "imagen": "/Imagenes/fotosPublicacion/perro_est_ort_edu_ar-auuuuuuu-905746.png",
+    "mail": "perro@est.ort.edu.ar",
+    "contacto": {
+      "mail": "perro@est.ort.edu.ar",
+      "tel": "1154597777"
+    },
+    "comentarios": [],
     "solicitudes": [
+      "rocco"
     ]
   }
 ]

@@ -86,3 +86,12 @@ btnSolicitar.addEventListener("click", () => {
     }
   );
 });
+
+
+// Enviar comentario
+
+botonC.addEventListener("click", () => {
+  if (campoComentarios.value !== "") {
+    
+  }
+});

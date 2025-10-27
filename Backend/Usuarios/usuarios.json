@@ -1,14 +1,23 @@
 [
   {
-    "user": "Santiago",
-    "password": "1",
+    "user": "auuu",
+    "password": "undefined",
     "email": "49764315@est.ort.edu.ar",
     "pfp": "/Imagenes/fotosPerfil/defaultPerfil.jpg",
+    "descripcion": "fds"
+  },
+  {
+    "user": "rocco",
+    "password": "1",
+    "email": "perro@est.ort.edu.ar",
+    "pfp": "/Imagenes/fotosPerfil/perro_est_ort_edu_ar.png",
     "descripcion": "",
-    "tel": "+541154581725",
+    "tel": "1154597777",
     "notificaciones": [
+      "rocco ha solicitado tu Resumen, \"auuuuuuu\""
     ],
     "solicitudes": [
+      1761568508749
     ]
   }
 ]

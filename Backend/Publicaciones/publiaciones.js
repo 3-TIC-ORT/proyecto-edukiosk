@@ -218,10 +218,10 @@ export function solicitarRecurso(data) {
     const publicacionATrabajar = publicaciones[indicePublicacion];
     const usuarioATrabajar = usuarios[indiceUsuario];
 
-    publicacionATrabajar.solicitudes.push(solicitante.username);
+    publicacionATrabajar.solicitudes.push(solicitante.user);
     usuarioATrabajar.solicitudes.push(publicacionATrabajar.fecha);
     usuarioATrabajar.notificaciones.push(
-      `${solicitante.username} ha solicitado tu ${publicacionATrabajar.recurso}, "${publicacionATrabajar.titulo}"`
+      `${solicitante.user} ha solicitado tu ${publicacionATrabajar.recurso}, "${publicacionATrabajar.titulo}"`
     );
     fs.writeFileSync(directorioJSON, JSON.stringify(publicaciones, null, 2));
     fs.writeFileSync(dirUsuarios, JSON.stringify(usuarios, null, 2));
