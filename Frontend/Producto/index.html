@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
+    <script type="module">
+      import { checkeoSesion } from "../Funciones/checkeoSesion.js";
+      checkeoSesion();
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Publicación | Edukiosk</title>
@@ -87,18 +91,19 @@
         <section class="comentarios-seccion">
           <h2>Comentarios</h2>
 
-          <div id="campoComentarios" class="comentarios-lista"></div>
-
           <div class="nuevo-comentario">
             <textarea
               id="comentariosInput"
               placeholder="Escribe un comentario..."
               rows="3"
             ></textarea>
+
             <button id="btnComentario" class="btn-secundario">
               Enviar Comentario
             </button>
+            <div id="campoComentarios" class="comentarios-lista"></div>
           </div>
+
         </section>
       </main>
 

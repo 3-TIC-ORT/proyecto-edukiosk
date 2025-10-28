@@ -1,11 +1,10 @@
 import { mensajePopUp } from "../Funciones/popUp.js";
 
-// Conexión al backend SoqueTIC
 connect2Server(3000);
 
 const actividadContainer = document.querySelector(".actividad-container");
 
-// ======================= FUNCIÓN PARA CREAR TARJETAS =======================
+//  FUNCIÓN PARA CREAR TARJETAS 
 function crearActividadCard(dato) {
   const card = document.createElement("div");
   card.classList.add("actividad-card");
@@ -20,7 +19,7 @@ function crearActividadCard(dato) {
   return card;
 }
 
-// ======================= CARGAR PUBLICACIONES DEL USUARIO =======================
+//CARGAR PUBLICACIONES DEL USUARIO
 window.addEventListener("DOMContentLoaded", () => {
   const usuario = JSON.parse(localStorage.getItem("usuarioSesion"));
 
