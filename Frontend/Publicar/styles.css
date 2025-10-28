@@ -3,14 +3,12 @@
   --colorPrimario: #224668;
 }
 
-/* ======== RESETEO GENERAL ======== */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* ======== ESTRUCTURA BASE ======== */
 body {
   width: 100%;
   min-height: 100vh;
@@ -30,7 +28,6 @@ body {
   padding-top: 112px;
 }
 
-/* ======== FORMULARIO PRINCIPAL ======== */
 .group {
   max-width: 1366px;
   margin: 48px auto 0 auto;
@@ -112,7 +109,6 @@ textarea.barra-mail {
   cursor: pointer;
 }
 
-/* ======== COLUMNA DE IMAGEN ======== */
 .media-col {
   width: 314px;
   display: flex;
@@ -158,7 +154,6 @@ textarea.barra-mail {
   object-fit: contain;
 }
 
-/* ================= HEADER (nuevo diseño) ================= */
 .header {
   width: 100%;
   height: 112px;
