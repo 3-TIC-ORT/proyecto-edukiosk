@@ -1,65 +1,31 @@
 [
   {
-    "titulo": "1",
-    "descripcion": "1",
-    "recurso": "Libro",
-    "grado": "5°",
-    "especialidad": "TIC",
-    "profesor": "1",
-    "añoEscolar": "1",
-    "materia": "Lengua y Literatura",
-    "precio": 1,
-    "fecha": 1761517688577,
-    "imagen": "/Imagenes/fotosPublicacion/49764315_est_ort_edu_ar-1-504026.png",
-    "dueño": "Santiago",
-    "mail": "49764315@est.ort.edu.ar",
-    "contacto": {
-      "mail": "49764315@est.ort.edu.ar",
-      "tel": "N/A"
-    },
-    "comentarios": [],
-    "solicitudes": []
-  },
-  {
-    "titulo": "auuuuuuu",
-    "descripcion": "auuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu",
+    "titulo": "lobo",
+    "descripcion": "1111111",
     "recurso": "Resumen",
-    "grado": "1°",
+    "grado": "2°",
     "especialidad": "",
-    "profesor": "estani",
-    "añoEscolar": "2001",
-    "materia": "Historia",
+    "profesor": "hgfd",
+    "añoEscolar": "2222",
+    "materia": "Lengua y Literatura",
     "precio": 0,
-    "fecha": 1761568508749,
-    "imagen": "/Imagenes/fotosPublicacion/perro_est_ort_edu_ar-auuuuuuu-905746.png",
+    "fecha": 1761652086265,
+    "imagen": "/Imagenes/fotosPublicacion/perro_est_ort_edu_ar-lobo-18694.png",
     "mail": "perro@est.ort.edu.ar",
     "contacto": {
       "mail": "perro@est.ort.edu.ar",
       "tel": "1154597777"
     },
-    "comentarios": [],
+    "comentarios": [
+      {
+        "usuarioPublicador": "rocco",
+        "comentarioData": "hytrew",
+        "fotoUsuarioPublicador": "/Imagenes/fotosPerfil/perro_est_ort_edu_ar.png",
+        "fecha": 1761691215593
+      }
+    ],
     "solicitudes": [
       "rocco"
     ]
-  },
-  {
-    "titulo": "67",
-    "descripcion": "67",
-    "recurso": "Libro",
-    "grado": "2°",
-    "especialidad": "",
-    "profesor": "Aura",
-    "añoEscolar": "6767",
-    "materia": "Historia",
-    "precio": 6767,
-    "fecha": 1761575398350,
-    "imagen": "/Imagenes/fotosPublicacion/ba_est_ort_edu_ar-67-649413.png",
-    "mail": "ba@est.ort.edu.ar",
-    "contacto": {
-      "mail": "ba@est.ort.edu.ar",
-      "tel": "1136701972"
-    },
-    "comentarios": [],
-    "solicitudes": []
   }
 ]

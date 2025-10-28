@@ -1,6 +1,6 @@
 import { startServer, subscribeGETEvent, subscribePOSTEvent } from "soquetic";
 import { registrarUsuario, loginUsuario, quitarFoto, checkeoUsername, guardarCambiosPerfil, subirFotoPerfil }  from "./Usuarios/usuarios.js";
-import { guardarPublicacion, obtenerPublicacionesPerfil, obtenerPublicaciones, borrarPublicacion, solicitarRecurso } from "./Publicaciones/publiaciones.js";
+import { guardarPublicacion, obtenerPublicacionesPerfil, obtenerPublicaciones, borrarPublicacion, solicitarRecurso, fetchComentarios, crearComentario } from "./Publicaciones/publiaciones.js";
 import path from "path";
 import { fileURLToPath } from "url"; 
 import { dirname } from "path";     
@@ -46,3 +46,9 @@ subscribePOSTEvent('borrarPublicacion', borrarPublicacion);
 
 // Solicitar recurso
 subscribePOSTEvent('solicitarRecurso', solicitarRecurso);
+
+// Cargar comentarios
+subscribePOSTEvent('fetchComentarios', fetchComentarios);
+
+// Agregar comentario
+subscribePOSTEvent('agregarComentario', crearComentario);

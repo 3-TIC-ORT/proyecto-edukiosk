@@ -7,8 +7,10 @@ import { cargarComentarios } from "../Funciones/comentarios.js"
 
 const publicacionActual = cargarPublicacionActualJSON();
 const usuarioSesion = JSON.parse(localStorage.getItem("usuarioSesion"));
+let comentarios = []
 
 connect2Server(3000);
+
 
 const botonC = document.getElementById("btnComentario");
 const comentariosInput = document.getElementById("comentariosInput");
@@ -22,6 +24,21 @@ const gradoOProfesor = document.getElementById("gradoOProfesor");
 const campoComentarios = document.getElementById("campoComentarios");
 const imagenPublicacion = document.getElementById("imagenPublicacion");
 const añoOPrecio = document.getElementById("añoOPrecio");
+
+// Cargar al localStorage los comentarios
+
+postEvent('fetchComentarios', publicacionActual, (res) => {
+  if (res && res.success) {
+    localStorage.setItem('comentarios', JSON.stringify(res.comentariosPublicacion, null, 2));
+    comentarios = JSON.parse(localStorage.getItem('comentarios'));
+    console.log(comentarios)
+    cargarComentarios(comentarios);
+  }
+  else {
+    mensajePopUp('Error al cargar comentarios', colores.error)
+  }
+})
+
 
 // Funcion chota para las taradeces de kufa
 
@@ -100,14 +117,22 @@ function revisarComentario(comentario) {
   }
 }
 botonC.addEventListener("click", () => {
-  const comentarioTexto = campoComentarios.value;
-  if (revisarComentario(comentarioTexto) == true) {
-    postEvent('agregarComentario', comentarioTexto, (data) => {
+  const comentarioData = comentariosInput.value;
+  console.log(comentarioData);
+  if (revisarComentario(comentarioData) == true) {
+    postEvent('agregarComentario', { 
+      comentarioData: comentarioData,
+      publicacionActual: publicacionActual,
+      usuarioSesion: usuarioSesion
+    }, (res) => {
       if (res && res.success) {
-        
+        mensajePopUp('Comentario agregado con exito', colores.exito)
+        comentarios = JSON.parse(localStorage.getItem('comentarios'))
+        comentarios.push(res.comentarios)
+        cargarComentarios(comentarios)
       }
       else {
-        mensajePopUp('Ocurrio un error al publicar el comentario', colores.error)
+        mensajePopUp('Ocurrio un error al publicar el comentario', colores.error);
       }
     })
   }

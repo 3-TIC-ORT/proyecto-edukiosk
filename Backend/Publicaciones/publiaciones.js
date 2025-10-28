@@ -226,22 +226,119 @@ export function solicitarRecurso(data) {
     fs.writeFileSync(directorioJSON, JSON.stringify(publicaciones, null, 2));
     fs.writeFileSync(dirUsuarios, JSON.stringify(usuarios, null, 2));
 
-    return { success: true, info: "Solicitud agregada con exito", publicacionATrabajar: JSON.stringify(publicacionATrabajar), usuarioATrabajar: JSON.stringify(usuarioATrabajar) };
+    return {
+      success: true,
+      info: "Solicitud agregada con exito",
+      publicacionATrabajar: JSON.stringify(publicacionATrabajar),
+      usuarioATrabajar: JSON.stringify(usuarioATrabajar),
+    };
   } catch (error) {
     return {
       success: false,
       info: "Ocurrió un error (runtime crash)",
       errorDetail: error.message || "Not Found",
       solicitante: solicitante || "Not Found",
-      fecha: fecha || "Not found", 
+      fecha: fecha || "Not found",
       indicePublicacion: indicePublicacion || "Not Found",
       indiceUsuario: indiceUsuario || "Not Found",
     };
   }
 }
 
-// Comentarios logica
+// Comentarios logica publicación
 
 export function crearComentario(data) {
-  
+  try {
+    const { publicacionActual, comentarioData, usuarioSesion } = data;
+    const dirUsuarios = path.resolve(__dirname, "../Usuarios/usuarios.json");
+
+    let publicaciones = [];
+    let usuarios = [];
+
+    // Check files exist
+    if (!fs.existsSync(directorioJSON) || !fs.existsSync(dirUsuarios)) {
+      return { success: false, info: "No se encontraron las publicaciones" };
+    }
+
+    // Read and parse files
+    const pubJson = fs.readFileSync(directorioJSON, "utf-8");
+    const usrJson = fs.readFileSync(dirUsuarios, "utf-8");
+
+    if (pubJson && usrJson) {
+      publicaciones = JSON.parse(pubJson);
+      usuarios = JSON.parse(usrJson);
+    }
+
+    // Find publication by fecha (unique ID)
+    const indexActual = publicaciones.findIndex(
+      (publicacion) => publicacionActual.fecha === publicacion.fecha
+    );
+
+    if (indexActual === -1) {
+      return { success: false, info: "Publicación no encontrada" };
+    }
+
+    // Initialize comentarios array if doesn't exist
+    if (!publicaciones[indexActual].comentarios) {
+      publicaciones[indexActual].comentarios = [];
+    }
+
+    const comentarioAPublicar = {
+      usuarioPublicador: usuarioSesion.user,
+      comentarioData: comentarioData,
+      fotoUsuarioPublicador: usuarioSesion.pfp,
+      fecha: Date.now()
+    };
+
+    // Add new comment
+    publicaciones[indexActual].comentarios.push(comentarioAPublicar);
+
+    // Save changes
+    fs.writeFileSync(directorioJSON, JSON.stringify(publicaciones, null, 2));
+
+    return {
+      success: true,
+      info: "Comentario agregado exitosamente",
+      comentarios: comentarioAPublicar
+    };
+  } catch (error) {
+    return {
+      success: false,
+      info: `Ocurrió un error: ${error.message}`,
+    };
+  }
+}
+
+// Pedir comentarios
+
+export function fetchComentarios(data) {
+  try {
+    let publicaciones = [];
+
+    if (directorioJSON) {
+      const archivoLeido = fs.readFileSync(directorioJSON, "utf-8");
+      if (archivoLeido !== "") {
+        publicaciones = JSON.parse(archivoLeido);
+      } else {
+        return { success: false, info: "El archivo está vacío" };
+      }
+    } else {
+      return { success: false, info: "Error al encontrar archivo" };
+    }
+
+    const indicePublicacion = publicaciones.findIndex(
+      (publicacion) => data.fecha === publicacion.fecha
+    );
+
+    if (indicePublicacion === -1) {
+      return { success: false, info: "No se encontro el índice (publicación)" };
+    }
+
+    return {
+      comentariosPublicacion: publicaciones[indicePublicacion].comentarios,
+      success: true,
+    };
+  } catch (error) {
+    return { success: false, info: "Ocurrio un error" };
+  }
 }
