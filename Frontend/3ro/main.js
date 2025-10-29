@@ -23,7 +23,7 @@ function popularFiltros() {
 
     if (typeof dataGrado === "object" && !Array.isArray(dataGrado)) {
         
-        selEspecialidad.innerHTML = '<option value="">Selecciona una opción</option>';
+        selEspecialidad.innerHTML = '<option value="">Especialidad</option>';
         selEspecialidad.disabled = false;
 
         let materiasUnicas = new Set();
@@ -58,7 +58,7 @@ function filtrarMateriasPorEspecialidad() {
     const especialidadSeleccionada = selEspecialidad.value;
     const dataGrado = materiasPorGradoYEspecialidad[grado];
 
-    selMateria.innerHTML = '<option value="">Selecciona una opción</option>';
+    selMateria.innerHTML = '<option value="">Materias</option>';
 
     if (!especialidadSeleccionada) {
         popularFiltros(); 

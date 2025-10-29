@@ -258,42 +258,52 @@ body {
   line-height: 1.5;
   margin-top: 6px;
 }
-
-/* ==== [COMENTAARIOS] === */
-
 .comentarios {
-    border: 1px solid #d0d0d0;
-    border-radius: 5px;
-    padding: 10px;
-    width: 250px;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    color: #000;
-    background-color: #fff;
-  }
-  
-  .usuario {
-    display: inline;
-    font-weight: bold;
-  }
-  
-  .tiempo {
-    display: inline;
-    color: gray;
-    font-size: 12px;
-    margin-left: 5px;
-  }
-  
-  .imagen {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    vertical-align: middle;
-    margin-right: 5px;
-  }
-  
-  .descripcion {
-    margin-top: 5px;
-    font-size: 14px;
-  }
-  
+  background-color: #fff;
+  border: 1px solid #d0d0d0;
+  border-radius: 6px;
+  padding: 10px 14px;
+  width: 100%;
+  max-width: 500px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.comentarios .imagen {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.comentarios .usuario {
+  display: inline;
+  font-weight: bold;
+  font-size: 24px;
+  vertical-align: middle;
+
+}
+
+.comentarios .tiempo {
+  display: inline;
+  color: gray;
+  font-size: 14px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.comentarios .descripcion {
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  line-height: 1.4;
+}
+
+.comentarios:hover {
+  background-color: #f9f9f9;
+}
