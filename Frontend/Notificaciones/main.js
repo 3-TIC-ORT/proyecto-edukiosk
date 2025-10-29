@@ -4,31 +4,38 @@ connect2Server(3000);
 
 const actividadContainer = document.querySelector(".actividad-container");
 
-//  FUNCIÓN PARA CREAR TARJETAS 
-function crearActividadCard(dato) {
+//  FUNCIÓN PARA CREAR TARJETAS
+function crearActividadCard(dato, usuario) {
   const card = document.createElement("div");
   card.classList.add("actividad-card");
 
   const p = document.createElement("p");
-  p.innerHTML = `
-    <strong>Has publicado</strong> en <strong>${dato.categoria}</strong>:
-    "<span>${dato.recurso}</span>"
-  `;
+  p.textContent = dato;
+  const eliminar = document.createElement("button");
+  eliminar.addEventListener("click", (e) => {
+    e.stopPropagation();
+    postEvent("descartarNotificacion", { dato, usuario }, (res) => {
+      if (res && res.success) {
+        card.remove();
+      }
+      else {
+        mensajePopUp('Error al descartar', colores.error)
+      }
+    });
+  });
+  const imagen = document.createElement("img");
+  imagen.src = "/Imagenes/IconoBasura.png";
+  imagen.classList.add("icono-eliminar");
 
   card.appendChild(p);
   card.appendChild(eliminar);
-  card.appendChild(icono);
+  eliminar.appendChild(imagen);
 
   return card;
 }
 
 window.addEventListener("DOMContentLoaded", () => {
   const usuario = JSON.parse(localStorage.getItem("usuarioSesion"));
-
-  if (!usuario) {
-    mensajePopUp("Debes iniciar sesión para ver tus publicaciones", "#e92828ff");
-    return;
-  }
 
   // Pedir al backend las publicaciones del usuario logueado
   postEvent(
@@ -38,11 +45,11 @@ window.addEventListener("DOMContentLoaded", () => {
       if (respuesta?.success && Array.isArray(respuesta.notificaciones)) {
         actividadContainer.innerHTML = "";
         respuesta.notificaciones.forEach((dato) => {
-          const card = crearActividadCard(dato);
+          const card = crearActividadCard(dato, usuario);
           actividadContainer.appendChild(card);
         });
       } else {
-        mensajePopUp("No se pudieron cargar las publicaciones", "#e92828ff");
+        mensajePopUp("No se pudieron cargar las publicaciones", colores.error);
       }
     }
   );

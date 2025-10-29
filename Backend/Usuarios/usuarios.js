@@ -257,7 +257,9 @@ export function obtenerNotificaciones(data) {
       usuarios = JSON.parse(jeison);
     }
 
-    const userIndex = usuarios.findIndex((usuario) => usuario.email === data.email);
+    const userIndex = usuarios.findIndex(
+      (usuario) => usuario.email === data.email
+    );
 
     if (userIndex == -1) {
       return { success: false, info: "Usuario no encontrado" };
@@ -265,6 +267,48 @@ export function obtenerNotificaciones(data) {
 
     notificaciones = usuarios[userIndex].notificaciones;
 
-    return { notificaciones, success: true }
+    return { notificaciones, success: true };
   } catch (error) {}
+}
+
+// Descartar notificacion
+export function descartarNotificacion(data) {
+  try {
+    const { dato, usuario } = data;
+    if (!usuario || !usuario.email) {
+      return { success: false, info: "Usuario inválido" };
+    }
+
+    if (!fs.existsSync(directorioJSON)) {
+      fs.writeFileSync(directorioJSON, "[]");
+    }
+
+    const jeison = fs.readFileSync(directorioJSON, "utf-8");
+    const usuarios = jeison ? JSON.parse(jeison) : [];
+
+    const userIndex = usuarios.findIndex((usua) => usua.email === usuario.email);
+    if (userIndex === -1) {
+      return { success: false, info: "Usuario no encontrado" };
+    }
+
+    const usuarioNotificaciones = Array.isArray(usuarios[userIndex].notificaciones)
+      ? usuarios[userIndex].notificaciones
+      : [];
+
+    const datoIndex = usuarioNotificaciones.findIndex((notif) => notif === dato);
+    if (datoIndex === -1) {
+      return { success: false, info: "Notificación no encontrada" };
+    }
+
+    usuarioNotificaciones.splice(datoIndex, 1);
+    usuarios[userIndex].notificaciones = usuarioNotificaciones;
+
+    // Persist changes
+    fs.writeFileSync(directorioJSON, JSON.stringify(usuarios, null, 2));
+
+    return { success: true, info: "Notificación borrada", notificaciones: usuarioNotificaciones };
+  } catch (error) {
+    console.error("Error en descartarNotificacion:", error);
+    return { success: false, info: "Ocurrió un error interno" };
+  }
 }

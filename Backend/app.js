@@ -1,5 +1,5 @@
 import { startServer, subscribeGETEvent, subscribePOSTEvent } from "soquetic";
-import { registrarUsuario, loginUsuario, quitarFoto, checkeoUsername, guardarCambiosPerfil, subirFotoPerfil, obtenerNotificaciones }  from "./Usuarios/usuarios.js";
+import { registrarUsuario, loginUsuario, quitarFoto, checkeoUsername, guardarCambiosPerfil, subirFotoPerfil, obtenerNotificaciones, descartarNotificacion }  from "./Usuarios/usuarios.js";
 import { guardarPublicacion, obtenerPublicacionesPerfil, obtenerPublicaciones, borrarPublicacion, solicitarRecurso, fetchComentarios, crearComentario } from "./Publicaciones/publiaciones.js";
 import path from "path";
 import { fileURLToPath } from "url"; 
@@ -34,6 +34,8 @@ subscribePOSTEvent("guardar", guardarCambiosPerfil);
 subscribePOSTEvent("obtenerNotificaciones", obtenerNotificaciones);
 
 // Descartar notificaciones presentes
+subscribePOSTEvent('descartarNotificacion', descartarNotificacion)
+
 
     // ==== Publicaciones ==== /
 

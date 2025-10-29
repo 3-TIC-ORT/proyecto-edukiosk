@@ -85,6 +85,13 @@
         "fotoUsuarioPublicador": "/Imagenes/fotosPerfil/defaultPerfil.jpg",
         "fecha": 1761745270282,
         "dueñoPublicacion": "perro@est.ort.edu.ar"
+      },
+      {
+        "usuarioPublicador": "popop",
+        "comentarioData": "wow",
+        "fotoUsuarioPublicador": "/Imagenes/fotosPerfil/3ER_ort_edu_ar.png",
+        "fecha": 1761778979045,
+        "dueñoPublicacion": "perro@est.ort.edu.ar"
       }
     ],
     "solicitudes": [
@@ -118,5 +125,35 @@
       }
     ],
     "solicitudes": []
+  },
+  {
+    "titulo": "jhfd",
+    "descripcion": "fddsfd",
+    "recurso": "Libro",
+    "grado": "4°",
+    "especialidad": "Medios",
+    "profesor": "2222",
+    "añoEscolar": "222",
+    "materia": "Taller Anual de Arte y Diseño",
+    "precio": 222,
+    "fecha": 1761774167876,
+    "imagen": "/Imagenes/fotosPublicacion/3ER_ort_edu_ar-jhfd-327135.png",
+    "mail": "3ER@ort.edu.ar",
+    "contacto": {
+      "mail": "3ER@ort.edu.ar",
+      "tel": "1189098788"
+    },
+    "comentarios": [
+      {
+        "usuarioPublicador": "popop",
+        "comentarioData": "gfd",
+        "fotoUsuarioPublicador": "/Imagenes/fotosPerfil/3ER_ort_edu_ar.png",
+        "fecha": 1761778949099,
+        "dueñoPublicacion": "3ER@ort.edu.ar"
+      }
+    ],
+    "solicitudes": [
+      "popop"
+    ]
   }
 ]

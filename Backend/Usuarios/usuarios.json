@@ -12,6 +12,7 @@
     "email": "perro@est.ort.edu.ar",
     "pfp": "/Imagenes/fotosPerfil/perro_est_ort_edu_ar.png",
     "notificaciones": [
+      "popop ha comentado en tu Resumen lobo",
       "popop ha comentado en tu Resumen lobo"
     ]
   },
@@ -29,13 +30,6 @@
     "user": "popop",
     "password": "1",
     "email": "3ER@ort.edu.ar",
-    "pfp": "/Imagenes/fotosPerfil/defaultPerfil.jpg",
-    "descripcion": "",
-    "tel": "1189098788",
-    "notificaciones": [
-    ],
-    "solicitudes": [
-      1761652086265
-    ]
+    "pfp": "/Imagenes/fotosPerfil/3ER_ort_edu_ar.png"
   }
 ]
