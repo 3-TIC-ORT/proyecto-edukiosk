@@ -37,7 +37,7 @@ export function registrarUsuario(data) {
 
     const telExists = usuarios.some(
       (useri) => (useri.tel ?? "") === (data.tel ?? "")
-    )
+    );
 
     if (usernameExists || emailExists) {
       return {
@@ -47,11 +47,11 @@ export function registrarUsuario(data) {
         emailExists,
       };
     }
-    if (telExists){
+    if (telExists) {
       return {
         success: false,
-        info: "Número de telefono ya registrado"
-      }
+        info: "Número de telefono ya registrado",
+      };
     }
     usuarios.push(data);
     fs.writeFileSync(directorioJSON, JSON.stringify(usuarios, null, 2));
@@ -72,7 +72,7 @@ export function loginUsuario(data) {
   try {
     let usuarioSesion = null;
     let usuarioIndex = null;
-    let usuarios = []
+    let usuarios = [];
 
     if (fs.existsSync(directorioJSON)) {
       const jeison = fs.readFileSync(directorioJSON, "utf-8");
@@ -81,14 +81,12 @@ export function loginUsuario(data) {
         (usuario) =>
           data.email === usuario.email && data.password === usuario.password
       );
-      usuarioIndex = usuarios.findIndex(
-        (user) => data.email === user.email
-      )
+      usuarioIndex = usuarios.findIndex((user) => data.email === user.email);
     }
     if (usuarioSesion) {
       return {
         success: true,
-        usuarioSesion: usuarios[usuarioIndex]
+        usuarioSesion: usuarios[usuarioIndex],
       };
     } else {
       return {
@@ -161,7 +159,11 @@ export function subirFotoPerfil(data) {
     usuarios[userIndex].pfp = `/Imagenes/fotosPerfil/${fileName}`;
 
     fs.writeFileSync(directorioJSON, JSON.stringify(usuarios, null, 2));
-    return { success: true, info: "Foto de perfil modificada", ruta: `/Imagenes/fotosPerfil/${fileName}` };
+    return {
+      success: true,
+      info: "Foto de perfil modificada",
+      ruta: `/Imagenes/fotosPerfil/${fileName}`,
+    };
   } catch (error) {
     return {
       success: false,
@@ -236,4 +238,33 @@ export function guardarCambiosPerfil(data) {
     console.error("Error al guardar cambios de perfil:", error);
     return { success: false, info: "Ocurrio un error interno en el servidor" };
   }
+}
+
+// Cargar notificaciones
+
+export function obtenerNotificaciones(data) {
+  try {
+    let usuarios = [];
+    let notificaciones = [];
+
+    if (!fs.existsSync(directorioJSON)) {
+      fs.writeFileSync(directorioJSON, "[]");
+    }
+
+    const jeison = fs.readFileSync(directorioJSON, "utf-8");
+
+    if (jeison !== "") {
+      usuarios = JSON.parse(jeison);
+    }
+
+    const userIndex = usuarios.findIndex((usuario) => usuario.email === data.email);
+
+    if (userIndex == -1) {
+      return { success: false, info: "Usuario no encontrado" };
+    }
+
+    notificaciones = usuarios[userIndex].notificaciones;
+
+    return { notificaciones, success: true }
+  } catch (error) {}
 }

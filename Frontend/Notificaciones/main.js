@@ -1,4 +1,4 @@
-import { mensajePopUp } from "../Funciones/popUp.js";
+import { mensajePopUp, colores } from "../Funciones/popUp.js";
 
 connect2Server(3000);
 
@@ -6,13 +6,16 @@ const actividadContainer = document.querySelector(".actividad-container");
 
 //  FUNCIÓN PARA CREAR TARJETAS 
 function crearActividadCard(dato) {
+  if (dato == "") {
+    const card = document.createElement("div");
+    card.innerText = "No hay notificaciones por el momento. :(";
+  }
   const card = document.createElement("div");
   card.classList.add("actividad-card");
 
   const p = document.createElement("p");
   p.innerHTML = `
-    <strong>Has publicado</strong> en <strong>${dato.categoria}</strong>:
-    "<span>${dato.recurso}</span>"
+  ${dato}
   `;
 
   card.appendChild(p);
@@ -24,23 +27,23 @@ window.addEventListener("DOMContentLoaded", () => {
   const usuario = JSON.parse(localStorage.getItem("usuarioSesion"));
 
   if (!usuario) {
-    mensajePopUp("Debes iniciar sesión para ver tus publicaciones", "#e92828ff");
+    mensajePopUp("Debes iniciar sesión para ver tus publicaciones", colores.error);
     return;
   }
 
   // Pedir al backend las publicaciones del usuario logueado
   postEvent(
     "obtenerNotificaciones",
-    { email: usuario.email, username: usuario.username },
-    (respuesta) => {
-      if (respuesta?.success && Array.isArray(respuesta.notificaciones)) {
+    usuario,
+    (res) => {
+      if (res.success && Array.isArray(res.notificaciones)) {
         actividadContainer.innerHTML = "";
-        respuesta.notificaciones.forEach((dato) => {
-          const card = crearActividadCard(dato);
+        res.notificaciones.forEach((notificacion) => {
+          const card = crearActividadCard(notificacion);
           actividadContainer.appendChild(card);
         });
       } else {
-        mensajePopUp("No se pudieron cargar las publicaciones", "#e92828ff");
+        mensajePopUp("No se pudieron cargar las publicaciones", colores.error);
       }
     }
   );

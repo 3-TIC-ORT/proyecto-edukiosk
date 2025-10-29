@@ -3,16 +3,17 @@
 export function cargarComentarios(comentarios) {
   const container = document.getElementById("campoComentarios");
   if (!container) return;
+  container.innerHTML = "";
   comentarios.forEach((comentario) => {
     const timestamp = comentario.fecha;
     const dateObject = new Date(timestamp);
     const spanishFormat = dateObject.toLocaleString("es-AR", {
-      month: "short", // 'oct' (short for octubre)
-      day: "2-digit", // '28'
-      hour: "2-digit", // '19'
-      minute: "2-digit", // '40'
-      hour12: false, // Force 24-hour format
-      timeZone: "America/Argentina/Buenos_Aires", // Keep the original time zone
+      month: "short",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
+      timeZone: "America/Argentina/Buenos_Aires",
     });
     const comentarioUnico = document.createElement("div");
     comentarioUnico.style.flex;

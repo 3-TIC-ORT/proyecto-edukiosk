@@ -108,7 +108,7 @@ togglePasswordBtn.addEventListener("click", () => {
     passwordTexto.textContent = "******";
     passwordVisible = false;
   } else {
-    passwordTexto.textContent = perfilReal.contraseña;
+    passwordTexto.textContent = perfilReal.password;
     passwordVisible = true;
   }
 });
@@ -120,7 +120,7 @@ toggleEditarBtn.addEventListener("click", () => {
   if (modoEdicion) {
     // rellenar inputs con los datos visibles
     nombreInput.value = nombreTexto.textContent;
-    passwordInput.value = perfilReal.contraseña;
+    passwordInput.value = perfilReal.password;
     descripcionInput.value = descripcionTexto.textContent;
 
     nombreInput.style.display = "block";
@@ -148,63 +148,53 @@ toggleEditarBtn.addEventListener("click", () => {
 
 // ==== Guardar cambios ====
 guardarBtn.addEventListener("click", () => {
-  const tieneCaracterProhibido = caracteresProhibidos.some((char) =>
-    nombreInput.value.includes(char)
-  );
-  const nuevoUsername = nombreInput.value.trim();
-
-  if (nuevoUsername.length >= 15 || tieneCaracterProhibido) {
-    mensajePopUp(
-      "El nombre de usuario no puede tener más de 15 caracteres ni caracteres especiales.",
-      "#e92828ff"
+    const tieneCaracterProhibido = caracteresProhibidos.some((char) =>
+        nombreInput.value.includes(char)
     );
-    return;
-  }
+    const nuevoUsername = nombreInput.value.trim();
 
-  postEvent("check", { user: nuevoUsername }, (data) => {
-    if (data.success || nuevoUsername === perfilReal.username) {
-      const userEditado = {
-        email: perfilReal.email,
-        username: nuevoUsername,
-        contraseña: passwordInput.value,
-        pfp: perfilReal.pfp,
-        description: descripcionInput.value,
-        rating: perfilReal.rating,
-      };
-
-      postEvent(
-        "guardar",
-        {
-          user: userEditado.username,
-          password: userEditado.contraseña,
-          email: userEditado.email,
-          pfp: userEditado.pfp,
-          rating: userEditado.rating,
-          descripcion: userEditado.description,
-        },
-        (data) => {
-          console.log(userEditado);
-          if (data && data.success) {
-            localStorage.setItem("usuarioSesion", JSON.stringify(userEditado));
-
-            mensajePopUp("Información actualizada con exito", "#28e97dff");
-            toggleEditarBtn.click();
-            setTimeout(() => {
-              window.location.reload();
-            }, 1000);
-          } else {
-            mensajePopUp("Error al actualizar la información", "#e92828ff");
-          }
-        }
-      );
-    } else {
-      mensajePopUp(
-        "El nombre de usuario que intentó ingresar se encuentra en uso",
-        "#e92828ff"
-      );
-      return;
+    if (nuevoUsername.length >= 15 || tieneCaracterProhibido) {
+        mensajePopUp(
+            "El nombre de usuario no puede tener más de 15 caracteres ni caracteres especiales.",
+            colores.error
+        );
+        return;
     }
-  });
+
+    postEvent("check", { user: nuevoUsername }, (data) => {
+        if (data.success || nuevoUsername === perfilReal.user) { // changed from username to user
+            const userEditado = {
+                email: perfilReal.email,
+                user: nuevoUsername,          // changed from username to user
+                password: passwordInput.value, // changed from contraseña to password
+                pfp: perfilReal.pfp,
+                description: descripcionInput.value, // changed from description to descripcion
+                rating: perfilReal.rating,
+            };
+
+            postEvent(
+                "guardar",
+                userEditado, // now matches backend expectations
+                (data) => {
+                    if (data && data.success) {
+                        localStorage.setItem("usuarioSesion", JSON.stringify(userEditado));
+                        mensajePopUp("Información actualizada con exito", colores.exito);
+                        toggleEditarBtn.click();
+                        setTimeout(() => {
+                            window.location.reload();
+                        }, 1000);
+                    } else {
+                        mensajePopUp("Error al actualizar la información", colores.error);
+                    }
+                }
+            );
+        } else {
+            mensajePopUp(
+                "El nombre de usuario que intentó ingresar se encuentra en uso",
+                colores.error
+            );
+        }
+    });
 });
 
 // Subir nueva imagen

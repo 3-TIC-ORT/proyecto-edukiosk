@@ -278,23 +278,39 @@ export function crearComentario(data) {
       return { success: false, info: "Publicación no encontrada" };
     }
 
+    const indexUsuario = usuarios.findIndex(
+      (usuario) => publicacionActual.mail === usuario.email
+    )
+
+    if (indexUsuario === -1) {
+      return { success: false, info: "Usuario a notificar no encontrado" };
+    }
+
     // Initialize comentarios array if doesn't exist
     if (!publicaciones[indexActual].comentarios) {
       publicaciones[indexActual].comentarios = [];
+    }
+
+    if (!usuarios[indexUsuario].notificaciones) {
+      usuarios[indexUsuario].notificaciones = [];
     }
 
     const comentarioAPublicar = {
       usuarioPublicador: usuarioSesion.user,
       comentarioData: comentarioData,
       fotoUsuarioPublicador: usuarioSesion.pfp,
-      fecha: Date.now()
+      fecha: Date.now(),
+      dueñoPublicacion: publicacionActual.mail
     };
 
     // Add new comment
     publicaciones[indexActual].comentarios.push(comentarioAPublicar);
+    
+    usuarios[indexUsuario].notificaciones.push(`${usuarioSesion.user} ha comentado en tu ${publicacionActual.recurso} ${publicacionActual.titulo}`)
 
     // Save changes
     fs.writeFileSync(directorioJSON, JSON.stringify(publicaciones, null, 2));
+    fs.writeFileSync(dirUsuarios, JSON.stringify(usuarios, null, 2));
 
     return {
       success: true,
@@ -314,6 +330,7 @@ export function crearComentario(data) {
 export function fetchComentarios(data) {
   try {
     let publicaciones = [];
+    
 
     if (directorioJSON) {
       const archivoLeido = fs.readFileSync(directorioJSON, "utf-8");
@@ -327,7 +344,7 @@ export function fetchComentarios(data) {
     }
 
     const indicePublicacion = publicaciones.findIndex(
-      (publicacion) => data.fecha === publicacion.fecha
+      (publicacion) => Number(data.fecha) === publicacion.fecha
     );
 
     if (indicePublicacion === -1) {

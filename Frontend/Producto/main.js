@@ -118,6 +118,7 @@ function revisarComentario(comentario) {
 }
 botonC.addEventListener("click", () => {
   const comentarioData = comentariosInput.value;
+  console.log("Detecta")
   console.log(comentarioData);
   if (revisarComentario(comentarioData) == true) {
     postEvent('agregarComentario', { 
