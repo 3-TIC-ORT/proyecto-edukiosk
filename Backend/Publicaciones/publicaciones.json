@@ -91,5 +91,32 @@
       "rocco",
       "popop"
     ]
+  },
+  {
+    "titulo": "La casa de bernarda Alba",
+    "descripcion": "Es un libro casi nuevo porque no lo uso nunca",
+    "recurso": "Libro",
+    "grado": "3°",
+    "especialidad": "TIC",
+    "profesor": "No",
+    "añoEscolar": "2025",
+    "materia": "Lengua y Literatura",
+    "precio": 8000,
+    "fecha": 1761741812084,
+    "imagen": "/Imagenes/fotosPublicacion/ba_est_ort_edu_ar-la_casa_de_bernarda_alba-746195.png",
+    "mail": "ba@est.ort.edu.ar",
+    "contacto": {
+      "mail": "ba@est.ort.edu.ar",
+      "tel": "1136701972"
+    },
+    "comentarios": [
+      {
+        "usuarioPublicador": "Rocco2",
+        "comentarioData": "Alto libro, lo lei 3 veces",
+        "fotoUsuarioPublicador": "/Imagenes/fotosPerfil/ba_est_ort_edu_ar.png",
+        "fecha": 1761743186354
+      }
+    ],
+    "solicitudes": []
   }
 ]

@@ -141,7 +141,9 @@ body {
   color: #1f2b3a;
   line-height: 1.6;
 }
-
+.Nombreusuariohr{
+margin-top: 4ppx;
+}
 .perfil-datos strong {
   color: var(--colorPrimario);
   font-weight: 700;
