@@ -1,35 +1,60 @@
 [
   {
-    "user": "auuu",
-    "password": "undefined",
-    "email": "49764315@est.ort.edu.ar",
-    "pfp": "/Imagenes/fotosPerfil/defaultPerfil.jpg",
-    "descripcion": "fds"
-  },
-  {
-    "user": "rocco",
-    "password": "kkk",
-    "email": "perro@est.ort.edu.ar",
-    "pfp": "/Imagenes/fotosPerfil/perro_est_ort_edu_ar.png",
-    "notificaciones": [
-      "popop ha comentado en tu Resumen lobo",
-      "popop ha comentado en tu Resumen lobo"
-    ]
-  },
-  {
-    "user": "Rocco2",
+    "user": "Rocco",
     "password": "1234",
-    "email": "ba@est.ort.edu.ar",
-    "pfp": "/Imagenes/fotosPerfil/ba_est_ort_edu_ar.png",
+    "email": "ba0783@est.ort.edu.ar",
+    "pfp": "/Imagenes/fotosPerfil/defaultPerfil.jpg",
     "descripcion": "",
     "tel": "1136701972",
+    "notificaciones": [
+      "Facundo ha comentado en tu Libro La casa de bernarda alba",
+      "Facundo ha comentado en tu Libro Toldot Israel 3",
+      "Duke ha comentado en tu Libro La casa de bernarda alba"
+    ],
+    "solicitudes": []
+  },
+  {
+    "user": "Facundo",
+    "password": "1234",
+    "email": "Facundo@est.ort.edu.ar",
+    "pfp": "/Imagenes/fotosPerfil/defaultPerfil.jpg",
+    "descripcion": "",
+    "tel": "1145679147",
     "notificaciones": [],
     "solicitudes": []
   },
   {
-    "user": "popop",
-    "password": "1",
-    "email": "3ER@ort.edu.ar",
-    "pfp": "/Imagenes/fotosPerfil/3ER_ort_edu_ar.png"
+    "user": "Duke",
+    "password": "1234",
+    "email": "Santiago@est.ort.edu.ar",
+    "pfp": "/Imagenes/fotosPerfil/defaultPerfil.jpg",
+    "descripcion": "",
+    "tel": "1134567345",
+    "notificaciones": [
+      "Bruno ha comentado en tu Libro Toldot Israel 4",
+      "Bruno ha comentado en tu Libro Ética y Ciudadanía 2",
+      "Juan ha comentado en tu Libro Toldot Israel 4"
+    ],
+    "solicitudes": []
+  },
+  {
+    "user": "Bruno",
+    "password": "1234",
+    "email": "Bruno@est.ort.edu.ar",
+    "pfp": "/Imagenes/fotosPerfil/defaultPerfil.jpg",
+    "descripcion": "",
+    "tel": "1137658968",
+    "notificaciones": [],
+    "solicitudes": []
+  },
+  {
+    "user": "Juan",
+    "password": "1234",
+    "email": "Juan@est.ort.edu.ar",
+    "pfp": "/Imagenes/fotosPerfil/defaultPerfil.jpg",
+    "descripcion": "",
+    "tel": "1188770943",
+    "notificaciones": [],
+    "solicitudes": []
   }
 ]

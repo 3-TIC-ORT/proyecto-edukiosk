@@ -1,107 +1,7 @@
 [
   {
-    "titulo": "lobo",
-    "descripcion": "1111111",
-    "recurso": "Resumen",
-    "grado": "2°",
-    "especialidad": "",
-    "profesor": "hgfd",
-    "añoEscolar": "2222",
-    "materia": "Lengua y Literatura",
-    "precio": 0,
-    "fecha": 1761652086265,
-    "imagen": "/Imagenes/fotosPublicacion/perro_est_ort_edu_ar-lobo-18694.png",
-    "mail": "perro@est.ort.edu.ar",
-    "contacto": {
-      "mail": "perro@est.ort.edu.ar",
-      "tel": "1154597777"
-    },
-    "comentarios": [
-      {
-        "usuarioPublicador": "rocco",
-        "comentarioData": "hytrew",
-        "fotoUsuarioPublicador": "/Imagenes/fotosPerfil/perro_est_ort_edu_ar.png",
-        "fecha": 1761691215593
-      },
-      {
-        "usuarioPublicador": "rocco",
-        "comentarioData": "mmm",
-        "fotoUsuarioPublicador": "/Imagenes/fotosPerfil/perro_est_ort_edu_ar.png",
-        "fecha": 1761738502527,
-        "dueñoPublicacion": "perro@est.ort.edu.ar"
-      },
-      {
-        "usuarioPublicador": "rocco",
-        "comentarioData": "mmm",
-        "fotoUsuarioPublicador": "/Imagenes/fotosPerfil/perro_est_ort_edu_ar.png",
-        "fecha": 1761738504997,
-        "dueñoPublicacion": "perro@est.ort.edu.ar"
-      },
-      {
-        "usuarioPublicador": "rocco",
-        "comentarioData": "mmm",
-        "fotoUsuarioPublicador": "/Imagenes/fotosPerfil/perro_est_ort_edu_ar.png",
-        "fecha": 1761738509456,
-        "dueñoPublicacion": "perro@est.ort.edu.ar"
-      },
-      {
-        "usuarioPublicador": "rocco",
-        "comentarioData": "mmmdws",
-        "fotoUsuarioPublicador": "/Imagenes/fotosPerfil/perro_est_ort_edu_ar.png",
-        "fecha": 1761738600086,
-        "dueñoPublicacion": "perro@est.ort.edu.ar"
-      },
-      {
-        "usuarioPublicador": "rocco",
-        "comentarioData": "deliocoso",
-        "fotoUsuarioPublicador": "/Imagenes/fotosPerfil/perro_est_ort_edu_ar.png",
-        "fecha": 1761738615502,
-        "dueñoPublicacion": "perro@est.ort.edu.ar"
-      },
-      {
-        "usuarioPublicador": "rocco",
-        "comentarioData": "deliocoso",
-        "fotoUsuarioPublicador": "/Imagenes/fotosPerfil/perro_est_ort_edu_ar.png",
-        "fecha": 1761738622029,
-        "dueñoPublicacion": "perro@est.ort.edu.ar"
-      },
-      {
-        "usuarioPublicador": "rocco",
-        "comentarioData": "deliocosodd",
-        "fotoUsuarioPublicador": "/Imagenes/fotosPerfil/perro_est_ort_edu_ar.png",
-        "fecha": 1761738631042,
-        "dueñoPublicacion": "perro@est.ort.edu.ar"
-      },
-      {
-        "usuarioPublicador": "rocco",
-        "comentarioData": "aiuuu",
-        "fotoUsuarioPublicador": "/Imagenes/fotosPerfil/perro_est_ort_edu_ar.png",
-        "fecha": 1761742336799,
-        "dueñoPublicacion": "perro@est.ort.edu.ar"
-      },
-      {
-        "usuarioPublicador": "popop",
-        "comentarioData": "ww",
-        "fotoUsuarioPublicador": "/Imagenes/fotosPerfil/defaultPerfil.jpg",
-        "fecha": 1761745270282,
-        "dueñoPublicacion": "perro@est.ort.edu.ar"
-      },
-      {
-        "usuarioPublicador": "popop",
-        "comentarioData": "wow",
-        "fotoUsuarioPublicador": "/Imagenes/fotosPerfil/3ER_ort_edu_ar.png",
-        "fecha": 1761778979045,
-        "dueñoPublicacion": "perro@est.ort.edu.ar"
-      }
-    ],
-    "solicitudes": [
-      "rocco",
-      "popop"
-    ]
-  },
-  {
-    "titulo": "La casa de bernarda Alba",
-    "descripcion": "Es un libro casi nuevo porque no lo uso nunca",
+    "titulo": "La casa de bernarda alba",
+    "descripcion": "Esta en casi perfecto estado",
     "recurso": "Libro",
     "grado": "3°",
     "especialidad": "TIC",
@@ -109,51 +9,220 @@
     "añoEscolar": "2025",
     "materia": "Lengua y Literatura",
     "precio": 8000,
-    "fecha": 1761741812084,
-    "imagen": "/Imagenes/fotosPublicacion/ba_est_ort_edu_ar-la_casa_de_bernarda_alba-746195.png",
-    "mail": "ba@est.ort.edu.ar",
+    "fecha": 1761831602724,
+    "imagen": "/Imagenes/fotosPublicacion/ba0783_est_ort_edu_ar-la_casa_de_bernarda_alba-35803.png",
+    "mail": "ba0783@est.ort.edu.ar",
     "contacto": {
-      "mail": "ba@est.ort.edu.ar",
+      "mail": "ba0783@est.ort.edu.ar",
       "tel": "1136701972"
     },
     "comentarios": [
       {
-        "usuarioPublicador": "Rocco2",
-        "comentarioData": "Alto libro, lo lei 3 veces",
-        "fotoUsuarioPublicador": "/Imagenes/fotosPerfil/ba_est_ort_edu_ar.png",
-        "fecha": 1761743186354
+        "usuarioPublicador": "Facundo",
+        "comentarioData": "Este vendedor es 100% confiable ",
+        "fotoUsuarioPublicador": "/Imagenes/fotosPerfil/defaultPerfil.jpg",
+        "fecha": 1761832351988,
+        "dueñoPublicacion": "ba0783@est.ort.edu.ar"
+      },
+      {
+        "usuarioPublicador": "Duke",
+        "comentarioData": "Es el mejor libro de lengua de tercer año con diferencia",
+        "fotoUsuarioPublicador": "/Imagenes/fotosPerfil/defaultPerfil.jpg",
+        "fecha": 1761832506707,
+        "dueñoPublicacion": "ba0783@est.ort.edu.ar"
       }
     ],
     "solicitudes": []
   },
   {
-    "titulo": "jhfd",
-    "descripcion": "fddsfd",
+    "titulo": "Toldot Israel 3",
+    "descripcion": "Es usado pero no tanto",
     "recurso": "Libro",
-    "grado": "4°",
-    "especialidad": "Medios",
-    "profesor": "2222",
-    "añoEscolar": "222",
-    "materia": "Taller Anual de Arte y Diseño",
-    "precio": 222,
-    "fecha": 1761774167876,
-    "imagen": "/Imagenes/fotosPublicacion/3ER_ort_edu_ar-jhfd-327135.png",
-    "mail": "3ER@ort.edu.ar",
+    "grado": "3°",
+    "especialidad": "TIC",
+    "profesor": "No",
+    "añoEscolar": "2025",
+    "materia": "Educación Judía",
+    "precio": 12000,
+    "fecha": 1761831870585,
+    "imagen": "/Imagenes/fotosPublicacion/ba0783_est_ort_edu_ar-toldot_israel_3-397675.png",
+    "mail": "ba0783@est.ort.edu.ar",
     "contacto": {
-      "mail": "3ER@ort.edu.ar",
-      "tel": "1189098788"
+      "mail": "ba0783@est.ort.edu.ar",
+      "tel": "1136701972"
     },
     "comentarios": [
       {
-        "usuarioPublicador": "popop",
-        "comentarioData": "gfd",
-        "fotoUsuarioPublicador": "/Imagenes/fotosPerfil/3ER_ort_edu_ar.png",
-        "fecha": 1761778949099,
-        "dueñoPublicacion": "3ER@ort.edu.ar"
+        "usuarioPublicador": "Facundo",
+        "comentarioData": "Me encanta Ed judía ",
+        "fotoUsuarioPublicador": "/Imagenes/fotosPerfil/defaultPerfil.jpg",
+        "fecha": 1761832369058,
+        "dueñoPublicacion": "ba0783@est.ort.edu.ar"
       }
     ],
-    "solicitudes": [
-      "popop"
-    ]
+    "solicitudes": []
+  },
+  {
+    "titulo": "Ética y Ciudadanía 2",
+    "descripcion": "Es un libro usado",
+    "recurso": "Libro",
+    "grado": "2°",
+    "especialidad": "",
+    "profesor": "No",
+    "añoEscolar": "2024",
+    "materia": "Formación Ética y Ciudadana",
+    "precio": 6700,
+    "fecha": 1761833191377,
+    "imagen": "/Imagenes/fotosPublicacion/Santiago_est_ort_edu_ar-_tica_y_ciudadan_a_2-368553.png",
+    "mail": "Santiago@est.ort.edu.ar",
+    "contacto": {
+      "mail": "Santiago@est.ort.edu.ar",
+      "tel": "1134567345"
+    },
+    "comentarios": [
+      {
+        "usuarioPublicador": "Bruno",
+        "comentarioData": "El vendedor es un genio",
+        "fotoUsuarioPublicador": "/Imagenes/fotosPerfil/defaultPerfil.jpg",
+        "fecha": 1761833680426,
+        "dueñoPublicacion": "Santiago@est.ort.edu.ar"
+      }
+    ],
+    "solicitudes": []
+  },
+  {
+    "titulo": "Toldot Israel 2",
+    "descripcion": "esta medio usado",
+    "recurso": "Libro",
+    "grado": "2°",
+    "especialidad": "",
+    "profesor": "No",
+    "añoEscolar": "2024",
+    "materia": "Educación Judía",
+    "precio": 8000,
+    "fecha": 1761833352699,
+    "imagen": "/Imagenes/fotosPublicacion/Santiago_est_ort_edu_ar-toldot_israel_2-609289.png",
+    "mail": "Santiago@est.ort.edu.ar",
+    "contacto": {
+      "mail": "Santiago@est.ort.edu.ar",
+      "tel": "1134567345"
+    },
+    "comentarios": [],
+    "solicitudes": []
+  },
+  {
+    "titulo": "Toldot Israel 4",
+    "descripcion": "Esta Nuevo",
+    "recurso": "Libro",
+    "grado": "4°",
+    "especialidad": "TIC",
+    "profesor": "No",
+    "añoEscolar": "2025",
+    "materia": "Educación Judía",
+    "precio": 14000,
+    "fecha": 1761833573981,
+    "imagen": "/Imagenes/fotosPublicacion/Santiago_est_ort_edu_ar-toldot_israel_4-688148.png",
+    "mail": "Santiago@est.ort.edu.ar",
+    "contacto": {
+      "mail": "Santiago@est.ort.edu.ar",
+      "tel": "1134567345"
+    },
+    "comentarios": [
+      {
+        "usuarioPublicador": "Bruno",
+        "comentarioData": "Alto libro",
+        "fotoUsuarioPublicador": "/Imagenes/fotosPerfil/defaultPerfil.jpg",
+        "fecha": 1761833647666,
+        "dueñoPublicacion": "Santiago@est.ort.edu.ar"
+      },
+      {
+        "usuarioPublicador": "Juan",
+        "comentarioData": "Me reprobó todas las pruebas lpm",
+        "fotoUsuarioPublicador": "/Imagenes/fotosPerfil/defaultPerfil.jpg",
+        "fecha": 1761834050954,
+        "dueñoPublicacion": "Santiago@est.ort.edu.ar"
+      }
+    ],
+    "solicitudes": []
+  },
+  {
+    "titulo": "El rastro de la canela",
+    "descripcion": "Es medio viejo pero usable",
+    "recurso": "Libro",
+    "grado": "1°",
+    "especialidad": "",
+    "profesor": "No",
+    "añoEscolar": "2023",
+    "materia": "Lengua y Literatura",
+    "precio": 7600,
+    "fecha": 1761833796617,
+    "imagen": "/Imagenes/fotosPublicacion/Bruno_est_ort_edu_ar-el_rastro_de_la_canela-190967.png",
+    "mail": "Bruno@est.ort.edu.ar",
+    "contacto": {
+      "mail": "Bruno@est.ort.edu.ar",
+      "tel": "1137658968"
+    },
+    "comentarios": [],
+    "solicitudes": []
+  },
+  {
+    "titulo": "Maus",
+    "descripcion": "Esta medio usado",
+    "recurso": "Libro",
+    "grado": "2°",
+    "especialidad": "",
+    "profesor": "No",
+    "añoEscolar": "2024",
+    "materia": "Lengua y Literatura",
+    "precio": 9000,
+    "fecha": 1761833945936,
+    "imagen": "/Imagenes/fotosPublicacion/Bruno_est_ort_edu_ar-maus-157108.png",
+    "mail": "Bruno@est.ort.edu.ar",
+    "contacto": {
+      "mail": "Bruno@est.ort.edu.ar",
+      "tel": "1137658968"
+    },
+    "comentarios": [],
+    "solicitudes": []
+  },
+  {
+    "titulo": "gold experience b2",
+    "descripcion": "Es viejo pero no TAN viejo",
+    "recurso": "Libro",
+    "grado": "2°",
+    "especialidad": "",
+    "profesor": "No",
+    "añoEscolar": "2022",
+    "materia": "Inglés",
+    "precio": 6789,
+    "fecha": 1761834452301,
+    "imagen": "/Imagenes/fotosPublicacion/Juan_est_ort_edu_ar-gold_experience_b2-915154.png",
+    "mail": "Juan@est.ort.edu.ar",
+    "contacto": {
+      "mail": "Juan@est.ort.edu.ar",
+      "tel": "1188770943"
+    },
+    "comentarios": [],
+    "solicitudes": []
+  },
+  {
+    "titulo": "gold experience b1A",
+    "descripcion": "Es nuevo",
+    "recurso": "Libro",
+    "grado": "3°",
+    "especialidad": "TIC",
+    "profesor": "No",
+    "añoEscolar": "2025",
+    "materia": "Inglés",
+    "precio": 9000,
+    "fecha": 1761834646905,
+    "imagen": "/Imagenes/fotosPublicacion/Juan_est_ort_edu_ar-gold_experience_b1a-950144.png",
+    "mail": "Juan@est.ort.edu.ar",
+    "contacto": {
+      "mail": "Juan@est.ort.edu.ar",
+      "tel": "1188770943"
+    },
+    "comentarios": [],
+    "solicitudes": []
   }
 ]
