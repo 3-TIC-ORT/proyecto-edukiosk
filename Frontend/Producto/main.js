@@ -76,6 +76,12 @@ loboFeroz(infoContacto, contactoDetalle, contactoDetalle);
 imagenPublicacion.src = publicacionActual.imagen;
 
 // Checkeo de ya haber solicitado
+const separador = document.getElementById("separador");
+if (publicacionActual.recurso === "Resumen" && separador) {
+  separador.style.display = "none";
+} else if (separador) {
+  separador.style.display = "block";
+}
 
 if (usuarioSesion.solicitudes.includes(publicacionActual.fecha)) {
   btnSolicitar.disabled = true;

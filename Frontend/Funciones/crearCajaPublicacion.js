@@ -20,7 +20,7 @@ export function cajaProducto(publicaciones) {
       const isDeleteButton = e.target.closest(".botonBorrar");
 
       if (isDeleteButton) {
-        return; // 🛑 Stop execution and prevent navigation
+        return; 
       }
       const publicacionActual = localStorage.getItem("publicacionActual");
       if (publicacionActual) {
