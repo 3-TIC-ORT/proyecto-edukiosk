@@ -89,6 +89,13 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.actividad-card p {
+  font-size: 26px;
+  color: #000;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
 .actividad-card p strong {
   font-weight: 900;
 }
@@ -97,24 +104,32 @@ body {
   font-weight: 600;
 }
 
-.accion {
-  position: absolute;
-  bottom: 15px;
-  right: 80px;
-  color: red;
-  font-weight: 900;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.icono-eliminar {
+.actividad-card button {
   position: absolute;
   bottom: 10px;
   right: 40px;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 900;
+  color: red;
+  font-family: "Inter", sans-serif;
+}
+
+.actividad-card button::before {
+  content: "Eliminar notificación";
+  margin-right: 5px;
+}
+
+.icono-eliminar {
   width: 25px;
   height: 25px;
-  cursor: pointer;
 }
+
 
 .footer {
   width: 100%;
