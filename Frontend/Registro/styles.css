@@ -44,7 +44,7 @@ body {
 }
 
 .formulario label {
-  font-size: 22px;
+  font-size: 32px;
   font-weight: 400;
   color: var(--colorTexto);
 }
@@ -79,25 +79,27 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 14px;
+  font-size: 20px;
 }
 .terminos a {
   color: var(--colorPrimario);
   text-decoration: none;
+  font-size: 20px;
+  font-weight: 600; 
 }
 
 .botonSubmit {
-  width: 249px;
-  height: 60px;
+  width: 382px;
+  height: 82px;
   margin: 30px auto 0 auto;
   border-radius: 40px;
   border: 5px solid var(--colorPrimario);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #fff;
-  color: var(--colorTexto);
-  font-size: 20px;     
+  background: #289AC8;
+  color: var(--colorFondo);
+  font-size: 32px;     
   font-weight: 700;      
   cursor: pointer;
 }
