@@ -3,15 +3,7 @@
     "user": "Rocco",
     "password": "1234",
     "email": "ba0783@est.ort.edu.ar",
-    "pfp": "/Imagenes/fotosPerfil/defaultPerfil.jpg",
-    "descripcion": "",
-    "tel": "1136701972",
-    "notificaciones": [
-      "Facundo ha comentado en tu Libro La casa de bernarda alba",
-      "Facundo ha comentado en tu Libro Toldot Israel 3",
-      "Duke ha comentado en tu Libro La casa de bernarda alba"
-    ],
-    "solicitudes": []
+    "pfp": "/Imagenes/fotosPerfil/defaultPerfil.jpg"
   },
   {
     "user": "Facundo",

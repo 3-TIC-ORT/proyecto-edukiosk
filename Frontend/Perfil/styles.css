@@ -93,14 +93,13 @@ body {
   transform: scale(1.05);
 }
 
-#editarImagenLabel,
-#quitarImagenBtn,
-#btnCerrarSesion {
+/* Cambiar foto - botón */
+#editarImagenLabel {
   width: 180px;
   height: 46px;
-  background: var(--colorPrimario);
-  color: #fff;
-  border: none;
+  background: white;
+  color: #224668;
+  border: 2px solid #224668;
   border-radius: 22px;
   cursor: pointer;
   font-weight: bold;
@@ -111,14 +110,45 @@ body {
   justify-content: center;
 }
 
-#editarImagenLabel:hover,
+#editarImagenLabel:hover {
+  background: #f0f0f0;
+}
+
+/* Quitar foto - botón */
+#quitarImagenBtn {
+  width: 180px;
+  height: 46px;
+  background: white;
+  color: #224668;
+  border: 2px solid #224668;
+  border-radius: 22px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 15px;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 #quitarImagenBtn:hover {
-  background: #0f1f30;
+  background: #f0f0f0;
 }
 
 #btnCerrarSesion {
+  width: 180px;
+  height: 46px;
   background: #e92828;
-  border: 2px solid #fff;
+  color: #fff;
+  border: 2px solid #224668;
+  border-radius: 22px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 15px;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #btnCerrarSesion:hover {
@@ -141,9 +171,7 @@ body {
   color: #1f2b3a;
   line-height: 1.6;
 }
-.Nombreusuariohr{
-margin-top: 4ppx;
-}
+
 .perfil-datos strong {
   color: var(--colorPrimario);
   font-weight: 700;
@@ -169,9 +197,28 @@ margin-top: 4ppx;
   min-height: 80px;
 }
 
-#toggleEditar,
-#guardarBtn,
-#togglePassword {
+/* Botón editar centrado y más abajo */
+#toggleEditar {
+  width: 103px;
+  height: 57px;
+  background: #224668;
+  color: #fff;
+  border-radius: 40px;
+  font-size: 17px;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px; /* Para moverlo hacia abajo */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#toggleEditar:hover {
+  background: #0f1f30;
+}
+
+#togglePassword{
   padding: 10px 20px;
   font-size: 15px;
   font-weight: 700;
@@ -179,26 +226,45 @@ margin-top: 4ppx;
   border: none;
   cursor: pointer;
 }
+#guardarBtn {
+  width: 180px; /* Ancho más grande */
+  height: 46px;
+  background: #224668;
+  color: #fff;
+  border-radius: 22px;
+  font-size: 15px;
+  font-weight: bold;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px; /* Para moverlo hacia abajo, al igual que el botón de editar */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: .10px;
+}
 
-/* Elimina el padding y el margin del contenedor de producto */
+#guardarBtn:hover {
+  background: #0f1f30;
+}
 .producto1-contenedor {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px; /* Espaciado entre elementos dentro del contenedor */
-  width: 100%; /* Asegura que ocupe todo el ancho de la tarjeta */
+  gap: 8px;
+  width: 100%;
 }
+
 .foto-de-producto1 {
-  display: block;          /* elimina gaps inline */
-  width: 320px;            /* ancho deseado */
-  height: 240px;           /* alto deseado */
-  object-fit: fill;        /* fuerza estirado/distorsión si no respeta ratio */
-  flex: 0 0 auto;          /* no permitir que el flex container cambie su tamaño */
+  display: block;
+  width: 320px;
+  height: 240px;
+  object-fit: fill;
+  flex: 0 0 auto;
   box-sizing: border-box;
   border: 3px solid black;
   margin: 10px 0;
 }
-
 
 .Principal-producto1, .Precio-producto1 {
   font-family: 'Inter', sans-serif;
@@ -206,21 +272,15 @@ margin-top: 4ppx;
   text-align: center;
   width: 100%;
   color: black;
-  
-  /* FIX: Elimina el margen por defecto del h2 */
-  margin: 0; 
+  margin: 0;
 }
 
 .Principal-producto1 {
-  font-size: 40px; 
-  
-  /* Ahora aplica solo el margen superior deseado */
-  margin-top: 5px; 
+  font-size: 40px;
+  margin-top: 5px;
   margin-bottom: 5px;
 }
 
-
-/* PRODUCT GALLERY WRAPPER */
 #containerProductos {
   display: flex;
   flex-wrap: wrap;
@@ -231,84 +291,36 @@ margin-top: 4ppx;
   margin: 0 auto;
 }
 
-/* Actualiza la clase .claseCajaPublicacion para eliminar el display: contents */
 .claseCajaPublicacion {
-  display: flex; /* Cambiado para mantener el flujo de layout */
-  flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
-  align-items: center; /* Centra los elementos horizontalmente */
-  justify-content: center; /* Centra los elementos verticalmente */
-  background-color: #dedede; /* Fondo de la tarjeta */
-  padding: 15px; /* Espaciado interno */
-  border-radius: 7%; /* Bordes redondeados */
-  border: 2px solid black; /* Borde de la tarjeta */
-  box-sizing: border-box; /* Asegura que el padding y el border se incluyan en el tamaño total */
-  width: 400px; /* Ancho fijo de la tarjeta */
-  height: 450px; /* Alto fijo de la tarjeta */
-  margin: 10px; /* Espaciado entre tarjetas */
-}
-
-.claseCajaPublicacion:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra al pasar el ratón */
-  transform: translateY(-5px); /* Levanta la tarjeta ligeramente */
-  transition: all 0.3s ease; /* Suaviza la transición */
-  cursor: pointer;
-}
-
-/* Elimina el padding y el margin del contenedor de producto */
-.producto1-contenedor {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px; /* Espaciado entre elementos dentro del contenedor */
-  width: 100%; /* Asegura que ocupe todo el ancho de la tarjeta */
-}
-.foto-de-producto1 {
-  display: block;          /* elimina gaps inline */
-  width: 320px;            /* ancho deseado */
-  height: 240px;           /* alto deseado */
-  object-fit: fill;        /* fuerza estirado/distorsión si no respeta ratio */
-  flex: 0 0 auto;          /* no permitir que el flex container cambie su tamaño */
+  justify-content: center;
+  background-color: #dedede;
+  padding: 15px;
+  border-radius: 7%;
+  border: 2px solid black;
   box-sizing: border-box;
-  border: 3px solid black;
-  margin: 10px 0;
+  width: 400px;
+  height: 450px;
+  margin: 10px;
 }
 
-
-.Principal-producto1, .Precio-producto1 {
-  font-family: 'Inter', sans-serif;
-  font-weight: 800;
-  text-align: center;
-  width: 100%;
-  color: black;
-  
-  /* FIX: Elimina el margen por defecto del h2 */
-  margin: 0; 
-}
-
-.Principal-producto1 {
-  font-size: 40px; 
-  
-  /* Ahora aplica solo el margen superior deseado */
-  margin-top: 5px; 
-  margin-bottom: 5px;
-}
-
-.Precio-producto1 {
-  font-size: 20px; 
-  margin-top: 15px;
-  margin-bottom: 5px;
+.claseCajaPublicacion:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .botonBorrar {
   position: absolute;
   top: 5px;
-  left: 5px; 
-  /* Add this to ensure it breaks out of the normal content flow of the Flex container */
-  align-self: flex-start; 
+  left: 5px;
+  align-self: flex-start;
   margin: 0;
   font-size: 40px;
   font-family: inherit;
-  /* ... */
 }
 
 .botonBorrar:hover {
@@ -316,27 +328,12 @@ margin-top: 4ppx;
 }
 
 .Precio-producto1 {
-  font-size: 20px; 
+  font-size: 20px;
   margin-top: 15px;
   margin-bottom: 5px;
-}
-
-.botonBorrar {
-  position: absolute;
-  top: 5px;
-  left: 5px; 
-  /* Add this to ensure it breaks out of the normal content flow of the Flex container */
-  align-self: flex-start; 
-  margin: 0;
-  font-size: 40px;
-  font-family: inherit;
-  /* ... */
-}
-
-.botonBorrar:hover {
-  background-color: rgb(167, 39, 39);
 }
 
 #togglePassword:hover {
   transform: scale(1.2);
 }
+ 
