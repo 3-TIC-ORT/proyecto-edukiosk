@@ -64,13 +64,23 @@
       </div>
 
       <div class="perfil-datos">
-        <p><strong>Nombre:</strong> <span id="nombreTexto"></span></p>
-        <p>
-          <strong>Contraseña:</strong>
-          <span id="passwordTexto"></span>
-          <button id="togglePassword" type="button">👁</button>
-        </p>
-        <p><strong>Descripción:</strong> <span id="descripcionTexto"></span></p>
+        <div class="perfil-info-row">
+          <p class="perfil-label"><strong>Nombre:</strong></p>
+          <p class="perfil-value"><span id="nombreTexto"></span></p>
+        </div>
+
+        <div class="perfil-info-row">
+          <p class="perfil-label"><strong>Contraseña:</strong></p>
+          <p class="perfil-value">
+            <span id="passwordTexto"></span>
+            <button id="togglePassword" type="button">👁</button>
+          </p>
+        </div>
+
+        <div class="perfil-info-row">
+          <p class="perfil-label"><strong>Descripción:</strong></p>
+          <p class="perfil-value"><span id="descripcionTexto"></span></p>
+        </div>
 
         <!-- inputs ocultos inicialmente -->
         <input

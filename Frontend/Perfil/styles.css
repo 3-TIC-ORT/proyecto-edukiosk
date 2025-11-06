@@ -60,13 +60,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  margin: 60px auto;
-  max-width: 1100px;
-  gap: 80px;
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  padding: 40px 60px;
+  margin: 40px auto;
+  max-width: 900px;
+  gap: 40px;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 20px;
   transition: all 0.3s ease;
 }
 
@@ -74,14 +74,14 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
-  border-right: 2px solid #e0e0e0;
-  padding-right: 40px;
+  gap: 12px;
+  border-right: none;
+  padding-right: 0;
 }
 
 .perfil-imagen img {
-  width: 180px;
-  height: 180px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid var(--colorPrimario);
@@ -95,15 +95,15 @@ body {
 
 /* Cambiar foto - botón */
 #editarImagenLabel {
-  width: 180px;
-  height: 46px;
+  width: 150px;
+  height: 40px;
   background: white;
   color: #224668;
   border: 2px solid #224668;
   border-radius: 22px;
   cursor: pointer;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 14px;
   transition: all 0.25s ease;
   display: flex;
   align-items: center;
@@ -116,15 +116,15 @@ body {
 
 /* Quitar foto - botón */
 #quitarImagenBtn {
-  width: 180px;
-  height: 46px;
+  width: 150px;
+  height: 40px;
   background: white;
   color: #224668;
   border: 2px solid #224668;
   border-radius: 22px;
   cursor: pointer;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 14px;
   transition: all 0.25s ease;
   display: flex;
   align-items: center;
@@ -136,15 +136,15 @@ body {
 }
 
 #btnCerrarSesion {
-  width: 180px;
-  height: 46px;
+  width: 150px;
+  height: 40px;
   background: #e92828;
   color: #fff;
   border: 2px solid #224668;
   border-radius: 22px;
   cursor: pointer;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 14px;
   transition: all 0.25s ease;
   display: flex;
   align-items: center;
@@ -159,22 +159,40 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  background: #f8f9fb;
-  padding: 30px 40px;
-  border-radius: 16px;
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+  gap: 15px;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  margin-left: 180px;
 }
 
-.perfil-datos p {
-  font-size: 16px;
+.perfil-info-row {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border-bottom: 1px solid #d0d0d0;
+  padding-bottom: 10px;
+}
+
+.perfil-label {
+  font-size: 14px;
   color: #1f2b3a;
-  line-height: 1.6;
+  margin: 0;
 }
 
-.perfil-datos strong {
+.perfil-label strong {
   color: var(--colorPrimario);
   font-weight: 700;
+}
+
+.perfil-value {
+  font-size: 16px;
+  color: #1f2b3a;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .perfil-datos input,
@@ -184,6 +202,7 @@ body {
   font-size: 14px;
   border: 1px solid #ccc;
   border-radius: 5px;
+
 }
 
 .perfil-datos input:focus,
@@ -197,19 +216,18 @@ body {
   min-height: 80px;
 }
 
-/* Botón editar centrado y más abajo */
 #toggleEditar {
-  width: 103px;
-  height: 57px;
+  width: 90px;
+  height: 45px;
   background: #224668;
   color: #fff;
   border-radius: 40px;
-  font-size: 17px;
+  font-size: 15px;
   transition: all 0.25s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 30px; /* Para moverlo hacia abajo */
+  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -219,15 +237,17 @@ body {
 }
 
 #togglePassword{
-  padding: 10px 20px;
+  padding: 5px 10px;
   font-size: 15px;
   font-weight: 700;
   border-radius: 8px;
   border: none;
   cursor: pointer;
+  background: transparent;
 }
+
 #guardarBtn {
-  width: 180px; /* Ancho más grande */
+  width: 180px;
   height: 46px;
   background: #224668;
   color: #fff;
@@ -238,15 +258,15 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 30px; /* Para moverlo hacia abajo, al igual que el botón de editar */
+  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: .10px;
 }
 
 #guardarBtn:hover {
   background: #0f1f30;
 }
+
 .producto1-contenedor {
   display: flex;
   flex-direction: column;
@@ -336,4 +356,3 @@ body {
 #togglePassword:hover {
   transform: scale(1.2);
 }
- 
